@@ -122,6 +122,13 @@
     <None Include="Lizzard_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\d3.png" />
+    <Content Include="Images\hs.png" />
+    <Content Include="Images\logout.png" />
+    <Content Include="Images\ow.png" />
+    <Content Include="Images\sc2.png" />
+    <Content Include="Images\settings.png" />
+    <Content Include="Images\wow.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
