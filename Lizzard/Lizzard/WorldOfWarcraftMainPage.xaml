@@ -9,12 +9,12 @@
 
     <Grid Background="#FF003265" FocusVisualSecondaryBrush="#99FFFFFF" BorderBrush="#FFFF9C00" BorderThickness="3">
         <Rectangle Fill="#FFFF9C00" HorizontalAlignment="Left" Height="13" Margin="0,58,0,0" VerticalAlignment="Top" Width="269"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="43" Margin="10,15,0,0" TextWrapping="Wrap" Text="World of Warcraft" VerticalAlignment="Top" Width="269" FontSize="29.333" FocusVisualPrimaryBrush="#FFFF9C00" Foreground="#FFFF9C00"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="43" Margin="10,15,0,0" TextWrapping="Wrap" Text="World of Warcraft" VerticalAlignment="Top" Width="269" FontSize="29.333" FocusVisualPrimaryBrush="#FFFF9C00" Foreground="#FFFF9C00" FontWeight="Bold"/>
         <Button x:Name="profileBtn_Copy1" Content="profile&#xD;&#xA;" HorizontalAlignment="Left" Height="79" Margin="175,148,0,0" VerticalAlignment="Top" Width="79" Background="#FFFF9C00" Foreground="#FF003265" Click="profileBtn_Copy1_Click"/>
         <Button x:Name="profileBtn_Copy2" Content="search&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Height="79" Margin="262,148,0,0" VerticalAlignment="Top" Width="79" Background="#FFFF9C00" Foreground="#FF003265"/>
         <Button x:Name="profileBtn_Copy3" Content="settings&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Height="79" Margin="349,148,0,0" VerticalAlignment="Top" Width="79" Background="#FFFF9C00" Foreground="#FF003265" RenderTransformOrigin="4.352,0.581" Click="profileBtn_Copy3_Click"/>
         <Button x:Name="button" Content="&lt;" HorizontalAlignment="Left" Height="32" Margin="0,301,0,0" VerticalAlignment="Top" Width="73" Background="#FFFF9C00" Foreground="#FF003265" FontWeight="Bold" FontSize="16"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="61" Margin="552,10,0,0" VerticalAlignment="Top" Width="61">
+        <Image x:Name="image" HorizontalAlignment="Left" Height="61" Margin="552,10,0,0" VerticalAlignment="Top" Width="61" Source="Images/testWowIcon.png">
             <Image.FocusVisualSecondaryBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
