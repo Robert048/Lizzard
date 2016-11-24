@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Overwatch\Data.cs" />
     <Compile Include="DiabloMainPage.xaml.cs">
       <DependentUpon>DiabloMainPage.xaml</DependentUpon>
     </Compile>
@@ -110,7 +111,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OverwatchMainPage.xaml.cs">
+    <Compile Include="Overwatch\Api.cs" />
+    <Compile Include="Overwatch\OverwatchMainPage.xaml.cs">
       <DependentUpon>OverwatchMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,7 +172,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="OverwatchMainPage.xaml">
+    <Page Include="Overwatch\OverwatchMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

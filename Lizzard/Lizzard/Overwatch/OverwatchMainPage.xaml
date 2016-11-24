@@ -101,10 +101,11 @@
                VerticalAlignment="Top"
                Source="Images/ow.png"
                Stretch="Fill" />
-        <TextBlock Grid.Column="6"
+        <TextBlock x:Name="txtData"
+                   Grid.Column="6"
                    Margin="0,20,20,0"
                    TextWrapping="Wrap"
-                   Text="Naam"
+                   Text=""
                    VerticalAlignment="Top"
                    HorizontalAlignment="Right"
                    FontSize="20"
