@@ -131,12 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\d3.png" />
+    <Content Include="Images\d3TestIcon.png" />
     <Content Include="Images\hots.png" />
     <Content Include="Images\hs.png" />
     <Content Include="Images\logout.png" />
     <Content Include="Images\ow.png" />
     <Content Include="Images\sc2.png" />
     <Content Include="Images\settings.png" />
+    <Content Include="Images\testSc2Icon.png" />
+    <Content Include="Images\testWowIcon.png" />
     <Content Include="Images\wow.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
