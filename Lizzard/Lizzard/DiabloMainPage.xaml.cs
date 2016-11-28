@@ -26,5 +26,10 @@ namespace Lizzard
         {
             this.InitializeComponent();
         }
+
+        private void textBlock_SelectionChanged(System.Object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

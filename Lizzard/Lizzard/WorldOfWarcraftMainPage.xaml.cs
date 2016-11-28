@@ -26,5 +26,15 @@ namespace Lizzard
         {
             this.InitializeComponent();
         }
+
+        private void profileBtn_Copy3_Click(System.Object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void profileBtn_Copy1_Click(System.Object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
