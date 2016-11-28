@@ -95,16 +95,24 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Overwatch\Data.cs" />
     <Compile Include="DiabloMainPage.xaml.cs">
       <DependentUpon>DiabloMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="HearthstoneMainPage.xaml.cs">
       <DependentUpon>HearthstoneMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HeroesOfTheStormMainPage.xaml.cs">
+      <DependentUpon>HeroesOfTheStormMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogInpage.xaml.cs">
+      <DependentUpon>LogInpage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OverwatchMainPage.xaml.cs">
+    <Compile Include="Overwatch\Api.cs" />
+    <Compile Include="Overwatch\OverwatchMainPage.xaml.cs">
       <DependentUpon>OverwatchMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +132,7 @@
   <ItemGroup>
     <Content Include="Images\d3.png" />
     <Content Include="Images\d3TestIcon.png" />
+    <Content Include="Images\hots.png" />
     <Content Include="Images\hs.png" />
     <Content Include="Images\logout.png" />
     <Content Include="Images\ow.png" />
@@ -154,11 +163,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HeroesOfTheStormMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogInpage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="OverwatchMainPage.xaml">
+    <Page Include="Overwatch\OverwatchMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
