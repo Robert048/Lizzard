@@ -31,5 +31,10 @@ namespace Lizzard
         {
 
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
