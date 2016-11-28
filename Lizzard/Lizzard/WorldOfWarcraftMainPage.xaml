@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Lizzard.HeroesOfTheStormMainPage"
+    x:Class="Lizzard.WorldOfWarcraftMainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Lizzard"
@@ -109,7 +109,7 @@
                    HorizontalAlignment="Right"
                    FontSize="20"
                    Foreground="#FFB19F05"
-                   FontWeight="Bold" FocusVisualPrimaryBrush="#FFFF9C00" />
+                   FontWeight="Bold"/>
 
     </Grid>
 </Page>

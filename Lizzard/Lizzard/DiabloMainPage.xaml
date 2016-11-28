@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Lizzard.HeroesOfTheStormMainPage"
+    x:Class="Lizzard.DiabloMainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Lizzard"
@@ -101,14 +101,6 @@
                VerticalAlignment="Top"
                Source="Images/d3TestIcon.png"
                Stretch="Fill" />
-        <TextBlock Grid.Column="6"
-                   Margin="0,20,20,0"
-                   TextWrapping="Wrap"
-                   Text="Naam"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Right"
-                   FontSize="20"
-                   Foreground="#FF4C0505" FocusVisualPrimaryBrush="#FF003265" FontWeight="Bold" />
 
     </Grid>
 </Page>
