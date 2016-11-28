@@ -37,5 +37,10 @@ namespace Lizzard
         {
             Frame.Navigate(typeof(HearthstoneMainPage));
         }
+
+        private void btnHotS_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(HeroesOfTheStormMainPage));
+        }
     }
 }
