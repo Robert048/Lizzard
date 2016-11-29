@@ -24,8 +24,12 @@ namespace Lizzard
         {
             Api call = new Api();
             Data data = await call.get("https://api.lootbox.eu/" + platform + "/" + region + "/" + tag + "/profile");
-            image.Source = new BitmapImage(new Uri(data.avatar, UriKind.Absolute));
-            txtData.Text = data.username + System.Environment.NewLine + "Level: " + data.level;
+            if (data.avatar != null && data.username != null)
+            {
+                image.Source = new BitmapImage(new Uri(data.avatar, UriKind.Absolute));
+                txtData.Text = data.username + System.Environment.NewLine + "Level: " + data.level;
+                progressRing.IsActive = false;
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
