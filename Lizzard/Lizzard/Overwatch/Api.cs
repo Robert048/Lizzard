@@ -7,25 +7,17 @@ namespace Lizzard
 {
     class Api
     {
-        public async Task<Data> get(string apiLink)
+        public async Task<string> get(string apiLink)
         {
-            Data data = new Data(); ;
+            DataProfile data = new DataProfile(); ;
+            var result = "";
             using (var client = new HttpClient())
             {
-                try
-                {
-                    var uri = new Uri(apiLink);
-                    var response = await client.GetAsync(uri);
-                    var result = await response.Content.ReadAsStringAsync();
-                    var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);
-                    data = jsonresult.data;
-                }
-                catch (Exception ex)
-                {
-
-                }
+                var uri = new Uri("https://api.lootbox.eu/" + apiLink);
+                var response = await client.GetAsync(uri);
+                result = await response.Content.ReadAsStringAsync();
             }
-            return data;
+            return result;
         }
     }
 }

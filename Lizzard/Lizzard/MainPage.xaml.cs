@@ -8,9 +8,11 @@ namespace Lizzard
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        User user;
         public MainPage()
         {
             this.InitializeComponent();
+            user = new User { tag = "Bobgast-2232", region="eu", platform = "pc"};
         }
 
         private void btnWOW_Click(object sender, RoutedEventArgs e)
@@ -30,7 +32,7 @@ namespace Lizzard
 
         private void btnOW_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OverwatchMainPage));
+            Frame.Navigate(typeof(OverwatchMainPage), user);
         }
 
         private void btnHS_Click(object sender, RoutedEventArgs e)
