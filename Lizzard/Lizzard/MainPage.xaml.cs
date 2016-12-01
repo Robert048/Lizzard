@@ -1,5 +1,6 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace Lizzard
 {
@@ -12,7 +13,6 @@ namespace Lizzard
         public MainPage()
         {
             this.InitializeComponent();
-            user = new User { tag = "Bobgast-2232", region="eu", platform = "pc"};
         }
 
         private void btnWOW_Click(object sender, RoutedEventArgs e)
@@ -32,7 +32,7 @@ namespace Lizzard
 
         private void btnOW_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OverwatchMainPage), user);
+            Frame.Navigate(typeof(Overwatch.OverwatchMainPage), user);
         }
 
         private void btnHS_Click(object sender, RoutedEventArgs e)
@@ -43,6 +43,13 @@ namespace Lizzard
         private void btnHotS_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(HeroesOfTheStormMainPage));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            User user = (User)e.Parameter;
+            this.user = user;
         }
     }
 }

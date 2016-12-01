@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-namespace Lizzard
+namespace Lizzard.Overwatch
 {
     /// <summary>
     /// Het overwatch mainscherm
