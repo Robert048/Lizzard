@@ -11,12 +11,12 @@ namespace Lizzard.Overwatch
     /// <summary>
     /// Het overwatch mainscherm
     /// </summary>
-    public sealed partial class OverwatchMainPage : Page
+    public sealed partial class MainPage : Page
     {
         private User user;
         private DataProfile data;
 
-        public OverwatchMainPage()
+        public MainPage()
         {
             this.InitializeComponent();
         }
@@ -47,7 +47,7 @@ namespace Lizzard.Overwatch
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("data", data);
                 parameters.Add("user", user);
-                Frame.Navigate(typeof(OverwatchSubPage), parameters);
+                Frame.Navigate(typeof(StatPage), parameters);
             }
         }
 
@@ -57,6 +57,17 @@ namespace Lizzard.Overwatch
             User user = (User)e.Parameter;
             this.user = user;
             getProfile();
+        }
+
+        private void btnHeroesQuick_Click(object sender, RoutedEventArgs e)
+        {
+            if (data != null)
+            {
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("data", data);
+                parameters.Add("user", user);
+                Frame.Navigate(typeof(QuickPlayPage), parameters);
+            }
         }
     }
 }
