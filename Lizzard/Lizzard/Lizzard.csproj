@@ -119,8 +119,17 @@
     <Compile Include="StarCraftMainPage.xaml.cs">
       <DependentUpon>StarCraftMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WorldOfWarcraftMainPage.xaml.cs">
+    <Compile Include="User.cs" />
+    <Compile Include="World of Warcraft\Data.cs" />
+    <Compile Include="World of Warcraft\WorldOfWarcraftMainPage.xaml.cs">
       <DependentUpon>WorldOfWarcraftMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="World of Warcraft\WoWApi.cs" />
+    <Compile Include="World of Warcraft\WoWProfile.xaml.cs">
+      <DependentUpon>WoWProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="World of Warcraft\WoWSetPage.xaml.cs">
+      <DependentUpon>WoWSetPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +192,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WorldOfWarcraftMainPage.xaml">
+    <Page Include="World of Warcraft\WorldOfWarcraftMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="World of Warcraft\WoWProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="World of Warcraft\WoWSetPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

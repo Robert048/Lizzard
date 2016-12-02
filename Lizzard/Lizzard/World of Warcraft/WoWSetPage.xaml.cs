@@ -20,26 +20,21 @@ namespace Lizzard
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class WorldOfWarcraftMainPage : Page
+    /// 
+
+    public sealed partial class WoWSetPage : Page
     {
-        public WorldOfWarcraftMainPage()
+        string charName;
+
+        public WoWSetPage()
         {
             this.InitializeComponent();
         }
 
-        private void profileBtn_Copy3_Click(System.Object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void profileBtn_Copy1_Click(System.Object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-
+            charName = txtCharName.Text;
+            Frame.Navigate(typeof(WorldOfWarcraftMainPage),charName);
         }
     }
 }
