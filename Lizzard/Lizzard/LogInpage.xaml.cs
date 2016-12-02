@@ -1,30 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-
+/// <summary>
+/// Login Page.
+/// </summary>
 namespace Lizzard
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// A login page to get the battletag of a user
     /// </summary>
     public sealed partial class LogInpage : Page
     {
         public LogInpage()
         {
             this.InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtUsername.Text != "" && txtRegion.Text != "")
+            {
+                string username = txtUsername.Text;
+                if (username.Contains("#"))
+                {
+                    username = username.Replace("#", "-");
+                }
+                User user = new User { tag = username, region = txtRegion.Text, platform = "pc" };
+                Frame.Navigate(typeof(MainPage), user);
+            }
+            else
+            {
+                //implement error message
+            }
         }
     }
 }

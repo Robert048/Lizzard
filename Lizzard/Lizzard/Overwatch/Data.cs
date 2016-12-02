@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Lizzard
+namespace Lizzard.Overwatch
 {
     public class Quick
     {
@@ -35,7 +31,7 @@ namespace Lizzard
         public object rank { get; set; }
     }
 
-    public class Data
+    public class DataProfile
     {
         public string username { get; set; }
         public int level { get; set; }
@@ -47,8 +43,25 @@ namespace Lizzard
         public string star { get; set; }
     }
 
-    public class RootObject
+    public class RootObjectProfile
     {
-        public Data data { get; set; }
+        public DataProfile data { get; set; }
+    }
+
+    public class Achievement
+    {
+        public string name { get; set; }
+        public bool finished { get; set; }
+        public string image { get; set; }
+        public string description { get; set; }
+        public object category { get; set; }
+    }
+
+    public class RootObjectAchievements
+    {
+        public int totalNumberOfAchievements { get; set; }
+        public int numberOfAchievementsCompleted { get; set; }
+        public string finishedAchievements { get; set; }
+        public List<Achievement> achievements { get; set; }
     }
 }
