@@ -52,23 +52,26 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 TabIndex="3"
-                Foreground="#FF223243" />
+                Foreground="#FF223243"
+                Click="button_Click" />
         <TextBox x:Name="txtUsername"
                  Grid.Column="3"
                  Margin="0,5"
                  Grid.Row="3"
                  TextWrapping="Wrap"
                  Text=""
-                 PlaceholderText="Username"
+                 PlaceholderText="Battletag"
                  FontSize="20"
                  TabIndex="1" />
-        <PasswordBox x:Name="txtPassword"
-                     Grid.Column="3"
-                     Margin="0,5"
-                     Grid.Row="4"
-                     FontSize="20"
-                     PlaceholderText="Password"
-                     TabIndex="2" />
+        <TextBox x:Name="txtRegion"
+                 Grid.Column="3"
+                 Grid.Row="4"
+                 TextWrapping="Wrap"
+                 Text=""
+                 PlaceholderText="Region"
+                 TabIndex="2"
+                 FontSize="20"
+                 Margin="0,5" />
 
     </Grid>
 </Page>
