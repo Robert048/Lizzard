@@ -17,7 +17,7 @@ namespace Lizzard
 
         private void btnWOW_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(WorldOfWarcraftMainPage));
+            Frame.Navigate(typeof(World_of_Warcraft.MainPage));
         }
 
         private void btnD3_Click(object sender, RoutedEventArgs e)
@@ -32,7 +32,7 @@ namespace Lizzard
 
         private void btnOW_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Overwatch.OverwatchMainPage), user);
+            Frame.Navigate(typeof(Overwatch.MainPage), user);
         }
 
         private void btnHS_Click(object sender, RoutedEventArgs e)

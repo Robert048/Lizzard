@@ -13,10 +13,10 @@ namespace Lizzard.Overwatch
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OverwatchSubPage : Page
+    public sealed partial class StatPage : Page
     {
         private User user;
-        public OverwatchSubPage()
+        public StatPage()
         {
             this.InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace Lizzard.Overwatch
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(OverwatchMainPage), user);
+            Frame.Navigate(typeof(MainPage), user);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

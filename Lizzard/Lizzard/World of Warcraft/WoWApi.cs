@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Lizzard
+namespace Lizzard.World_of_Warcraft
 {
     class WoWApi
     {
