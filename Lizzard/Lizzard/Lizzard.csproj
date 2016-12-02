@@ -112,11 +112,14 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Overwatch\Api.cs" />
-    <Compile Include="Overwatch\OverwatchMainPage.xaml.cs">
-      <DependentUpon>OverwatchMainPage.xaml</DependentUpon>
+    <Compile Include="Overwatch\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Overwatch\OverwatchSubPage.xaml.cs">
-      <DependentUpon>OverwatchSubPage.xaml</DependentUpon>
+    <Compile Include="Overwatch\StatPage.xaml.cs">
+      <DependentUpon>StatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Overwatch\QuickPlayPage.xaml.cs">
+      <DependentUpon>QuickPlayPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StarCraftMainPage.xaml.cs">
@@ -179,11 +182,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Overwatch\OverwatchMainPage.xaml">
+    <Page Include="Overwatch\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Overwatch\OverwatchSubPage.xaml">
+    <Page Include="Overwatch\StatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Overwatch\QuickPlayPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
