@@ -71,5 +71,6 @@ namespace Lizzard.Overwatch
         public string playtime { get; set; }
         public string image { get; set; }
         public double percentage { get; set; }
+        public double eliminations { get; set; }
     }
 }

@@ -71,7 +71,8 @@
                 Background="#FFF99E1A"
                 Foreground="#FF43484C"
                 FontSize="30"
-                Margin="10" />
+                Margin="10"
+                Click="btnHeroesComp_Click" />
         <Button x:Name="btnStat"
                 Content="4e button"
                 Grid.Column="5"

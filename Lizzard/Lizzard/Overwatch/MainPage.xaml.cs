@@ -69,5 +69,16 @@ namespace Lizzard.Overwatch
                 Frame.Navigate(typeof(QuickPlayPage), parameters);
             }
         }
+
+        private void btnHeroesComp_Click(object sender, RoutedEventArgs e)
+        {
+            if (data != null)
+            {
+                Dictionary<string, object> parameters = new Dictionary<string, object>();
+                parameters.Add("data", data);
+                parameters.Add("user", user);
+                Frame.Navigate(typeof(CompetitivePage), parameters);
+            }
+        }
     }
 }
