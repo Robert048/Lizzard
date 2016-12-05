@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Hearthstone\Data.cs" />
     <Compile Include="Overwatch\CompetitivePage.xaml.cs">
       <DependentUpon>CompetitivePage.xaml</DependentUpon>
     </Compile>
@@ -102,8 +103,8 @@
     <Compile Include="DiabloMainPage.xaml.cs">
       <DependentUpon>DiabloMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HearthstoneMainPage.xaml.cs">
-      <DependentUpon>HearthstoneMainPage.xaml</DependentUpon>
+    <Compile Include="Hearthstone\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="HeroesOfTheStormMainPage.xaml.cs">
       <DependentUpon>HeroesOfTheStormMainPage.xaml</DependentUpon>
@@ -177,7 +178,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HearthstoneMainPage.xaml">
+    <Page Include="Hearthstone\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

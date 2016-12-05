@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Navigation;
 namespace Lizzard.Overwatch
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Overwatch page to display the hero information on QuickPlay games.
     /// </summary>
     public sealed partial class QuickPlayPage : Page
     {

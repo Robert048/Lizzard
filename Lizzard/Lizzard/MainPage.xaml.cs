@@ -36,7 +36,7 @@ namespace Lizzard
 
         private void btnHS_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(HearthstoneMainPage));
+            Frame.Navigate(typeof(Hearthstone.MainPage));
         }
 
         private void btnHotS_Click(object sender, RoutedEventArgs e)
