@@ -6,8 +6,6 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Lizzard.Overwatch
 {
     /// <summary>
@@ -16,24 +14,32 @@ namespace Lizzard.Overwatch
     public sealed partial class CompetitivePage : Page
     {
         private User user;
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
         public CompetitivePage()
         {
             this.InitializeComponent();
         }
+
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage), user);
+            Frame.Navigate(typeof(MainPage));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            Dictionary<string, object> parameters = (Dictionary<string, object>)e.Parameter;
-            DataProfile data = (DataProfile)parameters["data"];
-            User user = (User)parameters["user"];
-            this.user = user;
+            DataProfile data = (DataProfile)e.Parameter;
+            var tag = localSettings.Values["tag"];
+            if (tag != null)
+            {
+                this.user = new User { tag = (string)localSettings.Values["tag"], region = (string)localSettings.Values["region"], platform = (string)localSettings.Values["platform"] };
+            }
+            else
+            {
+                Frame.Navigate(typeof(LogInpage));
+            }
             image.Source = new BitmapImage(new Uri(data.avatar, UriKind.Absolute));
-            txtData.Text = data.username + System.Environment.NewLine + "Level: " + data.level;
+            txtData.Text = data.username + Environment.NewLine + "Level: " + data.level;
             getheroes();
         }
 

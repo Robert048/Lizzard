@@ -5,11 +5,10 @@ using Windows.UI.Xaml.Navigation;
 namespace Lizzard
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Mainpage of the Lizzard Application
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        User user;
         public MainPage()
         {
             this.InitializeComponent();
@@ -32,7 +31,7 @@ namespace Lizzard
 
         private void btnOW_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Overwatch.MainPage), user);
+            Frame.Navigate(typeof(Overwatch.MainPage));
         }
 
         private void btnHS_Click(object sender, RoutedEventArgs e)
@@ -48,8 +47,6 @@ namespace Lizzard
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            User user = (User)e.Parameter;
-            this.user = user;
         }
     }
 }

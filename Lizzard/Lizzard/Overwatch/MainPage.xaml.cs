@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
@@ -15,10 +14,21 @@ namespace Lizzard.Overwatch
     {
         private User user;
         private DataProfile data;
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
         public MainPage()
         {
             this.InitializeComponent();
+            var tag = localSettings.Values["tag"];
+            if (tag != null)
+            {
+                this.user = new User { tag = (string)localSettings.Values["tag"], region = (string)localSettings.Values["region"], platform = (string)localSettings.Values["platform"] };
+                getProfile();
+            }
+            else
+            {
+                Frame.Navigate(typeof(LogInpage));
+            }
         }
 
         private async void getProfile()
@@ -37,36 +47,27 @@ namespace Lizzard.Overwatch
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            Frame.Navigate(typeof(Lizzard.MainPage));
         }
 
         private void btnLifetime_Click(object sender, RoutedEventArgs e)
         {
             if (data != null)
             {
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("data", data);
-                parameters.Add("user", user);
-                Frame.Navigate(typeof(StatPage), parameters);
+                Frame.Navigate(typeof(StatPage), data);
             }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            User user = (User)e.Parameter;
-            this.user = user;
-            getProfile();
         }
 
         private void btnHeroesQuick_Click(object sender, RoutedEventArgs e)
         {
             if (data != null)
             {
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("data", data);
-                parameters.Add("user", user);
-                Frame.Navigate(typeof(QuickPlayPage), parameters);
+                Frame.Navigate(typeof(QuickPlayPage), data);
             }
         }
 
@@ -74,10 +75,7 @@ namespace Lizzard.Overwatch
         {
             if (data != null)
             {
-                Dictionary<string, object> parameters = new Dictionary<string, object>();
-                parameters.Add("data", data);
-                parameters.Add("user", user);
-                Frame.Navigate(typeof(CompetitivePage), parameters);
+                Frame.Navigate(typeof(CompetitivePage), data);
             }
         }
     }
