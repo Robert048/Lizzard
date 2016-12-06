@@ -3,5 +3,76 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Lizzard"
              RequestedTheme="Light">
+    <Application.Resources>
+        <DataTemplate x:Key="DataTemplate">
+            <Grid Width="700"
+                  Height="250">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Text="{Binding name}"
+                           Grid.Column="1"
+                           FontSize="40" />
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Text="{Binding playtime}"
+                           Grid.Column="2"
+                           FontSize="26.667" />
+                <Image Source="{Binding image}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="1"
+                           FontSize="26.667">
+                    <Run Text="{Binding eliminations}"/> <Run Text="Eliminations" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="2"
+                           FontSize="26.667">
+                    <Run Text="{Binding damage}" /> <Run Text="Damage" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="1"
+                           FontSize="26.667"
+                           Grid.Column="1">
+                    <Run Text="{Binding kdratio}" /> <Run Text="K/D Ratio" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="2"
+                           FontSize="26.667"
+                           Grid.Column="1">
+                    <Run Text="{Binding Accuracy}" /> <Run Text="Accuracy" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           FontSize="26.667"
+                           Grid.Row="1"
+                           Grid.Column="2">
+                    <Run Text="{Binding ObjTime}" /> <Run Text="Objective time" />
+                </TextBlock>
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
 
 </Application>
