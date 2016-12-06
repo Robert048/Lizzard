@@ -16,7 +16,6 @@ namespace Lizzard.Hearthstone
         {
             this.InitializeComponent();
             test();
-            
         }
 
         private async void test()
@@ -24,6 +23,12 @@ namespace Lizzard.Hearthstone
             var result = await get();
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);
             progressRing.IsActive = false;
+
+
+            var folder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            var newFolder = await folder.CreateFolderAsync("NewFolder", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            var textFile = await newFolder.CreateFileAsync("cards.txt");
+            await Windows.Storage.FileIO.WriteTextAsync(textFile, result);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -43,6 +48,11 @@ namespace Lizzard.Hearthstone
                 result = await response.Content.ReadAsStringAsync();
             }
             return result;
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CreateDeckPage));
         }
     }
 }
