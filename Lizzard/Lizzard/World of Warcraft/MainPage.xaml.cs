@@ -25,7 +25,6 @@ namespace Lizzard.World_of_Warcraft
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            loadProfileData();
             base.OnNavigatedTo(e);
             if (e.Parameter == null)
             {
@@ -33,6 +32,7 @@ namespace Lizzard.World_of_Warcraft
             }
             else
             {
+                loadProfileData();
                 charName = e.Parameter.ToString();
             }
         }
@@ -54,14 +54,17 @@ namespace Lizzard.World_of_Warcraft
 
         private async void loadProfileData()
         {
-            WoWApi call = new WoWApi();
-            var result = await call.get("Outland" + "/" + "Nuclaer" + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
-            var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
-            image.Source = new BitmapImage(new Uri("http://render-api-eu.worldofwarcraft.com/static-render/eu/outland/217/137868505-avatar.jpg"));
-            txtCharacter.Text =
-                jsonresult.name + Environment.NewLine +
-                "Level: " + jsonresult.level.ToString() + Environment.NewLine +
-                "Achievement points: " + jsonresult.achievementPoints.ToString();
+            if (charName != "")
+            {
+                WoWApi call = new WoWApi();
+                var result = await call.get("character/Outland" + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+                var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
+                image.Source = new BitmapImage(new Uri("http://render-api-eu.worldofwarcraft.com/static-render/eu/" + jsonresult.thumbnail));
+                txtCharacter.Text =
+                    jsonresult.name + Environment.NewLine +
+                    "Level: " + jsonresult.level.ToString() + Environment.NewLine +
+                    "Achievement points: " + jsonresult.achievementPoints.ToString();
+            }
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
@@ -73,6 +76,12 @@ namespace Lizzard.World_of_Warcraft
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Profile), charName);
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Guild));
+
         }
     }
 }

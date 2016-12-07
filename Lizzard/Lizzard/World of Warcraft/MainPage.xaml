@@ -40,7 +40,7 @@
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" FontWeight="Bold" />
         <Button x:Name="btnProfile"
-                Content="Profile"
+                Content="Character information"
                 Grid.Column="2"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -50,7 +50,7 @@
                 FontSize="30"
                 Margin="10" FontWeight="Bold" Click="btnProfile_Click" />
         <Button x:Name="btnSearch"
-                Content="Search"
+                Content="Search guild"
                 Grid.Column="3"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -58,7 +58,7 @@
                 Background="#FFFF9C00"
                 Foreground="#FF003265"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" />
+                Margin="10" FontWeight="Bold" Click="btnSearch_Click" />
         <Button x:Name="btnSettings"
                 Content="Set character"
                 Grid.Column="4"
