@@ -138,6 +138,7 @@ namespace Lizzard.Overwatch
                 }
                 gridView.Items.Add(hero);
             }
+            progressRing.IsActive = false;
         }
     }
 }

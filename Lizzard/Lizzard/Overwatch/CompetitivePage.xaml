@@ -41,7 +41,7 @@
                 Click="btnBack_Click" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
-                   Text="Quick Play"
+                   Text="competitive"
                    Foreground="#FFF99E1A"
                    FontSize="100"
                    VerticalAlignment="Bottom"
@@ -71,14 +71,14 @@
                    Foreground="#FFF99E1A"
                    FontWeight="Bold" />
         <ProgressRing x:Name="progressRing"
-                      Grid.Column="5"
-                      HorizontalAlignment="Left"
+                      Grid.Column="3"
+                      HorizontalAlignment="Right"
                       Margin="0,30,0,0"
                       VerticalAlignment="Top"
                       IsActive="True"
                       Foreground="#FFF99E1A"
-                      Width="40"
-                      Height="40"
+                      Width="100"
+                      Height="100"
                       Grid.Row="3" />
         <GridView x:Name="gridView"
                   Grid.Row="3"

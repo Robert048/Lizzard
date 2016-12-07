@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
@@ -47,14 +46,18 @@ namespace Lizzard.Overwatch
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            Dictionary<string, object> parameters = (Dictionary<string, object>)e.Parameter;
-            DataProfile data = (DataProfile)parameters["data"];
-            txtQuickPlay.Text = data.games.quick.wins + " Wins" + Environment.NewLine + data.playtime.quick + " Hours playtime";
+            DataProfile data = (DataProfile)e.Parameter;
+            txtQuickPlay.Text = data.games.quick.wins + " Wins" + Environment.NewLine + data.playtime.quick + " playtime";
             if (data.competitive.rank != null)
-            txtCompetitive.Text = data.games.competitive.wins + " wins" + Environment.NewLine + data.playtime.competitive + " playtime" + Environment.NewLine + "Rank: " + data.competitive.rank;
-            txtCompetitive.Text = data.games.competitive.wins + " wins" + Environment.NewLine + data.playtime.competitive + " playtime";
+            {
+                txtCompetitive.Text = data.games.competitive.wins + " wins" + Environment.NewLine + data.playtime.competitive + " playtime" + Environment.NewLine + "Rank: " + data.competitive.rank;
+            }
+            else
+            {
+                txtCompetitive.Text = data.games.competitive.wins + " wins" + Environment.NewLine + data.playtime.competitive + " playtime";
+            }
             image.Source = new BitmapImage(new Uri(data.avatar, UriKind.Absolute));
-            txtData.Text = data.username + System.Environment.NewLine + "Level: " + data.level;
+            txtData.Text = data.username + Environment.NewLine + "Level: " + data.level;
 
             getAchievements();
         }
