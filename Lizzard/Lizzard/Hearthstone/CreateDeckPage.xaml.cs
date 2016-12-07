@@ -21,8 +21,7 @@ namespace Lizzard.Hearthstone
         private async void loadCards()
         {
             var folder = ApplicationData.Current.LocalFolder;
-            var newFolder = await folder.CreateFolderAsync("NewFolder", CreationCollisionOption.OpenIfExists);
-            var files = await newFolder.GetFilesAsync();
+            var files = await folder.GetFilesAsync();
             var cardFile = files.FirstOrDefault(x => x.Name == "cards.txt");
             var result = await FileIO.ReadTextAsync(cardFile);
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);

@@ -35,11 +35,6 @@ namespace Lizzard.Hearthstone
         public int? durability { get; set; }
     }
 
-    public class Mechanic2
-    {
-        public string name { get; set; }
-    }
-
     public class Classic
     {
         public string cardId { get; set; }
@@ -49,7 +44,7 @@ namespace Lizzard.Hearthstone
         public string text { get; set; }
         public string playerClass { get; set; }
         public string locale { get; set; }
-        public List<Mechanic2> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public string faction { get; set; }
         public string artist { get; set; }
         public string rarity { get; set; }
@@ -65,11 +60,6 @@ namespace Lizzard.Hearthstone
         public bool? elite { get; set; }
     }
 
-    public class Mechanic3
-    {
-        public string name { get; set; }
-    }
-
     public class Promo
     {
         public string cardId { get; set; }
@@ -79,7 +69,7 @@ namespace Lizzard.Hearthstone
         public string text { get; set; }
         public string playerClass { get; set; }
         public string locale { get; set; }
-        public List<Mechanic3> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? cost { get; set; }
         public int? attack { get; set; }
         public int? health { get; set; }
@@ -93,11 +83,6 @@ namespace Lizzard.Hearthstone
         public bool? collectible { get; set; }
         public bool? elite { get; set; }
         public string howToGetGold { get; set; }
-    }
-
-    public class Mechanic4
-    {
-        public string name { get; set; }
     }
 
     public class Reward
@@ -121,14 +106,9 @@ namespace Lizzard.Hearthstone
         public string img { get; set; }
         public string imgGold { get; set; }
         public string locale { get; set; }
-        public List<Mechanic4> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public string faction { get; set; }
         public bool? elite { get; set; }
-    }
-
-    public class Mechanic5
-    {
-        public string name { get; set; }
     }
 
     public class Naxxrama
@@ -143,7 +123,7 @@ namespace Lizzard.Hearthstone
         public string imgGold { get; set; }
         public string locale { get; set; }
         public string text { get; set; }
-        public List<Mechanic5> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? cost { get; set; }
         public string rarity { get; set; }
         public int? attack { get; set; }
@@ -157,11 +137,6 @@ namespace Lizzard.Hearthstone
         public int? durability { get; set; }
     }
 
-    public class Mechanic6
-    {
-        public string name { get; set; }
-    }
-
     public class GoblinsVsGnome
     {
         public string cardId { get; set; }
@@ -171,7 +146,7 @@ namespace Lizzard.Hearthstone
         public string text { get; set; }
         public string playerClass { get; set; }
         public string locale { get; set; }
-        public List<Mechanic6> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? cost { get; set; }
         public string img { get; set; }
         public string imgGold { get; set; }
@@ -184,11 +159,6 @@ namespace Lizzard.Hearthstone
         public string race { get; set; }
         public int? durability { get; set; }
         public bool? elite { get; set; }
-    }
-
-    public class Mechanic7
-    {
-        public string name { get; set; }
     }
 
     public class BlackrockMountain
@@ -203,7 +173,7 @@ namespace Lizzard.Hearthstone
         public string imgGold { get; set; }
         public string locale { get; set; }
         public string text { get; set; }
-        public List<Mechanic7> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? cost { get; set; }
         public string rarity { get; set; }
         public int? attack { get; set; }
@@ -218,11 +188,6 @@ namespace Lizzard.Hearthstone
         public string faction { get; set; }
     }
 
-    public class Mechanic8
-    {
-        public string name { get; set; }
-    }
-
     public class TheGrandTournament
     {
         public string cardId { get; set; }
@@ -232,7 +197,7 @@ namespace Lizzard.Hearthstone
         public string text { get; set; }
         public string playerClass { get; set; }
         public string locale { get; set; }
-        public List<Mechanic8> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? attack { get; set; }
         public int? health { get; set; }
         public string img { get; set; }
@@ -245,11 +210,6 @@ namespace Lizzard.Hearthstone
         public string race { get; set; }
         public int? durability { get; set; }
         public bool? elite { get; set; }
-    }
-
-    public class Mechanic9
-    {
-        public string name { get; set; }
     }
 
     public class TheLeagueOfExplorer
@@ -264,7 +224,7 @@ namespace Lizzard.Hearthstone
         public int? health { get; set; }
         public string img { get; set; }
         public string imgGold { get; set; }
-        public List<Mechanic9> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? attack { get; set; }
         public string race { get; set; }
         public int? cost { get; set; }
@@ -278,11 +238,6 @@ namespace Lizzard.Hearthstone
         public bool? elite { get; set; }
     }
 
-    public class Mechanic10
-    {
-        public string name { get; set; }
-    }
-
     public class WhispersOfTheOldGod
     {
         public string cardId { get; set; }
@@ -292,7 +247,7 @@ namespace Lizzard.Hearthstone
         public string text { get; set; }
         public string playerClass { get; set; }
         public string locale { get; set; }
-        public List<Mechanic10> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public string rarity { get; set; }
         public int? cost { get; set; }
         public string artist { get; set; }
@@ -309,11 +264,6 @@ namespace Lizzard.Hearthstone
         public string howToGetGold { get; set; }
     }
 
-    public class Mechanic11
-    {
-        public string name { get; set; }
-    }
-
     public class Karazhan
     {
         public string cardId { get; set; }
@@ -323,7 +273,7 @@ namespace Lizzard.Hearthstone
         public string text { get; set; }
         public string playerClass { get; set; }
         public string locale { get; set; }
-        public List<Mechanic11> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public string rarity { get; set; }
         public int? health { get; set; }
         public string img { get; set; }
@@ -341,11 +291,6 @@ namespace Lizzard.Hearthstone
         public bool? elite { get; set; }
     }
 
-    public class Mechanic12
-    {
-        public string name { get; set; }
-    }
-
     public class MeanStreetsOfGadgetzan
     {
         public string cardId { get; set; }
@@ -356,7 +301,7 @@ namespace Lizzard.Hearthstone
         public string artist { get; set; }
         public string playerClass { get; set; }
         public string locale { get; set; }
-        public List<Mechanic12> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public string rarity { get; set; }
         public int? cost { get; set; }
         public string flavor { get; set; }
@@ -371,11 +316,6 @@ namespace Lizzard.Hearthstone
         public string multiClassGroup { get; set; }
         public List<string> classes { get; set; }
         public int? durability { get; set; }
-    }
-
-    public class Mechanic13
-    {
-        public string name { get; set; }
     }
 
     public class TavernBrawl
@@ -393,7 +333,7 @@ namespace Lizzard.Hearthstone
         public string locale { get; set; }
         public string text { get; set; }
         public int? attack { get; set; }
-        public List<Mechanic13> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? cost { get; set; }
         public bool? elite { get; set; }
         public int? durability { get; set; }
@@ -418,11 +358,6 @@ namespace Lizzard.Hearthstone
         public string text { get; set; }
     }
 
-    public class Mechanic14
-    {
-        public string name { get; set; }
-    }
-
     public class Mission
     {
         public string cardId { get; set; }
@@ -436,7 +371,7 @@ namespace Lizzard.Hearthstone
         public int? health { get; set; }
         public string img { get; set; }
         public string imgGold { get; set; }
-        public List<Mechanic14> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public string faction { get; set; }
         public int? cost { get; set; }
         public int? attack { get; set; }
@@ -461,11 +396,6 @@ namespace Lizzard.Hearthstone
         public string locale { get; set; }
     }
 
-    public class Mechanic15
-    {
-        public string name { get; set; }
-    }
-
     public class Debug
     {
         public string cardId { get; set; }
@@ -481,7 +411,7 @@ namespace Lizzard.Hearthstone
         public string imgGold { get; set; }
         public string rarity { get; set; }
         public int? cost { get; set; }
-        public List<Mechanic15> mechanics { get; set; }
+        public List<Mechanic> mechanics { get; set; }
         public int? durability { get; set; }
         public string faction { get; set; }
         public string race { get; set; }

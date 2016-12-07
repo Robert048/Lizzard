@@ -78,7 +78,9 @@
         </DataTemplate>
         <DataTemplate x:Key="CardTemplate">
             <Grid Width="200"
-                  Height="300">
+                  Height="300"
+                  BorderBrush="Black"
+                  BorderThickness="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="75*" />
                     <RowDefinition Height="15*" />
@@ -103,6 +105,17 @@
                            Text="{Binding health}"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Bottom"
+                           FontSize="33.333" />
+                <TextBlock Grid.Row="3"
+                           TextWrapping="Wrap"
+                           Text="{Binding attack}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Bottom"
+                           FontSize="33.333" />
+                <TextBlock TextWrapping="Wrap"
+                           Text="{Binding cost}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
                            FontSize="33.333" />
             </Grid>
         </DataTemplate>

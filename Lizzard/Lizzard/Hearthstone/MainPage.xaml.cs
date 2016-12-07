@@ -24,8 +24,7 @@ namespace Lizzard.Hearthstone
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);
 
             var folder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            var newFolder = await folder.CreateFolderAsync("NewFolder", Windows.Storage.CreationCollisionOption.OpenIfExists);
-            var textFile = await newFolder.CreateFileAsync("cards.txt", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+            var textFile = await folder.CreateFileAsync("cards.txt", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             await Windows.Storage.FileIO.WriteTextAsync(textFile, result);
 
             progressRing.IsActive = false;
