@@ -15,20 +15,21 @@ namespace Lizzard.Hearthstone
         public MainPage()
         {
             this.InitializeComponent();
-            test();
+            updateCards();
         }
 
-        private async void test()
+        private async void updateCards()
         {
             var result = await get();
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);
-            progressRing.IsActive = false;
-
 
             var folder = Windows.Storage.ApplicationData.Current.LocalFolder;
             var newFolder = await folder.CreateFolderAsync("NewFolder", Windows.Storage.CreationCollisionOption.OpenIfExists);
-            var textFile = await newFolder.CreateFileAsync("cards.txt");
+            var textFile = await newFolder.CreateFileAsync("cards.txt", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             await Windows.Storage.FileIO.WriteTextAsync(textFile, result);
+
+            progressRing.IsActive = false;
+            btnReload.IsEnabled = true;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -52,7 +53,15 @@ namespace Lizzard.Hearthstone
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
+            //check for card file
             Frame.Navigate(typeof(CreateDeckPage));
+        }
+
+        private void btnReload_Click(object sender, RoutedEventArgs e)
+        {
+            progressRing.IsActive = true;
+            btnReload.IsEnabled = false;
+            updateCards();
         }
     }
 }

@@ -29,6 +29,16 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
+        <ProgressRing x:Name="progressRing"
+                      Grid.Column="4"
+                      HorizontalAlignment="Stretch"
+                      Margin="0,0,0,50"
+                      Grid.Row="3"
+                      VerticalAlignment="Bottom"
+                      Width="40"
+                      Height="40"
+                      Foreground="#FF2F67E1" />
+
         <Button x:Name="btnBack"
                 Content="&lt;"
                 Grid.Row="6"
@@ -61,8 +71,8 @@
                 Foreground="#FFFBD163"
                 FontSize="30"
                 Margin="10" />
-        <Button x:Name="btnstat3"
-                Content="3e btn"
+        <Button x:Name="btnReload"
+                Content="Update cards"
                 Grid.Column="4"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -70,7 +80,8 @@
                 Background="#FF2F67E1"
                 Foreground="#FFFBD163"
                 FontSize="30"
-                Margin="10" />
+                Margin="10"
+                Click="btnReload_Click" />
         <Button x:Name="btnStat"
                 Content="4e button"
                 Grid.Column="5"
@@ -83,7 +94,7 @@
                 Margin="10" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
-                   Text="Hearthstone"
+                   Text="hearthstone"
                    Foreground="#FF2F67E1"
                    FontSize="100"
                    VerticalAlignment="Bottom"
@@ -94,15 +105,6 @@
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <ProgressRing x:Name="progressRing"
-                      Grid.Column="3"
-                      HorizontalAlignment="Stretch"
-                      Margin="0"
-                      Grid.Row="2"
-                      VerticalAlignment="Stretch"
-                      Width="30"
-                      Height="30"
-                      IsActive="True" />
 
     </Grid>
 </Page>
