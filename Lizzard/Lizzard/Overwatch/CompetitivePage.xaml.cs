@@ -9,13 +9,13 @@ using Windows.UI.Xaml.Navigation;
 namespace Lizzard.Overwatch
 {
     /// <summary>
-    /// Overwatch page to display the hero information on QuickPlay games.
+    /// Overwatch page to display the hero information on competitive games.
     /// </summary>
-    public sealed partial class QuickPlayPage : Page
+    public sealed partial class CompetitivePage : Page
     {
         private User user;
         Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-        public QuickPlayPage()
+        public CompetitivePage()
         {
             this.InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace Lizzard.Overwatch
         private async void getheroes()
         {
             Api call = new Api();
-            var result = await call.get(user.platform + "/" + user.region + "/" + user.tag + "/quickplay/heroes");
+            var result = await call.get(user.platform + "/" + user.region + "/" + user.tag + "/competitive/heroes");
             var jsonresult = JsonConvert.DeserializeObject<List<Hero>>(result);
             string names = "";
             foreach (Hero hero in jsonresult)
@@ -80,30 +80,50 @@ namespace Lizzard.Overwatch
             }
             names = names.Remove(names.Length - 1);
             Api call2 = new Api();
-            var result2 = await call2.get(user.platform + "/" + user.region + "/" + user.tag + "/quickplay/hero/" + names + "/");
+            var result2 = await call2.get(user.platform + "/" + user.region + "/" + user.tag + "/competitive/hero/" + names + "/");
             var jsonresult2 = JsonConvert.DeserializeObject<dynamic>(result2);
 
             foreach (Hero hero in jsonresult)
             {
                 if (hero.name == "D.Va")
                 {
-                    hero.eliminations = jsonresult2["DVa"]["Eliminations"];
+                    try
+                    {
+                        hero.eliminations = jsonresult2["DVa"]["Eliminations"];
+                    }
+                    catch (Exception) { }
                 }
                 else if (hero.name == "Lúcio")
                 {
-                    hero.eliminations = jsonresult2["Lucio"]["Eliminations"];
+                    try
+                    {
+                        hero.eliminations = jsonresult2["Lucio"]["Eliminations"];
+                    }
+                    catch (Exception) { }
                 }
                 else if (hero.name == "Soldier: 76")
                 {
-                    hero.eliminations = jsonresult2["Soldier76"]["Eliminations"];
+                    try
+                    {
+                        hero.eliminations = jsonresult2["Soldier76"]["Eliminations"];
+                    }
+                    catch (Exception) { }
                 }
                 else if (hero.name == "McCree")
                 {
-                    hero.eliminations = jsonresult2["Mccree"]["Eliminations"];
+                    try
+                    {
+                        hero.eliminations = jsonresult2["Mccree"]["Eliminations"];
+                    }
+                    catch (Exception) { }
                 }
                 else if (hero.name == "Torbjörn")
                 {
-                    hero.eliminations = jsonresult2["Torbjoern"]["Eliminations"];
+                    try
+                    {
+                        hero.eliminations = jsonresult2["Torbjoern"]["Eliminations"];
+                    }
+                    catch (Exception) { }
                 }
                 else
                 {
@@ -111,7 +131,7 @@ namespace Lizzard.Overwatch
                     {
                         hero.eliminations = jsonresult2[hero.name]["Eliminations"];
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         System.Diagnostics.Debug.WriteLine(ex);
                     }
