@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
@@ -13,6 +14,8 @@ namespace Lizzard.World_of_Warcraft
     /// </summary>
     public sealed partial class Profile : Page
     {
+        private string charName;
+
         public Profile()
         {
             this.InitializeComponent();
@@ -21,17 +24,36 @@ namespace Lizzard.World_of_Warcraft
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            loadProfileData();
-            loadIconProfileData();
-            loadActivity();
-            loadStats();
+            try
+            {
+                charName = e.Parameter.ToString();
+                loadProfileData();
+                loadIconProfileData();
+                loadActivity();
+                loadStats();
+                loadItems();
+            }
+            catch
+            {
+                showError();
+          
+            }
+
 
         }
+
+        private async void showError()
+        {
+            var message = new MessageDialog("Please insert a character name.");
+            await message.ShowAsync();
+            Frame.Navigate(typeof(SetPage));
+        }
+
 
         private async void loadProfileData()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("Outland" + "/" + "Nuclaer"+ "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/Outland" + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             txtProfile.Text =
                 "Name: " + jsonresult.name + Environment.NewLine +
@@ -45,7 +67,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadIconProfileData()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("Outland" + "/" + "Nuclaer" + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/Outland" + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             image.Source = new BitmapImage(new Uri("http://render-api-eu.worldofwarcraft.com/static-render/eu/" + jsonresult.thumbnail));
             txtCharacter.Text =
@@ -58,7 +80,7 @@ namespace Lizzard.World_of_Warcraft
         {
            
             WoWApi call = new WoWApi();
-            var result = await call.get("Outland/Nuclaer?fields=feed&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/Outland/" + charName + "?fields=feed&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFeed>(result);
             txtActivity.Text =
                 jsonresult.feed[0].type.ToString() + Environment.NewLine;
@@ -67,7 +89,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadStats()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("Outland/Nuclaer?fields=stats&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/Outland/" + charName + "?fields=stats&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectStats>(result);
             txtStats.Text =
                 "Health: " + jsonresult.stats.health.ToString() + Environment.NewLine +
@@ -78,6 +100,27 @@ namespace Lizzard.World_of_Warcraft
                 "Stamina: " + jsonresult.stats.sta.ToString() + Environment.NewLine +
                 "Critical rating: " + jsonresult.stats.crit.ToString() + Environment.NewLine +
                 "Haste rating: " + jsonresult.stats.haste.ToString() + Environment.NewLine;
+        }
+
+        private async void loadItems()
+        {
+            WoWApi call = new WoWApi();
+            var result = await call.get("character/Outland/" + charName + "?fields=items&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var jsonresult = JsonConvert.DeserializeObject<RootObjectItems>(result);
+            txtItems.Text =
+                "Equipped item level: " + jsonresult.items.averageItemLevelEquipped.ToString() + Environment.NewLine +
+                "Item level: " + jsonresult.items.averageItemLevel.ToString() + Environment.NewLine +
+                "Chest: " + jsonresult.items.chest.name.ToString() + Environment.NewLine +
+                "Back: " + jsonresult.items.back.name.ToString() + Environment.NewLine +
+                "Feet: " + jsonresult.items.feet.name.ToString() + Environment.NewLine +
+                "Mainhand: " + jsonresult.items.mainHand.name.ToString() + Environment.NewLine +
+                "Neck: " + jsonresult.items.neck.name.ToString() + Environment.NewLine;
+
+        }
+
+        private void btnBack_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

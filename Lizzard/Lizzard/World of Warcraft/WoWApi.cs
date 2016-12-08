@@ -17,7 +17,7 @@ namespace Lizzard.World_of_Warcraft
                 var result = "";
                 using (var client = new HttpClient())
                 {
-                    var uri = new Uri("https://eu.api.battle.net/wow/character/" + apiLink);
+                    var uri = new Uri("https://eu.api.battle.net/wow/" + apiLink);
                     var response = await client.GetAsync(uri);
                     result = await response.Content.ReadAsStringAsync();
                 }
