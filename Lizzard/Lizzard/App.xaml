@@ -1,7 +1,124 @@
-﻿<Application x:Class="Lizzard.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Lizzard"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Lizzard.App"
              RequestedTheme="Light">
+    <Application.Resources>
+        <DataTemplate x:Key="DataTemplate">
+            <Grid Width="700"
+                  Height="250">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Text="{Binding name}"
+                           Grid.Column="1"
+                           FontSize="40" />
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Text="{Binding playtime}"
+                           Grid.Column="2"
+                           FontSize="26.667" />
+                <Image Source="{Binding image}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="1"
+                           FontSize="26.667">
+                    <Run Text="{Binding eliminations}" /> <Run Text="Eliminations" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="2"
+                           FontSize="26.667">
+                    <Run Text="{Binding damage}" /> <Run Text="Damage" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="1"
+                           FontSize="26.667"
+                           Grid.Column="1">
+                    <Run Text="{Binding kdratio}" /> <Run Text="K/D Ratio" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Grid.Row="2"
+                           FontSize="26.667"
+                           Grid.Column="1">
+                    <Run Text="{Binding Accuracy}" /> <Run Text="Accuracy" />
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           FontSize="26.667"
+                           Grid.Row="1"
+                           Grid.Column="2">
+                    <Run Text="{Binding ObjTime}" /> <Run Text="Objective time" />
+                </TextBlock>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="CardTemplate">
+            <Grid Width="200"
+                  Height="300"
+                  BorderBrush="Black"
+                  BorderThickness="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="20*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1"
+                           TextWrapping="Wrap"
+                           FontSize="20"
+                           Text="{Binding name}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                <TextBlock Grid.Row="2"
+                           TextWrapping="Wrap"
+                           Text="{Binding text}"
+                           d:LayoutOverrides="Width"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="13.333" />
+                <TextBlock Grid.Row="3"
+                           TextWrapping="Wrap"
+                           Text="{Binding health}"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom"
+                           FontSize="33.333" />
+                <TextBlock Grid.Row="3"
+                           TextWrapping="Wrap"
+                           Text="{Binding attack}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Bottom"
+                           FontSize="33.333" />
+                <TextBlock TextWrapping="Wrap"
+                           Text="{Binding cost}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           FontSize="33.333" />
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
 
 </Application>
