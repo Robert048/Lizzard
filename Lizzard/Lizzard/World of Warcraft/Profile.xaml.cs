@@ -65,8 +65,19 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("character/" + realm + "/" + charName + "?fields=feed&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFeed>(result);
-            txtActivity.Text =
-                jsonresult.feed[0].type.ToString() + Environment.NewLine;
+
+            foreach (Feed feed in jsonresult.feed)
+            {
+                if (feed.type == "LOOT")
+                {
+                    call = new WoWApi();
+                    var itemResult = await call.get("item/" + feed.itemId.ToString() + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+                    var jsonresults = JsonConvert.DeserializeObject<RootObjectItem>(itemResult);
+
+                    feed.type = jsonresult.name + " has recieved " + jsonresults.name;
+                    gridViewFeed.Items.Add(feed);
+                }
+            }
         }
 
         private async void loadStats()
@@ -123,7 +134,6 @@ namespace Lizzard.World_of_Warcraft
                 region = txtRegion.Text;
                 realm = txtRealm.Text;
                 loadAll();
-                txtActivity.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;

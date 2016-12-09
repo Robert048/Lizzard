@@ -41,7 +41,7 @@
                 Click="btnBack_Click" FontWeight="Bold" />
         <Button x:Name="btnProfile"
                 Content="Search character"
-                Grid.Column="2"
+                Grid.Column="3"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
@@ -51,16 +51,6 @@
                 Margin="10" FontWeight="Bold" Click="btnProfile_Click" />
         <Button x:Name="btnSearch"
                 Content="Search guild"
-                Grid.Column="3"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FFFF9C00"
-                Foreground="#FF003265"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnSearch_Click" />
-        <Button x:Name="btnSettings"
-                Content="Set character"
                 Grid.Column="4"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -68,17 +58,7 @@
                 Background="#FFFF9C00"
                 Foreground="#FF003265"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnSettings_Click" />
-        <Button x:Name="btnStat"
-                Content="4e button"
-                Grid.Column="5"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FFFF9C00"
-                Foreground="#FF003265"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" />
+                Margin="10" FontWeight="Bold" Click="btnSearch_Click" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="World of  Warcraft"
