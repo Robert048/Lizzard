@@ -900,5 +900,142 @@ namespace Lizzard.World_of_Warcraft
 
 
 
+    public class News
+    {
+        public string type { get; set; }
+        public string character { get; set; }
+        public object timestamp { get; set; }
+        public int itemId { get; set; }
+        public string context { get; set; }
+        public List<object> bonusLists { get; set; }
+        public Achievement achievement { get; set; }
+    }
+
+    public class RootObjectGuildNews
+    {
+        public long lastModified { get; set; }
+        public string name { get; set; }
+        public string realm { get; set; }
+        public string battlegroup { get; set; }
+        public int level { get; set; }
+        public int side { get; set; }
+        public int achievementPoints { get; set; }
+        public Emblem emblem { get; set; }
+        public List<News> news { get; set; }
+    }
+
+
+    public class Spec
+    {
+        public string name { get; set; }
+        public string role { get; set; }
+        public string backgroundImage { get; set; }
+        public string icon { get; set; }
+        public string description { get; set; }
+        public int order { get; set; }
+    }
+
+    public class Character
+    {
+        public string name { get; set; }
+        public string realm { get; set; }
+        public string battlegroup { get; set; }
+        public int @class { get; set; }
+        public int race { get; set; }
+        public int gender { get; set; }
+        public int level { get; set; }
+        public int achievementPoints { get; set; }
+        public string thumbnail { get; set; }
+        public Spec spec { get; set; }
+        public string guild { get; set; }
+        public string guildRealm { get; set; }
+        public int lastModified { get; set; }
+    }
+
+    public class Member
+    {
+        public Character character { get; set; }
+        public int rank { get; set; }
+    }
+
+
+    public class RootObjectGuildMembers
+    {
+        public long lastModified { get; set; }
+        public string name { get; set; }
+        public string realm { get; set; }
+        public string battlegroup { get; set; }
+        public int level { get; set; }
+        public int side { get; set; }
+        public int achievementPoints { get; set; }
+        public List<Member> members { get; set; }
+    }
+
+
+    public class BonusStat
+    {
+        public int stat { get; set; }
+        public int amount { get; set; }
+    }
+
+
+    public class ItemSource
+    {
+        public int sourceId { get; set; }
+        public string sourceType { get; set; }
+    }
+
+    public class BonusSummary
+    {
+        public List<object> defaultBonusLists { get; set; }
+        public List<object> chanceBonusLists { get; set; }
+        public List<object> bonusChances { get; set; }
+    }
+
+    public class RootObjectItem
+    {
+        public int id { get; set; }
+        public int disenchantingSkillRank { get; set; }
+        public string description { get; set; }
+        public string name { get; set; }
+        public string icon { get; set; }
+        public int stackable { get; set; }
+        public int itemBind { get; set; }
+        public List<BonusStat> bonusStats { get; set; }
+        public List<object> itemSpells { get; set; }
+        public int buyPrice { get; set; }
+        public int itemClass { get; set; }
+        public int itemSubClass { get; set; }
+        public int containerSlots { get; set; }
+        public WeaponInfo weaponInfo { get; set; }
+        public int inventoryType { get; set; }
+        public bool equippable { get; set; }
+        public int itemLevel { get; set; }
+        public int maxCount { get; set; }
+        public int maxDurability { get; set; }
+        public int minFactionId { get; set; }
+        public int minReputation { get; set; }
+        public int quality { get; set; }
+        public int sellPrice { get; set; }
+        public int requiredSkill { get; set; }
+        public int requiredLevel { get; set; }
+        public int requiredSkillRank { get; set; }
+        public ItemSource itemSource { get; set; }
+        public int baseArmor { get; set; }
+        public bool hasSockets { get; set; }
+        public bool isAuctionable { get; set; }
+        public int armor { get; set; }
+        public int displayInfoId { get; set; }
+        public string nameDescription { get; set; }
+        public string nameDescriptionColor { get; set; }
+        public bool upgradable { get; set; }
+        public bool heroicTooltip { get; set; }
+        public string context { get; set; }
+        public List<object> bonusLists { get; set; }
+        public List<string> availableContexts { get; set; }
+        public BonusSummary bonusSummary { get; set; }
+        public int artifactId { get; set; }
+    }
+
 
 }
