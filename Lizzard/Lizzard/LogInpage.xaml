@@ -63,15 +63,14 @@
                  PlaceholderText="Battletag"
                  FontSize="20"
                  TabIndex="1" />
-        <TextBox x:Name="txtRegion"
-                 Grid.Column="3"
-                 Grid.Row="4"
-                 TextWrapping="Wrap"
-                 Text=""
-                 PlaceholderText="Region"
-                 TabIndex="2"
-                 FontSize="20"
-                 Margin="0,5" />
+        <ComboBox x:Name="boxRegion"
+                  Grid.Column="3"
+                  Grid.Row="4"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  PlaceholderText="Region/platform"
+                  Margin="0,5"
+                  FontSize="20" />
 
     </Grid>
 </Page>
