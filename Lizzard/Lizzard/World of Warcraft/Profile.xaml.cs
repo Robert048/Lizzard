@@ -29,12 +29,6 @@ namespace Lizzard.World_of_Warcraft
 
         }
 
-        private async void showError()
-        {
-            var message = new MessageDialog("Please insert a character name.");
-            await message.ShowAsync();
-            Frame.Navigate(typeof(SetPage));
-        }
 
 
         private async void loadProfileData()
@@ -117,14 +111,7 @@ namespace Lizzard.World_of_Warcraft
             Frame.Navigate(typeof(MainPage));
         }
 
-        private async void loadAll()
-        {
-            loadProfileData();
-            loadIconProfileData();
-            loadActivity();
-            loadStats();
-            loadItems();
-        }
+
 
         private void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
@@ -133,8 +120,11 @@ namespace Lizzard.World_of_Warcraft
                 charName = txtCharName.Text;
                 region = txtRegion.Text;
                 realm = txtRealm.Text;
-                loadAll();
-                txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                loadProfileData();
+                loadIconProfileData();
+                loadActivity();
+                loadStats();
+                loadItems(); txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 textBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
