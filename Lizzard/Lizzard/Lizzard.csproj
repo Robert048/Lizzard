@@ -90,6 +90,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <None Include="project.lock.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -99,6 +100,7 @@
       <DependentUpon>CreateDeckPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Hearthstone\Data.cs" />
+    <Compile Include="Heroes of the Storm\Api.cs" />
     <Compile Include="Overwatch\CompetitivePage.xaml.cs">
       <DependentUpon>CompetitivePage.xaml</DependentUpon>
     </Compile>
@@ -109,7 +111,7 @@
     <Compile Include="Hearthstone\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HeroesOfTheStormMainPage.xaml.cs">
+    <Compile Include="Heroes of the Storm\HeroesOfTheStormMainPage.xaml.cs">
       <DependentUpon>HeroesOfTheStormMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogInpage.xaml.cs">
@@ -140,6 +142,7 @@
     <Compile Include="World of Warcraft\Guild.xaml.cs">
       <DependentUpon>Guild.xaml</DependentUpon>
     </Compile>
+    <Compile Include="World of Warcraft\WorldOfWarcraftMainPage.xaml.cs" />
     <Compile Include="World of Warcraft\WoWApi.cs" />
     <Compile Include="World of Warcraft\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -192,7 +195,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HeroesOfTheStormMainPage.xaml">
+    <Page Include="Heroes of the Storm\HeroesOfTheStormMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
