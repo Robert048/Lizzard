@@ -49,7 +49,7 @@ namespace Lizzard.World_of_Warcraft
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(MainPage));
         }
 
         private async void loadProfileData()
@@ -60,18 +60,9 @@ namespace Lizzard.World_of_Warcraft
                 var result = await call.get("character/Outland" + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
                 var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
                 image.Source = new BitmapImage(new Uri("http://render-api-eu.worldofwarcraft.com/static-render/eu/" + jsonresult.thumbnail));
-                txtCharacter.Text =
-                    jsonresult.name + Environment.NewLine +
-                    "Level: " + jsonresult.level.ToString() + Environment.NewLine +
-                    "Achievement points: " + jsonresult.achievementPoints.ToString();
             }
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(SetPage));
-
-        }
 
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {

@@ -18,8 +18,6 @@ namespace Lizzard.World_of_Warcraft
         private string guildName;
         private string region;
         private string realm;
-        private RootObjectItem currentItem;
-
         public Guild()
         {
             this.InitializeComponent();
@@ -74,11 +72,7 @@ namespace Lizzard.World_of_Warcraft
             Frame.Navigate(typeof(MainPage));
         }
 
-        private async void loadAll()
-        {
-            loadGuildActivity();
-            loadMembers();
-        }
+
 
         private void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
@@ -87,7 +81,8 @@ namespace Lizzard.World_of_Warcraft
                 guildName = txtGuildName.Text;
                 region = txtRegion.Text;
                 realm = txtRealm.Text;
-                loadAll();
+                loadGuildActivity();
+                loadMembers();
                 textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
@@ -96,6 +91,15 @@ namespace Lizzard.World_of_Warcraft
                 //showError();
 
             }
+        }
+
+        private void SendGuildMember(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            var parameters = new Character();
+            parameters.name = ((TextBlock)sender).Text;
+            parameters.realm = ((TextBlock)sender).Tag.ToString();
+
+            Frame.Navigate(typeof(Profile), parameters);
         }
     }
 }
