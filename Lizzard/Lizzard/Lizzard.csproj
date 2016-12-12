@@ -142,7 +142,6 @@
     <Compile Include="World of Warcraft\Guild.xaml.cs">
       <DependentUpon>Guild.xaml</DependentUpon>
     </Compile>
-    <Compile Include="World of Warcraft\WorldOfWarcraftMainPage.xaml.cs" />
     <Compile Include="World of Warcraft\WoWApi.cs" />
     <Compile Include="World of Warcraft\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
