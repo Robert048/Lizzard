@@ -15,6 +15,8 @@ namespace Lizzard.World_of_Warcraft
     public sealed partial class Profile : Page
     {
         private string charName;
+        private string region;
+        private string realm;
 
         public Profile()
         {
@@ -24,21 +26,6 @@ namespace Lizzard.World_of_Warcraft
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            try
-            {
-                charName = e.Parameter.ToString();
-                loadProfileData();
-                loadIconProfileData();
-                loadActivity();
-                loadStats();
-                loadItems();
-            }
-            catch
-            {
-                showError();
-          
-            }
-
 
         }
 
@@ -53,7 +40,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadProfileData()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/Outland" + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             txtProfile.Text =
                 "Name: " + jsonresult.name + Environment.NewLine +
@@ -67,29 +54,36 @@ namespace Lizzard.World_of_Warcraft
         private async void loadIconProfileData()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/Outland" + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             image.Source = new BitmapImage(new Uri("http://render-api-eu.worldofwarcraft.com/static-render/eu/" + jsonresult.thumbnail));
-            txtCharacter.Text =
-                jsonresult.name + Environment.NewLine +
-                "Level: " + jsonresult.level.ToString() + Environment.NewLine +
-                "Achievement points: " + jsonresult.achievementPoints.ToString();
         }
 
         private async void loadActivity()
         {
            
             WoWApi call = new WoWApi();
-            var result = await call.get("character/Outland/" + charName + "?fields=feed&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?fields=feed&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFeed>(result);
-            txtActivity.Text =
-                jsonresult.feed[0].type.ToString() + Environment.NewLine;
+
+            foreach (Feed feed in jsonresult.feed)
+            {
+                if (feed.type == "LOOT")
+                {
+                    call = new WoWApi();
+                    var itemResult = await call.get("item/" + feed.itemId.ToString() + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+                    var jsonresults = JsonConvert.DeserializeObject<RootObjectItem>(itemResult);
+
+                    feed.type = jsonresult.name + " has recieved " + jsonresults.name;
+                    gridViewFeed.Items.Add(feed);
+                }
+            }
         }
 
         private async void loadStats()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/Outland/" + charName + "?fields=stats&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?fields=stats&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectStats>(result);
             txtStats.Text =
                 "Health: " + jsonresult.stats.health.ToString() + Environment.NewLine +
@@ -105,7 +99,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadItems()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/Outland/" + charName + "?fields=items&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?fields=items&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectItems>(result);
             txtItems.Text =
                 "Equipped item level: " + jsonresult.items.averageItemLevelEquipped.ToString() + Environment.NewLine +
@@ -121,6 +115,38 @@ namespace Lizzard.World_of_Warcraft
         private void btnBack_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
+        }
+
+        private async void loadAll()
+        {
+            loadProfileData();
+            loadIconProfileData();
+            loadActivity();
+            loadStats();
+            loadItems();
+        }
+
+        private void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            try
+            {
+                charName = txtCharName.Text;
+                region = txtRegion.Text;
+                realm = txtRealm.Text;
+                loadAll();
+                txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock2.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+            catch
+            {
+                //showError();
+
+            }
         }
     }
 }
