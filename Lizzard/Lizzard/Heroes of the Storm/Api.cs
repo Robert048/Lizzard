@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Lizzard.Overwatch
+namespace Lizzard.Heroes_of_the_Storm
 {
     class Api
     {
@@ -11,7 +11,7 @@ namespace Lizzard.Overwatch
             var result = "";
             using (var client = new HttpClient())
             {
-                var uri = new Uri("https://api.lootbox.eu/" + apiLink);
+                var uri = new Uri("https://api.hotslogs.com/Public/" + apiLink);
                 var response = await client.GetAsync(uri);
                 result = await response.Content.ReadAsStringAsync();
             }
