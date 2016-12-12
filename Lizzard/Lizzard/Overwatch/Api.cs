@@ -8,7 +8,6 @@ namespace Lizzard.Overwatch
     {
         public async Task<string> get(string apiLink)
         {
-            DataProfile data = new DataProfile(); ;
             var result = "";
             using (var client = new HttpClient())
             {

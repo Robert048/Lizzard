@@ -101,6 +101,16 @@
     </Compile>
     <Compile Include="Hearthstone\Data.cs" />
     <Compile Include="Heroes of the Storm\Api.cs" />
+    <Compile Include="Heroes of the Storm\data.cs" />
+    <Compile Include="Heroes of the Storm\HeroesPage.xaml.cs">
+      <DependentUpon>HeroesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Heroes of the Storm\MapsPage.xaml.cs">
+      <DependentUpon>MapsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Heroes of the Storm\StatsPage.xaml.cs">
+      <DependentUpon>StatsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Overwatch\CompetitivePage.xaml.cs">
       <DependentUpon>CompetitivePage.xaml</DependentUpon>
     </Compile>
@@ -111,8 +121,8 @@
     <Compile Include="Hearthstone\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Heroes of the Storm\HeroesOfTheStormMainPage.xaml.cs">
-      <DependentUpon>HeroesOfTheStormMainPage.xaml</DependentUpon>
+    <Compile Include="Heroes of the Storm\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogInpage.xaml.cs">
       <DependentUpon>LogInpage.xaml</DependentUpon>
@@ -191,7 +201,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Heroes of the Storm\HeroesOfTheStormMainPage.xaml">
+    <Page Include="Heroes of the Storm\HeroesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Heroes of the Storm\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Heroes of the Storm\MapsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Heroes of the Storm\StatsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

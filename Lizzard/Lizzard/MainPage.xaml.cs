@@ -41,7 +41,7 @@ namespace Lizzard
 
         private void btnHotS_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Heroes_of_the_Storm.HeroesOfTheStormMainPage));
+            Frame.Navigate(typeof(Heroes_of_the_Storm.MainPage));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
