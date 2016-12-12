@@ -76,12 +76,6 @@
                Grid.Column="7"
                Source="Images/testWowIcon.png"
                Stretch="Fill" Margin="10,10,11,77" />
-        <TextBlock x:Name="txtCharacter" Grid.Column="6"
-                   TextWrapping="Wrap"
-                   Text="Naam"
-                   FontSize="20"
-                   Foreground="#FFB19F05"
-                   FontWeight="Bold" RenderTransformOrigin="0.266,0.205"/>
 
     </Grid>
 </Page>

@@ -144,9 +144,6 @@
     <Compile Include="World of Warcraft\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="World of Warcraft\SetPage.xaml.cs">
-      <DependentUpon>SetPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -233,10 +230,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="World of Warcraft\Profile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="World of Warcraft\SetPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
