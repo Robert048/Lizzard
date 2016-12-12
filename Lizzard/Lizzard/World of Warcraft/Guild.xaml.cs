@@ -92,5 +92,14 @@ namespace Lizzard.World_of_Warcraft
 
             }
         }
+
+        private void SendGuildMember(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            var parameters = new Character();
+            parameters.name = ((TextBlock)sender).Text;
+            parameters.realm = ((TextBlock)sender).Tag.ToString();
+
+            Frame.Navigate(typeof(Profile), parameters);
+        }
     }
 }

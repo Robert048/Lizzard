@@ -27,6 +27,36 @@ namespace Lizzard.World_of_Warcraft
         {
             base.OnNavigatedTo(e);
 
+            if(e.Parameter != null)
+            {
+                var parameters = (Character)e.Parameter;
+                txtCharName.Text = parameters.name;
+                txtRealm.Text = parameters.realm;
+
+                try
+                {
+                    charName = txtCharName.Text;
+                    region = txtRegion.Text;
+                    realm = txtRealm.Text;
+                    loadProfileData();
+                    loadIconProfileData();
+                    loadActivity();
+                    loadStats();
+                    loadItems(); txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    textBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    textBlock2.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                }
+                catch
+                {
+                    //showError();
+
+                }
+            }
+
         }
 
 
