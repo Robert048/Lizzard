@@ -49,7 +49,7 @@ namespace Lizzard.World_of_Warcraft
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            Frame.Navigate(typeof(Lizzard.MainPage));
         }
 
         private async void loadProfileData()

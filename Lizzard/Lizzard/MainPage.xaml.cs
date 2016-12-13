@@ -21,7 +21,7 @@ namespace Lizzard
 
         private void btnD3_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(DiabloMainPage));
+            Frame.Navigate(typeof(Diablo_3.MainPage));
         }
 
         private void btnSC2_Click(object sender, RoutedEventArgs e)
