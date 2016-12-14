@@ -100,5 +100,12 @@ namespace Lizzard.Hearthstone
         {
             Frame.Navigate(typeof(MainPage));
         }
+
+        private void gridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var card = e.ClickedItem;
+            listCards.Items.Add(card);
+
+        }
     }
 }

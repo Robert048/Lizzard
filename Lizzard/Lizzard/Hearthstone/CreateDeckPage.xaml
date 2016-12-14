@@ -22,7 +22,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
@@ -46,19 +47,27 @@
                    Foreground="#FF2F67E1"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="3" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="4" />
+        <Rectangle Grid.ColumnSpan="4"
                    Fill="#FF2F67E1"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
         <GridView x:Name="gridView"
-                  Grid.Column="2"
+                  Grid.Column="3"
                   Grid.Row="3"
                   Grid.RowSpan="2"
-                  Grid.ColumnSpan="4"
-                  ItemTemplate="{StaticResource CardTemplate}" />
+                  Grid.ColumnSpan="5"
+                  ItemTemplate="{StaticResource CardTemplate}"
+                  ItemClick="gridView_ItemClick"
+                  IsItemClickEnabled="True"
+                  SelectionMode="Single" />
+        <ListView x:Name="listCards"
+                  Grid.Row="3"
+                  Grid.RowSpan="2"
+                  Grid.ColumnSpan="3"
+                  Margin="10,0" />
 
     </Grid>
 </Page>
