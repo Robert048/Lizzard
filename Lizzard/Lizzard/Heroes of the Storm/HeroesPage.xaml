@@ -42,7 +42,7 @@
                 Click="btnBack_Click" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
-                   Text="Heroes of the Storm"
+                   Text="The Heroes"
                    Foreground="#FF533B5B"
                    FontSize="100"
                    VerticalAlignment="Bottom"
@@ -53,13 +53,20 @@
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <TextBlock x:Name="txtHeroes"
-                   TextWrapping="Wrap"
-                   Text=""
-                   Grid.Row="3"
-                   Grid.Column="2"
-                   FontSize="20"
-                   Foreground="#FF533B5B" />
+        <ListView x:Name="listHeroes"
+                  Grid.Column="2"
+                  Grid.Row="3"
+                  FontSize="20"
+                  Grid.ColumnSpan="4"
+                  Grid.RowSpan="2" />
+        <ProgressRing x:Name="progressRing"
+                      Grid.Column="3"
+                      Grid.Row="3"
+                      Grid.ColumnSpan="2"
+                      IsActive="True"
+                      Width="100"
+                      Height="100"
+                      Foreground="#FF533B5B" />
 
     </Grid>
 </Page>

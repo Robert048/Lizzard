@@ -7,7 +7,7 @@ using System;
 namespace Lizzard.Heroes_of_the_Storm
 {
     /// <summary>
-    /// Heroes of the Storm hero page
+    /// Heroes of the Storm page with all the hero names of the game
     /// </summary>
     public sealed partial class HeroesPage : Page
     {
@@ -24,8 +24,9 @@ namespace Lizzard.Heroes_of_the_Storm
             var jsonresult = JsonConvert.DeserializeObject<List<Hero>>(result);
             foreach (var hero in jsonresult)
             {
-                txtHeroes.Text = txtHeroes.Text + hero.PrimaryName + Environment.NewLine;
+                listHeroes.Items.Add(hero.PrimaryName);
             }
+            progressRing.IsActive = false;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

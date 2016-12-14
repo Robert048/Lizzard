@@ -1015,7 +1015,8 @@
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 FontSize="26.667"
-                Background="Black">
+                Background="Black"
+                Click="btnLogout_Click">
             <Button.Resources>
                 <Style x:Key="logoutIcon"
                        TargetType="Button">

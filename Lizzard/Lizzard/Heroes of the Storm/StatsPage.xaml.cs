@@ -48,11 +48,37 @@ namespace Lizzard.Heroes_of_the_Storm
             }
             var result = await call.get("Players/" + region + "/" + tag);
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);
-            txtStats.Text = txtStats.Text + jsonresult.Name + Environment.NewLine;
-            foreach (var rank in jsonresult.LeaderboardRankings)
+            if (jsonresult != null)
             {
-                txtStats.Text = txtStats.Text + rank.GameMode + rank.LeagueRank + Environment.NewLine;
+                txtStats.Text = "Name: " + jsonresult.Name + Environment.NewLine + "Player ID: " + jsonresult.PlayerID;
+                foreach (var rank in jsonresult.LeaderboardRankings)
+                {
+                    txtLeaderboard1.Text = txtLeaderboard1.Text + "Gamemode: " + rank.GameMode + Environment.NewLine;
+                    txtLeaderboard3.Text = txtLeaderboard3.Text + "Current MMR: " + rank.CurrentMMR + Environment.NewLine;
+                    if (rank.LeagueRank != null)
+                    {
+                        txtLeaderboard2.Text = txtLeaderboard2.Text + "Rank: " + rank.LeagueRank + Environment.NewLine;
+                    }
+                    else
+                    {
+                        txtLeaderboard2.Text = txtLeaderboard2.Text + "Rank: Not ranked" + Environment.NewLine;
+                    }
+                }
             }
+            else
+            {
+                string username = "";
+                if (user.tag.Contains("-"))
+                {
+                    username = user.tag.Replace("-", "#");
+                }
+                else if (user.tag.Contains("_"))
+                {
+                    username = user.tag.Replace("_", "#");
+                }
+                txtStats.Text = "This Battletag does not exist in Heroes of the Storm: " + username;
+            }
+            progressRing.IsActive = false;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

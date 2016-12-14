@@ -86,23 +86,6 @@
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <Image x:Name="image"
-               Grid.Column="7"
-               Height="100"
-               Margin="0,20,20,0"
-               Width="100"
-               VerticalAlignment="Top"
-               Source="Images/ow.png"
-               Stretch="Fill" />
-        <TextBlock Grid.Column="6"
-                   Margin="0,20,20,0"
-                   TextWrapping="Wrap"
-                   Text="Naam"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Right"
-                   FontSize="20"
-                   Foreground="#FF533B5B"
-                   FontWeight="Bold" />
 
     </Grid>
 </Page>
