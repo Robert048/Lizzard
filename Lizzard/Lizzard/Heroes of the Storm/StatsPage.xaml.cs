@@ -76,7 +76,7 @@ namespace Lizzard.Heroes_of_the_Storm
                 {
                     username = user.tag.Replace("_", "#");
                 }
-                txtStats.Text = "This Battletag does not exist in Heroes of the Storm: " + username;
+                txtStats.Text = "This Battletag and region combination does not exist in Heroes of the Storm." + Environment.NewLine + "Battletag: " + username + Environment.NewLine + "Region: " + user.region;
             }
             progressRing.IsActive = false;
         }
