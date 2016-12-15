@@ -67,7 +67,21 @@
                   Grid.Row="3"
                   Grid.RowSpan="2"
                   Grid.ColumnSpan="3"
-                  Margin="10,0" />
+                  Margin="10,0">
+            <ListView.Resources>
+                <DataTemplate x:Key="CardDeckTemplate">
+                    <Grid>
+                        <TextBlock x:Name="textBlock"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding name}"
+                                   d:LayoutOverrides="Width, Height" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <StaticResource ResourceKey="CardDeckTemplate" />
+            </ListView.ItemTemplate>
+        </ListView>
 
     </Grid>
 </Page>

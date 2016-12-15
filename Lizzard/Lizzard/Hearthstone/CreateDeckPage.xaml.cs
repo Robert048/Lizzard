@@ -104,8 +104,29 @@ namespace Lizzard.Hearthstone
         private void gridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var card = e.ClickedItem;
-            listCards.Items.Add(card);
-
+            if (listCards.Items.Contains(card))
+            {
+                var type = card.GetType();
+                switch (type.Name)
+                {
+                    case "Basic":
+                        Basic selectedCard = (Basic)card;
+                        if (selectedCard.name.Substring(0, 2) != "2x")
+                        {
+                            selectedCard.name = "2x " + selectedCard.name;
+                            listCards.Items.Remove(card);
+                            listCards.Items.Add(selectedCard);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                
+            }
+            else
+            {
+                listCards.Items.Add(card);
+            }
         }
     }
 }
