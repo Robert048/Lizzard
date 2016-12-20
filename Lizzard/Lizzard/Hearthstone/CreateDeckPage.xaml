@@ -67,7 +67,10 @@
                   Grid.Row="3"
                   Grid.RowSpan="2"
                   Grid.ColumnSpan="3"
-                  Margin="10,0">
+                  Margin="10,0"
+                  ItemClick="listCards_ItemClick"
+                  IsItemClickEnabled="True"
+                  SelectionMode="Single">
             <ListView.Resources>
                 <DataTemplate x:Key="CardDeckTemplate">
                     <Grid>

@@ -104,27 +104,41 @@ namespace Lizzard.Hearthstone
         private void gridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var card = e.ClickedItem;
-            if (listCards.Items.Contains(card))
+            if (listCards.Items.Count < 30)
             {
-                var type = card.GetType();
-                switch (type.Name)
+                if (listCards.Items.Contains(card))
                 {
-                    case "Basic":
-                        Basic selectedCard = (Basic)card;
-                        if (selectedCard.name.Substring(0, 2) != "2x")
-                        {
-                            selectedCard.name = "2x " + selectedCard.name;
-                            listCards.Items.Remove(card);
-                            listCards.Items.Add(selectedCard);
-                        }
-                        break;
-                    default:
-                        break;
+                    var type = card.GetType();
+                    switch (type.Name)
+                    {
+                        case "Basic":
+                            Basic selectedCard = (Basic)card;
+                            if (selectedCard.name.Substring(0, 2) != "2x")
+                            {
+                                selectedCard.name = "2x " + selectedCard.name;
+                                listCards.Items.Remove(card);
+                                listCards.Items.Add(selectedCard);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
                 }
-                
+                else
+                {
+                    listCards.Items.Add(card);
+                }
             }
-            else
+        }
+
+        private void listCards_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            listCards.Items.Remove(e.ClickedItem);
+            Basic card = (Basic)e.ClickedItem;
+            if(card.name.Contains("2x"))
             {
+                card.name = card.name.Substring(3);
                 listCards.Items.Add(card);
             }
         }
