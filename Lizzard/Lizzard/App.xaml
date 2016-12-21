@@ -11,10 +11,9 @@
             <Grid Width="700"
                   Height="250">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
@@ -35,7 +34,8 @@
                            FontSize="26.667" />
                 <Image Source="{Binding image}"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />
+                       VerticalAlignment="Center"
+                       Margin="0" />
                 <TextBlock HorizontalAlignment="Left"
                            TextWrapping="Wrap"
                            VerticalAlignment="Top"
@@ -64,20 +64,21 @@
                            Grid.Row="2"
                            FontSize="26.667"
                            Grid.Column="1">
-                    <Run Text="{Binding Accuracy}" /> <Run Text="Accuracy" />
+                    <Run Text="{Binding accuracy}" /> <Run Text="Accuracy" />
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Left"
                            TextWrapping="Wrap"
                            VerticalAlignment="Top"
                            FontSize="26.667"
                            Grid.Row="1"
-                           Grid.Column="2">
-                    <Run Text="{Binding ObjTime}" /> <Run Text="Objective time" />
+                           Grid.Column="2"
+                           d:LayoutOverrides="HorizontalAlignment">
+                    <Run Text="{Binding objTime}" /> <Run Text="Objective time" />
                 </TextBlock>
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="CardTemplate">
-            
+
             <Grid Width="200"
                   Height="300">
                 <Grid.Resources>

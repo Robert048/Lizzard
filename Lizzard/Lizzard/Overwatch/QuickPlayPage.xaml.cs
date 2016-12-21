@@ -87,29 +87,65 @@ namespace Lizzard.Overwatch
             {
                 if (hero.name == "D.Va")
                 {
-                    hero.eliminations = jsonresult2["DVa"]["Eliminations"];
+                    hero.eliminations = jsonresult2["DVa"]["Eliminations-Average"];
+                    hero.damage = jsonresult2["DVa"]["DamageDone-Average"];
+                    double kills = jsonresult2["DVa"]["Eliminations"];
+                    double deaths = jsonresult2["DVa"]["Deaths"];
+                    hero.kdratio = kills / deaths;
+                    hero.accuracy = jsonresult2["DVa"]["WeaponAccuracy"];
+                    hero.objTime = jsonresult2["DVa"]["ObjectiveTime-Average"];
                 }
                 else if (hero.name == "Lúcio")
                 {
-                    hero.eliminations = jsonresult2["Lucio"]["Eliminations"];
+                    hero.eliminations = jsonresult2["Lucio"]["Eliminations-Average"];
+                    hero.damage = jsonresult2["Lucio"]["DamageDone-Average"];
+                    double kills = jsonresult2["Lucio"]["Eliminations"];
+                    double deaths = jsonresult2["Lucio"]["Deaths"];
+                    hero.kdratio = kills / deaths;
+                    hero.accuracy = jsonresult2["Lucio"]["WeaponAccuracy"];
+                    hero.objTime = jsonresult2["Lucio"]["ObjectiveTime-Average"];
                 }
                 else if (hero.name == "Soldier: 76")
                 {
-                    hero.eliminations = jsonresult2["Soldier76"]["Eliminations"];
+                    hero.eliminations = jsonresult2["Soldier76"]["Eliminations-Average"];
+                    hero.damage = jsonresult2["Soldier76"]["DamageDone-Average"];
+                    double kills = jsonresult2["Soldier76"]["Eliminations"];
+                    double deaths = jsonresult2["Soldier76"]["Deaths"];
+                    hero.kdratio = kills / deaths;
+                    hero.accuracy = jsonresult2["Soldier76"]["WeaponAccuracy"];
+                    hero.objTime = jsonresult2["Soldier76"]["ObjectiveTime-Average"];
                 }
                 else if (hero.name == "McCree")
                 {
-                    hero.eliminations = jsonresult2["Mccree"]["Eliminations"];
+                    hero.eliminations = jsonresult2["Mccree"]["Eliminations-Average"];
+                    hero.damage = jsonresult2["Mccree"]["DamageDone-Average"];
+                    double kills = jsonresult2["Mccree"]["Eliminations"];
+                    double deaths = jsonresult2["Mccree"]["Deaths"];
+                    hero.kdratio = kills / deaths;
+                    hero.accuracy = jsonresult2["Mccree"]["WeaponAccuracy"];
+                    hero.objTime = jsonresult2["Mccree"]["ObjectiveTime-Average"];
                 }
                 else if (hero.name == "Torbjörn")
                 {
-                    hero.eliminations = jsonresult2["Torbjoern"]["Eliminations"];
+                    hero.eliminations = jsonresult2["Torbjoern"]["Eliminations-Average"];
+                    hero.damage = jsonresult2["Torbjoern"]["DamageDone-Average"];
+                    double kills = jsonresult2["Torbjoern"]["Eliminations"];
+                    double deaths = jsonresult2["Torbjoern"]["Deaths"];
+                    hero.kdratio = kills / deaths;
+                    hero.accuracy = jsonresult2["Torbjoern"]["WeaponAccuracy"];
+                    hero.objTime = jsonresult2["Torbjoern"]["ObjectiveTime-Average"];
                 }
                 else
                 {
                     try
                     {
-                        hero.eliminations = jsonresult2[hero.name]["Eliminations"];
+                        hero.eliminations = jsonresult2[hero.name]["Eliminations-Average"];
+                        hero.damage = jsonresult2[hero.name]["DamageDone-Average"];
+                        double kills = jsonresult2[hero.name]["Eliminations"];
+                        double deaths = jsonresult2[hero.name]["Deaths"];
+                        hero.kdratio = kills / deaths;
+                        hero.accuracy = jsonresult2[hero.name]["WeaponAccuracy"];
+                        hero.objTime = jsonresult2[hero.name]["ObjectiveTime-Average"];
                     }
                     catch(Exception ex)
                     {
