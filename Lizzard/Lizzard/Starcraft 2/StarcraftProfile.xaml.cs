@@ -23,6 +23,7 @@ namespace Lizzard.Starcraft_2
     /// </summary>
     public sealed partial class StarcraftProfile : Page
     {
+
         public StarcraftProfile()
         {
             this.InitializeComponent();
@@ -36,6 +37,8 @@ namespace Lizzard.Starcraft_2
         private async void loadProfileInformation()
         {
             SC2Api call = new SC2Api();
+
+
             var result = await call.get("/profile/" + "2690538/1/Rainy/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
             txtProfile.Text =

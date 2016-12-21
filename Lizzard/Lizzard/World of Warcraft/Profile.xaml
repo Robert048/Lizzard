@@ -20,7 +20,7 @@
             <RowDefinition Height="5*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="5*" />
             <RowDefinition />
             <RowDefinition Height="11*" />
             <RowDefinition Height="3*" />
@@ -56,13 +56,13 @@
                Width="100"
                Source="Images/testWowIcon.png"
                Stretch="Fill" RenderTransformOrigin="-15.792,5.118" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" />
-        <TextBlock x:Name="txtProfile" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="TextBlock" Foreground="#FFFF9C00" FontSize="24" Visibility="Collapsed"/>
+        <TextBlock x:Name="txtProfile" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Collapsed"/>
         <TextBlock x:Name="textBlock" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Character Information" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Collapsed"/>
         <TextBlock x:Name="textBlock1" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Collapsed"/>
         <TextBlock x:Name="textBlock2" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="Character Stats" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Collapsed"/>
-        <TextBlock x:Name="txtStats" Grid.Column="3" Grid.Row="5" TextWrapping="Wrap" Text="TextBlock" Foreground="#FFFF9C00" FontSize="24" Visibility="Collapsed"/>
+        <TextBlock x:Name="txtStats" Grid.Column="3" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Collapsed"/>
         <TextBlock x:Name="textBlock3" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="Equipped items" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Collapsed"/>
-        <TextBlock x:Name="txtItems" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="TextBlock" Foreground="#FFFF9C00" FontSize="24" Visibility="Collapsed"/>
+        <TextBlock x:Name="txtItems" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Collapsed"/>
         <Button x:Name="btnBack"
         	Content="&lt;"
         	Grid.Row="6"
@@ -72,7 +72,6 @@
         	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20,0,25" />
         <TextBox x:Name="txtCharName" Grid.Row="3" TextWrapping="Wrap" Text="Sky" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184"/>
         <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,0,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1"/>
-        <TextBox x:Name="txtRegion" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" RenderTransformOrigin="0.296,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,23,0,0"/>
         <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="Outland" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184"/>
         <TextBlock
         	TextWrapping="Wrap"
@@ -81,6 +80,13 @@
         	FontSize="48"
         	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
         <GridView x:Name="gridViewFeed" Grid.Column="2" Grid.Row="5" ItemTemplate="{StaticResource FeedTemplate}" Margin="0,0,15,0"/>
+        <ComboBox x:Name="boxRegion"
+        	Grid.Row="3"
+        	HorizontalAlignment="Left"
+        	VerticalAlignment="Stretch"
+        	PlaceholderText="Region/platform"
+        	Margin="0,88,0,55"
+        	FontSize="15" Grid.Column="1" Width="186" Height="35" />
 
     </Grid>
 </Page>

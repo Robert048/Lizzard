@@ -94,7 +94,7 @@
                 <Image x:Name="image"
                        Margin="0"
                        Grid.RowSpan="4"
-                       Source="{Binding type, Converter={StaticResource converter}}" />
+                       Source="{Binding img}" />
                 <TextBlock Grid.Row="1"
                            TextWrapping="Wrap"
                            FontSize="20"

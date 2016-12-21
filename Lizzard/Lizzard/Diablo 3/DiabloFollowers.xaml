@@ -66,8 +66,8 @@
         <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="53,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Choose a follower" Grid.ColumnSpan="3" Foreground="#FF4C0505" FontSize="85.333" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom"/>
         <Image x:Name="imgTemplar" Grid.Column="3" Grid.Row="3" Source="ms-appx:///Assets/d3Temp.png" Tapped="imgTemplar_Tapped"/>
-        <Image x:Name="imgScoundrel" Grid.Column="4" Grid.Row="3" Source="ms-appx:///Assets/d3Scoun.png"/>
-        <Image x:Name="imgEnchantress" Grid.Column="5" Grid.Row="3" Source="ms-appx:///Assets/d3Ench.png"/>
+        <Image x:Name="imgScoundrel" Grid.Column="4" Grid.Row="3" Source="ms-appx:///Assets/d3Scoun.png" Tapped="imgScoundrel_Tapped"/>
+        <Image x:Name="imgEnchantress" Grid.Column="5" Grid.Row="3" Source="ms-appx:///Assets/d3Ench.png" Tapped="imgEnchantress_Tapped"/>
 
 
     </Grid>

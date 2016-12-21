@@ -73,15 +73,15 @@
                Stretch="Fill" />
         <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="53,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="Templar" Grid.ColumnSpan="3" Foreground="#FF4C0505" FontSize="48" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,10"/>
-        <Image x:Name="imgTemplar" Grid.Column="1" Grid.Row="3" Source="ms-appx:///Assets/d3Temp.png" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgFollowerSet" Grid.Column="1" Grid.Row="3" Source="ms-appx:///Assets/d3Temp.png" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="textBlock1_Copy" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Active skills" Foreground="#FF4C0505" FontSize="48" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.ColumnSpan="2"/>
         <GridView x:Name="gridView" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="4">
             <GridView.Resources>
                 <DataTemplate x:Key="FollowerGrid">
-                    <Grid Height="65" Width="417">
-                        <Image x:Name="imgSkill" HorizontalAlignment="Left" Height="62" Source="{Binding icon}" VerticalAlignment="Top" Width="60" Margin="3,0,0,0"/>
-                        <TextBlock x:Name="txtName" HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Top" Foreground="#FF681313" FontWeight="Bold" FontSize="24"/>
-                        <TextBlock x:Name="txtDesc" HorizontalAlignment="Left" Margin="74,32,0,0" TextWrapping="Wrap" Text="{Binding simpleDescription}" VerticalAlignment="Top" Foreground="#FF660707" Height="26" Width="333"/>
+                    <Grid Height="193" Width="506">
+                        <Image x:Name="imgSkill" HorizontalAlignment="Left" Height="109" Source="{Binding icon}" VerticalAlignment="Top" Width="105" Margin="10,10,0,0"/>
+                        <TextBlock x:Name="txtName" HorizontalAlignment="Left" Margin="127,10,0,0" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Top" Foreground="#FF681313" FontWeight="Bold" FontSize="21.333" Height="35" Width="362"/>
+                        <TextBlock x:Name="txtDesc" HorizontalAlignment="Left" Margin="127,50,0,0" TextWrapping="Wrap" Text="{Binding simpleDescription}" VerticalAlignment="Top" Foreground="#FF660707" Height="133" Width="362"/>
                     </Grid>
                 </DataTemplate>
             </GridView.Resources>

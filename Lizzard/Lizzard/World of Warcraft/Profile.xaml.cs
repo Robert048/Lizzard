@@ -21,6 +21,10 @@ namespace Lizzard.World_of_Warcraft
         public Profile()
         {
             this.InitializeComponent();
+            boxRegion.Items.Add("eu");
+            boxRegion.Items.Add("us");
+            boxRegion.Items.Add("kr");
+            boxRegion.Items.Add("cn");
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -36,7 +40,7 @@ namespace Lizzard.World_of_Warcraft
                 try
                 {
                     charName = txtCharName.Text;
-                    region = txtRegion.Text;
+                    region = boxRegion.SelectedValue.ToString();
                     realm = txtRealm.Text;
                     loadProfileData();
                     loadIconProfileData();
@@ -148,7 +152,7 @@ namespace Lizzard.World_of_Warcraft
             try
             {
                 charName = txtCharName.Text;
-                region = txtRegion.Text;
+                region = boxRegion.SelectedValue.ToString();
                 realm = txtRealm.Text;
                 loadProfileData();
                 loadIconProfileData();
