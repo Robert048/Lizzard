@@ -23,6 +23,10 @@ namespace Lizzard.Diablo_3
     /// </summary>
     public sealed partial class DiabloProfile : Page
     {
+
+        private User user;
+        Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
         public DiabloProfile()
         {
             this.InitializeComponent();
@@ -37,7 +41,11 @@ namespace Lizzard.Diablo_3
         private async void loadCareerInformation()
         {
             D3Api call = new D3Api();
-            var result = await call.get("/profile/" + "RedZerg%231884" + "/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+
+            var tag = localSettings.Values["tag"];
+            user = new User { tag = (string)localSettings.Values["tag"], region = (string)localSettings.Values["region"]};
+
+            var result = await call.get("/profile/" + user.tag + "/?locale=" + user.region + "&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
             txtCareerInfo.Text =
                 "BattleTag: " + jsonresult.battleTag + Environment.NewLine +
@@ -141,7 +149,7 @@ namespace Lizzard.Diablo_3
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Lizzard.MainPage));
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

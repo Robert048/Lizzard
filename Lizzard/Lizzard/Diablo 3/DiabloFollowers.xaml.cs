@@ -34,8 +34,21 @@ namespace Lizzard.Diablo_3
 
         private void imgTemplar_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Diablo_3.DiabloFollower));
+            string name = "templar";
+            Frame.Navigate(typeof(Diablo_3.DiabloFollower), name);
 
+        }
+
+        private void imgScoundrel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            string name = "scoundrel";
+            Frame.Navigate(typeof(Diablo_3.DiabloFollower), name);
+        }
+
+        private void imgEnchantress_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            string name = "enchantress";
+            Frame.Navigate(typeof(Diablo_3.DiabloFollower), name);
         }
     }
 }
