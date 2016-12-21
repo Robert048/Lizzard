@@ -48,5 +48,14 @@ namespace Lizzard
         {
             base.OnNavigatedTo(e);
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            localSettings.Values["tag"] = "";
+            localSettings.Values["region"] = "";
+            localSettings.Values["platform"] = "";
+            Frame.Navigate(typeof(LogInpage));
+        }
     }
 }

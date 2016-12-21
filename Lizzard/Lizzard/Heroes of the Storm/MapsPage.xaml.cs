@@ -7,7 +7,7 @@ using Windows.UI.Xaml.Controls;
 namespace Lizzard.Heroes_of_the_Storm
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Heroes of the Storm page with all the map names of the game
     /// </summary>
     public sealed partial class MapsPage : Page
     {
@@ -24,8 +24,9 @@ namespace Lizzard.Heroes_of_the_Storm
             var jsonresult = JsonConvert.DeserializeObject<List<Map>>(result);
             foreach (var map in jsonresult)
             {
-                txtMaps.Text = txtMaps.Text + map.PrimaryName + Environment.NewLine;
+                listMaps.Items.Add(map.PrimaryName);
             }
+            progressRing.IsActive = false;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

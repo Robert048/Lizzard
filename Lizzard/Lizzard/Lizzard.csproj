@@ -122,6 +122,7 @@
     <Compile Include="Heroes of the Storm\StatsPage.xaml.cs">
       <DependentUpon>StatsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImageConverter.cs" />
     <Compile Include="Overwatch\CompetitivePage.xaml.cs">
       <DependentUpon>CompetitivePage.xaml</DependentUpon>
     </Compile>
