@@ -79,52 +79,14 @@
         <DataTemplate x:Key="CardTemplate">
             
             <Grid Width="200"
-                  Height="300"
-                  BorderBrush="Black"
-                  BorderThickness="2">
+                  Height="300">
                 <Grid.Resources>
                     <local:ImageConverter x:Key="converter" />
                 </Grid.Resources>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="75*" />
-                    <RowDefinition Height="15*" />
-                    <RowDefinition Height="40*" />
-                    <RowDefinition Height="20*" />
-                </Grid.RowDefinitions>
                 <Image x:Name="image"
                        Margin="0"
                        Grid.RowSpan="4"
-                       Source="{Binding type, Converter={StaticResource converter}}" />
-                <TextBlock Grid.Row="1"
-                           TextWrapping="Wrap"
-                           FontSize="20"
-                           Text="{Binding name}"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center" />
-                <TextBlock Grid.Row="2"
-                           TextWrapping="Wrap"
-                           Text="{Binding text}"
-                           d:LayoutOverrides="Width"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontSize="13.333" />
-                <TextBlock Grid.Row="3"
-                           TextWrapping="Wrap"
-                           Text="{Binding health}"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Bottom"
-                           FontSize="33.333" />
-                <TextBlock Grid.Row="3"
-                           TextWrapping="Wrap"
-                           Text="{Binding attack}"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Bottom"
-                           FontSize="33.333" />
-                <TextBlock TextWrapping="Wrap"
-                           Text="{Binding cost}"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Top"
-                           FontSize="33.333" />
+                       Source="{Binding name, Converter={StaticResource converter}}" />
             </Grid>
         </DataTemplate>
     </Application.Resources>
