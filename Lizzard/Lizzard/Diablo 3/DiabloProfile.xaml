@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="Lizzard.Diablo_3.DiabloProfile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lizzard"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="D3Hero">
+            <Grid d:DesignWidth="122.333" d:DesignHeight="27" Height="86" Width="234">
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Top" Foreground="#FF4C0505" FontSize="26.667" FontWeight="Bold" Margin="83,4,0,0"/>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="83,39,0,0" TextWrapping="Wrap" Text="{Binding level}" VerticalAlignment="Top" Foreground="#FF4C0505"/>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="77" Margin="3,4,0,0" Source="{Binding icon}" VerticalAlignment="Top" Width="77"/>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="83,59,0,0" TextWrapping="Wrap" Text="{Binding paragonLevel}" VerticalAlignment="Top" Foreground="#FF4C0505"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="Black"
+          BorderBrush="#FF4C0505"
+          BorderThickness="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="12*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnBack"
+                Content="&lt;"
+                Grid.Row="6"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="#FF4C0505"
+                FontSize="30"
+                Foreground="Black"
+                Margin="-10,0,0,0"
+                Click="btnBack_Click" FontWeight="Bold" />
+        <TextBlock Margin="20,0,0,0"
+                   TextWrapping="Wrap"
+                   Text="Diablo III"
+                   Foreground="#FF4C0505"
+                   FontSize="100"
+                   VerticalAlignment="Bottom"
+                   Grid.ColumnSpan="4" FontWeight="Bold" />
+        <Rectangle Grid.ColumnSpan="3"
+                   Fill="#FF4C0505"
+                   Grid.Row="1"
+                   Stroke="Black"
+                   Margin="-10,0,0,0"
+                   StrokeThickness="0" />
+        <GridView x:Name="gridView" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="2" ItemTemplate="{StaticResource D3Hero}"/>
+        <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="53,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tBlock1" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Characters" FontSize="32" Foreground="#FF4C0505" FontWeight="Bold" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,15"/>
+        <TextBlock x:Name="tBlock1_Copy" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" FontSize="24" Foreground="#FF4C0505" FontWeight="Bold" Visibility="Visible" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,15">
+        	<Run FontSize="32" Text="Career "/>
+        	<Run FontSize="29.333" Text="Information"/>
+        </TextBlock>
+        <TextBlock x:Name="txtCareerInfo" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="#FF891212" FontSize="24" Text="" Visibility="Visible"/>
+
+
+    </Grid>
+</Page>

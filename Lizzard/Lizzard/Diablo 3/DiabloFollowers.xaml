@@ -1,11 +1,21 @@
 ﻿<Page
-    x:Class="Lizzard.DiabloMainPage"
+    x:Class="Lizzard.Diablo_3.DiabloFollowers"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Lizzard"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="D3Hero">
+            <Grid d:DesignWidth="122.333" d:DesignHeight="27" Height="86" Width="234">
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding name}" VerticalAlignment="Top" Foreground="#FF4C0505" FontSize="26.667" FontWeight="Bold" Margin="83,4,0,0"/>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="83,39,0,0" TextWrapping="Wrap" Text="{Binding level}" VerticalAlignment="Top" Foreground="#FF4C0505"/>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="77" Margin="3,4,0,0" Source="{Binding icon}" VerticalAlignment="Top" Width="77"/>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="83,59,0,0" TextWrapping="Wrap" Text="{Binding paragonLevel}" VerticalAlignment="Top" Foreground="#FF4C0505"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid Background="Black"
           BorderBrush="#FF4C0505"
@@ -23,11 +33,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
@@ -40,46 +50,6 @@
                 Foreground="Black"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" FontWeight="Bold" />
-        <Button x:Name="btnProfile"
-                Content="Profile"
-                Grid.Column="2"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FF4C0505"
-                Foreground="Black"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" />
-        <Button x:Name="btnSearch"
-                Content="Search"
-                Grid.Column="3"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FF4C0505"
-                Foreground="Black"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" />
-        <Button x:Name="btnSettings"
-                Content="Settings"
-                Grid.Column="4"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FF4C0505"
-                Foreground="Black"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" />
-        <Button x:Name="btnStat"
-                Content="4e button"
-                Grid.Column="5"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FF4C0505"
-                Foreground="Black"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"
@@ -93,14 +63,12 @@
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <Image x:Name="image"
-               Grid.Column="7"
-               Height="100"
-               Margin="0,20,20,0"
-               Width="100"
-               VerticalAlignment="Top"
-               Source="Images/d3TestIcon.png"
-               Stretch="Fill" />
+        <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="53,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Choose a follower" Grid.ColumnSpan="3" Foreground="#FF4C0505" FontSize="85.333" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom"/>
+        <Image x:Name="imgTemplar" Grid.Column="3" Grid.Row="3" Source="ms-appx:///Assets/d3Temp.png" Tapped="imgTemplar_Tapped"/>
+        <Image x:Name="imgScoundrel" Grid.Column="4" Grid.Row="3" Source="ms-appx:///Assets/d3Scoun.png"/>
+        <Image x:Name="imgEnchantress" Grid.Column="5" Grid.Row="3" Source="ms-appx:///Assets/d3Ench.png"/>
+
 
     </Grid>
 </Page>
