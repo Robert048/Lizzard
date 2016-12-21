@@ -34,13 +34,18 @@ namespace Lizzard.Diablo_3
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Lizzard.MainPage));
         }
 
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(DiabloProfile));
 
+        }
+
+        private void btnFollowers_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(DiabloFollowers));
         }
     }
 }

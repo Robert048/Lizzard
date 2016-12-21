@@ -50,19 +50,9 @@
                 Background="#FFD6C005"
                 Foreground="#FF223D99"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" />
+                Margin="10" FontWeight="Bold" Grid.ColumnSpan="2" Click="btnProfile_Click" />
         <Button x:Name="btnSearch"
-                Content="Search"
-                Grid.Column="3"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FFD6C005"
-                Foreground="#FF223D99"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" />
-        <Button x:Name="btnSettings"
-                Content="Settings"
+                Content="Ladder"
                 Grid.Column="4"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -70,17 +60,7 @@
                 Background="#FFD6C005"
                 Foreground="#FF223D99"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" />
-        <Button x:Name="btnStat"
-                Content="4e button"
-                Grid.Column="5"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FFD6C005"
-                Foreground="#FF223D99"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" />
+                Margin="10" FontWeight="Bold" Grid.ColumnSpan="2" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Starcraft II"
@@ -94,23 +74,6 @@
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <Image x:Name="image"
-               Grid.Column="7"
-               Height="100"
-               Margin="0,20,20,0"
-               Width="100"
-               VerticalAlignment="Top"
-               Source="Images/testSc2Icon.png"
-               Stretch="Fill" />
-        <TextBlock Grid.Column="6"
-                   Margin="0,20,20,0"
-                   TextWrapping="Wrap"
-                   Text="Naam"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Right"
-                   FontSize="20"
-                   Foreground="#FFB19F05"
-                   FontWeight="Bold"/>
 
     </Grid>
 </Page>

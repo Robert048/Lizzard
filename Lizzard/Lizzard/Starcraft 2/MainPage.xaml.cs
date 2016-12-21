@@ -26,5 +26,16 @@ namespace Lizzard.Starcraft_2
         {
             this.InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Lizzard.MainPage));
+        }
+
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(StarcraftProfile));
+
+        }
     }
 }

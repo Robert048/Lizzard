@@ -26,7 +26,7 @@ namespace Lizzard
 
         private void btnSC2_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(StarCraftMainPage));
+            Frame.Navigate(typeof(Starcraft_2.MainPage));
         }
 
         private void btnOW_Click(object sender, RoutedEventArgs e)
