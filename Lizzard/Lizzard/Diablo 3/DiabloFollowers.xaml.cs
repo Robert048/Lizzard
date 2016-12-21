@@ -15,25 +15,26 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Lizzard
+namespace Lizzard.Diablo_3
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StarCraftMainPage : Page
+    public sealed partial class DiabloFollowers : Page
     {
-        public StarCraftMainPage()
+        public DiabloFollowers()
         {
             this.InitializeComponent();
         }
 
-        private void textBlock_SelectionChanged(System.Object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void imgTemplar_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Diablo_3.DiabloFollower));
 
         }
     }
