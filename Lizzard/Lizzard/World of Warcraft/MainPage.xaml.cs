@@ -71,7 +71,7 @@ namespace Lizzard.World_of_Warcraft
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Guild));
+            Frame.Navigate(typeof(Mounts));
 
         }
     }

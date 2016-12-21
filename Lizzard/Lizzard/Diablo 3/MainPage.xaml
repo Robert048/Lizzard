@@ -42,14 +42,14 @@
                 Click="btnBack_Click" FontWeight="Bold" />
         <Button x:Name="btnProfile"
                 Content="Profile"
-                Grid.Column="2"
+                Grid.Column="3"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF4C0505"
                 Foreground="Black"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnProfile_Click" Grid.ColumnSpan="2" />
+                Margin="10" FontWeight="Bold" Click="btnProfile_Click" />
         <Button x:Name="btnFollowers"
                 Content="Followers"
                 Grid.Column="4"
@@ -59,7 +59,7 @@
                 Background="#FF4C0505"
                 Foreground="Black"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" Grid.ColumnSpan="2" />
+                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"

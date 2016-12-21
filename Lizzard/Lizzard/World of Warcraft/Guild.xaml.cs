@@ -79,7 +79,6 @@ namespace Lizzard.World_of_Warcraft
             try
             {
                 guildName = txtGuildName.Text;
-                region = txtRegion.Text;
                 realm = txtRealm.Text;
                 loadGuildActivity();
                 loadMembers();
