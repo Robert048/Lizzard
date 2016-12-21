@@ -77,16 +77,24 @@
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="CardTemplate">
+            
             <Grid Width="200"
                   Height="300"
                   BorderBrush="Black"
                   BorderThickness="2">
+                <Grid.Resources>
+                    <local:ImageConverter x:Key="converter" />
+                </Grid.Resources>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="75*" />
                     <RowDefinition Height="15*" />
                     <RowDefinition Height="40*" />
                     <RowDefinition Height="20*" />
                 </Grid.RowDefinitions>
+                <Image x:Name="image"
+                       Margin="0"
+                       Grid.RowSpan="4"
+                       Source="{Binding type, Converter={StaticResource converter}}" />
                 <TextBlock Grid.Row="1"
                            TextWrapping="Wrap"
                            FontSize="20"
