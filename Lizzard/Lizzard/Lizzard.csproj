@@ -169,6 +169,9 @@
     <Compile Include="World of Warcraft\Guild.xaml.cs">
       <DependentUpon>Guild.xaml</DependentUpon>
     </Compile>
+    <Compile Include="World of Warcraft\Mounts.xaml.cs">
+      <DependentUpon>Mounts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="World of Warcraft\WoWApi.cs" />
     <Compile Include="World of Warcraft\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -285,6 +288,10 @@
     <Page Include="World of Warcraft\Guild.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="World of Warcraft\Mounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="World of Warcraft\Profile.xaml">
       <Generator>MSBuild:Compile</Generator>

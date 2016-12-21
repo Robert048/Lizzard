@@ -36,7 +36,6 @@ namespace Lizzard.World_of_Warcraft
                 try
                 {
                     charName = txtCharName.Text;
-                    region = txtRegion.Text;
                     realm = txtRealm.Text;
                     loadProfileData();
                     loadIconProfileData();
@@ -148,7 +147,6 @@ namespace Lizzard.World_of_Warcraft
             try
             {
                 charName = txtCharName.Text;
-                region = txtRegion.Text;
                 realm = txtRealm.Text;
                 loadProfileData();
                 loadIconProfileData();
