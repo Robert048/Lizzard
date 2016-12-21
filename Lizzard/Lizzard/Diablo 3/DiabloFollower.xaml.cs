@@ -56,6 +56,7 @@ namespace Lizzard.Diablo_3
         {
             D3Api call = new D3Api();
             var result = await call.get("/data/follower/" + followerName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFollower>(result);
             foreach (Active skill in jsonresult.skills.active)
             {

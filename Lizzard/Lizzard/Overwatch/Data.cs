@@ -72,5 +72,10 @@ namespace Lizzard.Overwatch
         public string image { get; set; }
         public double percentage { get; set; }
         public double eliminations { get; set; }
+        public double damage { get; set; }
+        public double kdratio { get; set; }
+        public string accuracy { get; set; }
+        public string objTime { get; set; }
+
     }
 }
