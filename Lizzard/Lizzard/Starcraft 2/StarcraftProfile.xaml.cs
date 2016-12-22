@@ -41,7 +41,10 @@ namespace Lizzard.Starcraft_2
 
             var result = await call.get("/profile/" + "2690538/1/Rainy/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
-            txtProfile.Text =
+
+            if (jsonresult.clanName != "")
+            {
+                txtProfile.Text =
                 "Name: " + jsonresult.displayName + Environment.NewLine +
                 "Clan name: " + jsonresult.clanName + Environment.NewLine +
                 "Clan tag: " + jsonresult.clanTag + Environment.NewLine + Environment.NewLine +
@@ -49,6 +52,18 @@ namespace Lizzard.Starcraft_2
                 "Primary race: " + jsonresult.career.primaryRace + Environment.NewLine +
                 "Highest 1v1 rank: " + jsonresult.career.highest1v1Rank + Environment.NewLine +
                 "Highest team rank: " + jsonresult.career.highestTeamRank + Environment.NewLine + Environment.NewLine;
+            }
+
+            else
+            {
+                txtProfile.Text =
+                "Name: " + jsonresult.displayName + Environment.NewLine +
+                "Achievement points: " + jsonresult.achievements.points.totalPoints.ToString() + Environment.NewLine +
+                "Primary race: " + jsonresult.career.primaryRace + Environment.NewLine +
+                "Highest 1v1 rank: " + jsonresult.career.highest1v1Rank + Environment.NewLine +
+                "Highest team rank: " + jsonresult.career.highestTeamRank + Environment.NewLine + Environment.NewLine;
+            }
+
 
             txtZergLvl.Text = jsonresult.swarmLevels.zerg.level.ToString();
             txtTerranLvl.Text = jsonresult.swarmLevels.terran.level.ToString();
