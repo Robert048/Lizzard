@@ -73,7 +73,7 @@
                Stretch="Fill" />
         <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="53,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="Templar" Grid.ColumnSpan="3" Foreground="#FF4C0505" FontSize="48" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,10"/>
-        <Image x:Name="imgFollowerSet" Grid.Column="1" Grid.Row="3" Source="ms-appx:///Assets/d3Temp.png" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgFollowerSet" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="textBlock1_Copy" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Active skills" Foreground="#FF4C0505" FontSize="48" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Grid.ColumnSpan="2"/>
         <GridView x:Name="gridView" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="4">
             <GridView.Resources>
@@ -89,6 +89,8 @@
                 <StaticResource ResourceKey="FollowerGrid"/>
             </GridView.ItemTemplate>
         </GridView>
+        <ProgressRing x:Name="ringIcon" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="223" Width="223" Foreground="#FF4C0505" IsActive="True" Background="Transparent" Grid.ColumnSpan="2"/>
+        <ProgressRing x:Name="ringSkills" Grid.Column="4" HorizontalAlignment="Center" Margin="0,134,0,0" Grid.Row="3" VerticalAlignment="Center" Height="345" Width="345" Foreground="#FF4C0505" IsActive="True" Background="Transparent" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>

@@ -7,7 +7,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="DataTemplate1">
-                <Grid Width="243" Height="62">
+            <Grid Width="243" Height="62">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="0*"/>
@@ -73,9 +73,9 @@
                Source="Images/testWowIcon.png"
                Stretch="Fill" RenderTransformOrigin="-15.792,5.118" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" />
         <Image x:Name="imgChar" Grid.Column="1" Grid.Row="3"/>
-        <TextBlock x:Name="textBlock1" Grid.Column="5" Grid.Row="4" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Collapsed"/>
-        <TextBlock x:Name="textBlock3" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Collapsed">
-        	<Run Text="Members"/>
+        <TextBlock x:Name="textBlock1" Grid.Column="5" Grid.Row="4" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
+        <TextBlock x:Name="textBlock3" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Visible">
+        	<Run Text="Guild Members"/>
         	<LineBreak/>
         	<Run/>
         </TextBlock>
@@ -97,6 +97,8 @@
         	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
         <GridView x:Name="gridView" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" ItemTemplate="{StaticResource DataTemplate1}"/>
         <GridView x:Name="gridViewNews" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="3" ItemTemplate="{StaticResource GuildNewsTemplate}"/>
+        <ProgressRing x:Name="progressGuildMembers" Grid.Column="2" HorizontalAlignment="Center" Margin="1,0,0,0" Grid.Row="5" VerticalAlignment="Stretch" Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"/>
+        <ProgressRing x:Name="progressGuildActivity" Grid.Column="5" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>

@@ -38,6 +38,7 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("mount/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectMount>(result);
+            progressMounts.IsActive = false;
             foreach (Mount m in jsonresult.mounts)
             {
                 m.icon = "http://wow.zamimg.com/images/wow/icons/large/" + m.icon + ".jpg";

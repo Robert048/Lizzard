@@ -77,6 +77,7 @@
                 <StaticResource ResourceKey="MountTemplate"/>
             </GridView.ItemTemplate>
         </GridView>
+        <ProgressRing x:Name="progressRealms" Grid.Column="2" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="377" Width="377" Foreground="#FFFF9C00" Grid.RowSpan="3" Grid.ColumnSpan="3" IsActive="True"/>
 
     </Grid>
 </Page>

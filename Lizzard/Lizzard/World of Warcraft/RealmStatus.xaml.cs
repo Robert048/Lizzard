@@ -38,6 +38,7 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("realm/status?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectRealms>(result);
+            progressRealms.IsActive = false;
             foreach (RealmStats realm in jsonresult.realms)
             {
                 realm.population = realm.population + " population";

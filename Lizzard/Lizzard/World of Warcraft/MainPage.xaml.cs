@@ -72,12 +72,16 @@ namespace Lizzard.World_of_Warcraft
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Guild));
-
         }
 
         private void btnRealmPage(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(RealmStatus));
+        }
+
+        private void btnAllMounts(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Mounts));
         }
     }
 }

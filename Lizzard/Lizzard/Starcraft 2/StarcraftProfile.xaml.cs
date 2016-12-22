@@ -42,6 +42,7 @@ namespace Lizzard.Starcraft_2
             var result = await call.get("/profile/" + "2690538/1/Rainy/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
 
+            prgrProf.IsActive = false;
             if (jsonresult.clanName != "")
             {
                 txtProfile.Text =
@@ -65,8 +66,11 @@ namespace Lizzard.Starcraft_2
             }
 
 
+            prgrsZrg.IsActive = false;
             txtZergLvl.Text = jsonresult.swarmLevels.zerg.level.ToString();
+            prgrTerran.IsActive = false;
             txtTerranLvl.Text = jsonresult.swarmLevels.terran.level.ToString();
+            prgrsProt.IsActive = false;
             txtProtossLvl.Text = jsonresult.swarmLevels.protoss.level.ToString();
 
             double terranCurrentExp = jsonresult.swarmLevels.terran.currentLevelXP;
