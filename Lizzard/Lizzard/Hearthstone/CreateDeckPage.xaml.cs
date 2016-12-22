@@ -101,7 +101,109 @@ namespace Lizzard.Hearthstone
         private void gridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var card = e.ClickedItem;
-            if (listCards.Items.Count < 30)
+            int count = listCards.Items.Count;
+            int doubles = 0;
+            foreach (var card2 in listCards.Items)
+            {
+                var type = card2.GetType();
+                switch (type.Name)
+                {
+                    case "Basic":
+                        Basic Basic = (Basic)card2;
+                        if (Basic.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "Classic":
+                        Classic Classic = (Classic)card2;
+                        if (Classic.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "Promo":
+                        Promo Promo = (Promo)card2;
+                        if (Promo.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "Reward":
+                        Reward Reward = (Reward)card2;
+                        if (Reward.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "Naxxrama":
+                        Naxxrama Naxxrama = (Naxxrama)card2;
+                        if (Naxxrama.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "GoblinsVsGnome":
+                        GoblinsVsGnome GoblinsVsGnome = (GoblinsVsGnome)card2;
+                        if (GoblinsVsGnome.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "BlackrockMountain":
+                        BlackrockMountain BlackrockMountain = (BlackrockMountain)card2;
+                        if (BlackrockMountain.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "TheGrandTournament":
+                        TheGrandTournament TheGrandTournament = (TheGrandTournament)card2;
+                        if (TheGrandTournament.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "TheLeagueOfExplorer":
+                        TheLeagueOfExplorer TheLeagueOfExplorer = (TheLeagueOfExplorer)card2;
+                        if (TheLeagueOfExplorer.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "WhispersOfTheOldGod":
+                        WhispersOfTheOldGod WhispersOfTheOldGod = (WhispersOfTheOldGod)card2;
+                        if (WhispersOfTheOldGod.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "Karazhan":
+                        Karazhan Karazhan = (Karazhan)card;
+                        if (Karazhan.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "MeanStreetsOfGadgetzan":
+                        MeanStreetsOfGadgetzan MeanStreetsOfGadgetzan = (MeanStreetsOfGadgetzan)card2;
+                        if (MeanStreetsOfGadgetzan.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    case "HeroSkin":
+                        HeroSkin HeroSkin = (HeroSkin)card2;
+                        if (HeroSkin.name.Contains("2x"))
+                        {
+                            doubles++;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if ((count + doubles) < 30)
             {
                 if (listCards.Items.Contains(card))
                 {
