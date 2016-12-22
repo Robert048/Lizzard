@@ -7,7 +7,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="DataTemplate1">
-            <Grid Width="243" Height="62">
+                <Grid Width="243" Height="62">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="0*"/>
@@ -19,8 +19,8 @@
                 </Image>
                 <TextBlock x:Name="txtMemberName" HorizontalAlignment="Left" Margin="56,0,0,0" TextWrapping="Wrap" Text="{Binding name}" Tag="{Binding realm}" Tapped="SendGuildMember"  VerticalAlignment="Top" FontSize="26.667" Foreground="#FFFF9C00"/>
                 <TextBlock x:Name="txtMemberLvl" HorizontalAlignment="Left" Margin="56,35,0,0" TextWrapping="Wrap" Text="{Binding level}" VerticalAlignment="Top" FontSize="16" Foreground="#FFFF9C00"/>
-
             </Grid>
+
         </DataTemplate>
         <DataTemplate x:Key="GuildNewsTemplate">
             <Grid Height="98" Width="435">

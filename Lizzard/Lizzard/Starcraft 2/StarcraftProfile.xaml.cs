@@ -45,14 +45,33 @@ namespace Lizzard.Starcraft_2
                 "Name: " + jsonresult.displayName + Environment.NewLine +
                 "Clan name: " + jsonresult.clanName + Environment.NewLine +
                 "Clan tag: " + jsonresult.clanTag + Environment.NewLine + Environment.NewLine +
-                "Achievement points: " + jsonresult.achievements.points.ToString() + Environment.NewLine +
+                "Achievement points: " + jsonresult.achievements.points.totalPoints.ToString() + Environment.NewLine +
                 "Primary race: " + jsonresult.career.primaryRace + Environment.NewLine +
                 "Highest 1v1 rank: " + jsonresult.career.highest1v1Rank + Environment.NewLine +
-                "Highest team rank: " + jsonresult.career.highestTeamRank + Environment.NewLine + Environment.NewLine +
-                "Combined level: " + jsonresult.swarmLevels.level.ToString() + Environment.NewLine +
-                "Terran level: " + jsonresult.swarmLevels.terran.level.ToString() + Environment.NewLine +
-                "Zerg level: " + jsonresult.swarmLevels.zerg.level.ToString() + Environment.NewLine +
-                "Protoss level: " + jsonresult.swarmLevels.protoss.level.ToString() + Environment.NewLine + Environment.NewLine;
+                "Highest team rank: " + jsonresult.career.highestTeamRank + Environment.NewLine + Environment.NewLine;
+
+            txtZergLvl.Text = jsonresult.swarmLevels.zerg.level.ToString();
+            txtTerranLvl.Text = jsonresult.swarmLevels.terran.level.ToString();
+            txtProtossLvl.Text = jsonresult.swarmLevels.protoss.level.ToString();
+
+            double terranCurrentExp = jsonresult.swarmLevels.terran.currentLevelXP;
+            double terranTotalExp = jsonresult.swarmLevels.terran.totalLevelXP;
+
+            double zergCurrentExp = jsonresult.swarmLevels.zerg.currentLevelXP;
+            double zergTotalExp = jsonresult.swarmLevels.zerg.totalLevelXP;
+
+            double protosCurrentExp = jsonresult.swarmLevels.protoss.currentLevelXP;
+            double protosTotalExp = jsonresult.swarmLevels.protoss.totalLevelXP;
+
+            double terVal = terranCurrentExp / terranTotalExp * 100;
+            double zergVal = zergCurrentExp / zergTotalExp * 100;
+            double proVal = protosCurrentExp / protosTotalExp * 100;
+
+            prgTerran.Value = terVal;
+            prgZerg.Value = zergVal;
+            prgProtoss.Value = proVal;
+
+
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
