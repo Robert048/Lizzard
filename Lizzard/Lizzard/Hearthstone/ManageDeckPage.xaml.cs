@@ -30,8 +30,7 @@ namespace Lizzard.Hearthstone
             var cardFile = files.FirstOrDefault(x => x.Name == "cardDecks.txt");
             string result = await FileIO.ReadTextAsync(cardFile);
             result = result.TrimEnd(result[result.Length -1]);
-            List<string> cards = result.Split(',').ToList<string>();
-
+            List<string> cards = result.Split(',').ToList();
         }
     }
 }
