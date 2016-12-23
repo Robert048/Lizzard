@@ -179,7 +179,7 @@ namespace Lizzard.Hearthstone
                         }
                         break;
                     case "Karazhan":
-                        Karazhan Karazhan = (Karazhan)card;
+                        Karazhan Karazhan = (Karazhan)card2;
                         if (Karazhan.name.Contains("2x"))
                         {
                             doubles++;
@@ -453,6 +453,167 @@ namespace Lizzard.Hearthstone
                 default:
                     break;
             }
+        }
+
+        private async void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            string deck = "";
+            foreach (var card in listCards.Items)
+            {
+                
+                var type = card.GetType();
+                switch (type.Name)
+                {
+                    case "Basic":
+                        Basic Basic = (Basic)card;
+                        if (Basic.name.Contains("2x"))
+                        {
+                            deck = deck + Basic.cardId + "," + Basic.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + Basic.cardId + ",";
+                        }
+                        break;
+                    case "Classic":
+                        Classic Classic = (Classic)card;
+                        if (Classic.name.Contains("2x"))
+                        {
+                            deck = deck + Classic.cardId + "," + Classic.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + Classic.cardId + ",";
+                        }
+                        break;
+                    case "Promo":
+                        Promo Promo = (Promo)card;
+                        if (Promo.name.Contains("2x"))
+                        {
+                            deck = deck + Promo.cardId + "," + Promo.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + Promo.cardId + ",";
+                        }
+                        break;
+                    case "Reward":
+                        Reward Reward = (Reward)card;
+                        if (Reward.name.Contains("2x"))
+                        {
+                            deck = deck + Reward.cardId + "," + Reward.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + Reward.cardId + ",";
+                        }
+                        break;
+                    case "Naxxrama":
+                        Naxxrama Naxxrama = (Naxxrama)card;
+                        if (Naxxrama.name.Contains("2x"))
+                        {
+                            deck = deck + Naxxrama.cardId + "," + Naxxrama.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + Naxxrama.cardId + ",";
+                        }
+                        break;
+                    case "GoblinsVsGnome":
+                        GoblinsVsGnome GoblinsVsGnome = (GoblinsVsGnome)card;
+                        if (GoblinsVsGnome.name.Contains("2x"))
+                        {
+                            deck = deck + GoblinsVsGnome.cardId + "," + GoblinsVsGnome.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + GoblinsVsGnome.cardId + ",";
+                        }
+                        break;
+                    case "BlackrockMountain":
+                        BlackrockMountain BlackrockMountain = (BlackrockMountain)card;
+                        if (BlackrockMountain.name.Contains("2x"))
+                        {
+                            deck = deck + BlackrockMountain.cardId + "," + BlackrockMountain.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + BlackrockMountain.cardId + ",";
+                        }
+                        break;
+                    case "TheGrandTournament":
+                        TheGrandTournament TheGrandTournament = (TheGrandTournament)card;
+                        if (TheGrandTournament.name.Contains("2x"))
+                        {
+                            deck = deck + TheGrandTournament.cardId + "," + TheGrandTournament.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + TheGrandTournament.cardId + ",";
+                        }
+                        break;
+                    case "TheLeagueOfExplorer":
+                        TheLeagueOfExplorer TheLeagueOfExplorer = (TheLeagueOfExplorer)card;
+                        if (TheLeagueOfExplorer.name.Contains("2x"))
+                        {
+                            deck = deck + TheLeagueOfExplorer.cardId + "," + TheLeagueOfExplorer.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + TheLeagueOfExplorer.cardId + ",";
+                        }
+                        break;
+                    case "WhispersOfTheOldGod":
+                        WhispersOfTheOldGod WhispersOfTheOldGod = (WhispersOfTheOldGod)card;
+                        if (WhispersOfTheOldGod.name.Contains("2x"))
+                        {
+                            deck = deck + WhispersOfTheOldGod.cardId + "," + WhispersOfTheOldGod.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + WhispersOfTheOldGod.cardId + ",";
+                        }
+                        break;
+                    case "Karazhan":
+                        Karazhan Karazhan = (Karazhan)card;
+                        if (Karazhan.name.Contains("2x"))
+                        {
+                            deck = deck + Karazhan.cardId + "," + Karazhan.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + Karazhan.cardId + ",";
+                        }
+                        break;
+                    case "MeanStreetsOfGadgetzan":
+                        MeanStreetsOfGadgetzan MeanStreetsOfGadgetzan = (MeanStreetsOfGadgetzan)card;
+                        if (MeanStreetsOfGadgetzan.name.Contains("2x"))
+                        {
+                            deck = deck + MeanStreetsOfGadgetzan.cardId + "," + MeanStreetsOfGadgetzan.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + MeanStreetsOfGadgetzan.cardId + ",";
+                        }
+                        break;
+                    case "HeroSkin":
+                        HeroSkin HeroSkin = (HeroSkin)card;
+                        if (HeroSkin.name.Contains("2x"))
+                        {
+                            deck = deck + HeroSkin.cardId + "," + HeroSkin.cardId + ",";
+                        }
+                        else
+                        {
+                            deck = deck + HeroSkin.cardId + ",";
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            var folder = ApplicationData.Current.LocalFolder;
+            var textFile = await folder.CreateFileAsync("cardDecks.txt", CreationCollisionOption.ReplaceExisting);
+            await FileIO.WriteTextAsync(textFile, deck);
         }
     }
 }

@@ -85,6 +85,14 @@
                 <StaticResource ResourceKey="CardDeckTemplate" />
             </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="btnSave"
+                Content="Save"
+                Grid.Column="1"
+                Grid.Row="5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Margin="0,10"
+                Click="btnSave_Click" />
 
     </Grid>
 </Page>
