@@ -21,28 +21,36 @@ namespace Lizzard.World_of_Warcraft
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Mounts : Page
+    public sealed partial class RealmStatus : Page
     {
-        public Mounts()
+        public RealmStatus()
         {
             this.InitializeComponent();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            loadMounts();
+            loadRealms();
         }
 
-        private async void loadMounts()
+        private async void loadRealms()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("mount/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
-            var jsonresult = JsonConvert.DeserializeObject<RootObjectMount>(result);
-            progressMounts.IsActive = false;
-            foreach (Mount m in jsonresult.mounts)
+            var result = await call.get("realm/status?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var jsonresult = JsonConvert.DeserializeObject<RootObjectRealms>(result);
+            progressRealms.IsActive = false;
+            foreach (RealmStats realm in jsonresult.realms)
             {
-                m.icon = "http://wow.zamimg.com/images/wow/icons/large/" + m.icon + ".jpg";
-                gridView.Items.Add(m);
+                realm.population = realm.population + " population";
+                if(realm.status == true)
+                {
+                    realm.icon = "http://www.helios.de/support/manuals/msUB64-e/green.png";
+                }
+                if(realm.status == false)
+                {
+                    realm.icon = "http://www.helios.de/support/manuals/msUB64-e/red.png";
+                }
+                gridView.Items.Add(realm);
             }
         }
 

@@ -85,7 +85,17 @@
         	Background="#FFFF9C00"
         	Foreground="#FF003265"
         	FontSize="30"
-        	Margin="10" FontWeight="Bold" Click="btnSearch_Click" />
+        	Margin="10" FontWeight="Bold" Click="btnAllMounts" />
+        <Button x:Name="btnRealmStatus"
+        	Content="Realm status"
+        	Grid.Column="5"
+        	Grid.Row="3"
+        	VerticalAlignment="Stretch"
+        	HorizontalAlignment="Stretch"
+        	Background="#FFFF9C00"
+        	Foreground="#FF003265"
+        	FontSize="30"
+        	Margin="10,10,9,10" FontWeight="Bold" Click="btnRealmPage" />
 
     </Grid>
 </Page>

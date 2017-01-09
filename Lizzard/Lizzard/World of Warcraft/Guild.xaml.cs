@@ -33,6 +33,7 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("guild/" + realm + "/" + guildName + "?fields=news%2Cchallenge&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectGuildNews>(result);
+            progressGuildActivity.IsActive = false;
             foreach (News news in jsonresult.news)
             {
                 if (news.type == "itemLoot")
@@ -60,7 +61,8 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("guild/" + realm + "/" + guildName + "?fields=members&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectGuildMembers>(result);
-            foreach(Member m in jsonresult.members)
+            progressGuildMembers.IsActive = false;
+            foreach (Member m in jsonresult.members)
             {
                 m.character.thumbnail = "http://render-api-eu.worldofwarcraft.com/static-render/eu/" + m.character.thumbnail;
                 gridView.Items.Add(m.character);
@@ -78,12 +80,15 @@ namespace Lizzard.World_of_Warcraft
         {
             try
             {
+                progressGuildActivity.IsActive = true;
+                progressGuildMembers.IsActive = true;
                 guildName = txtGuildName.Text;
                 realm = txtRealm.Text;
                 loadGuildActivity();
                 loadMembers();
                 textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
             }
             catch
             {

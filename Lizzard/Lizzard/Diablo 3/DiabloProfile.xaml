@@ -71,6 +71,8 @@
         	<Run FontSize="29.333" Text="Information"/>
         </TextBlock>
         <TextBlock x:Name="txtCareerInfo" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="#FF891212" FontSize="24" Text="" Visibility="Visible"/>
+        <ProgressRing x:Name="ringInfo" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="223" Width="223" Foreground="#FF4C0505" IsActive="True" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Transparent"/>
+        <ProgressRing x:Name="ringCharacters" Grid.Column="4" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="223" Width="223" Foreground="#FF4C0505" IsActive="True" Background="Transparent" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
 
     </Grid>
