@@ -43,14 +43,14 @@
                 Click="btnBack_Click" />
         <Button x:Name="btnProfile"
                 Content="Profile"
-                Grid.Column="2"
+                Grid.Column="3"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FFD6C005"
                 Foreground="#FF223D99"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Grid.ColumnSpan="2" Click="btnProfile_Click" />
+                Margin="10" FontWeight="Bold" Click="btnProfile_Click" />
         <Button x:Name="btnSearch"
                 Content="Ladder"
                 Grid.Column="4"
@@ -60,7 +60,7 @@
                 Background="#FFD6C005"
                 Foreground="#FF223D99"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Grid.ColumnSpan="2" />
+                Margin="10" FontWeight="Bold" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Starcraft II"

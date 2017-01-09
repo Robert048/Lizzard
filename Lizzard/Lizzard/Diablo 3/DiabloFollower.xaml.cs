@@ -34,20 +34,26 @@ namespace Lizzard.Diablo_3
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            
             if(e.Parameter.ToString() == "templar")
             {
                 followerName = e.Parameter.ToString();
                 imgFollowerSet.Source = new BitmapImage(new Uri("http://www.diablowiki.net/images/9/90/Templarportrait.jpg", UriKind.Absolute));
+                ringIcon.IsActive = false;
             }
             if (e.Parameter.ToString() == "scoundrel")
             {
                 followerName = e.Parameter.ToString();
                 imgFollowerSet.Source = new BitmapImage(new Uri("http://www.diablowiki.net/images/4/49/Scoundrel-portrait.png", UriKind.Absolute));
+                ringIcon.IsActive = false;
+
             }
             if (e.Parameter.ToString() == "enchantress")
             {
                 followerName = e.Parameter.ToString();
                 imgFollowerSet.Source = new BitmapImage(new Uri("http://www.diablowiki.net/images/6/61/Enchantress-portrait.png", UriKind.Absolute));
+                ringIcon.IsActive = false;
+
             }
             loadFollowerData();
         }
@@ -58,6 +64,8 @@ namespace Lizzard.Diablo_3
             var result = await call.get("/data/follower/" + followerName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
 
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFollower>(result);
+            ringSkills.IsActive = false;
+
             foreach (Active skill in jsonresult.skills.active)
             {
                 skill.icon = "http://media.blizzard.com/d3/icons/skills/64/" + skill.icon +".png";

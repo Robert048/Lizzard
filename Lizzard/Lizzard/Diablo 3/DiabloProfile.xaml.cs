@@ -47,6 +47,7 @@ namespace Lizzard.Diablo_3
 
             var result = await call.get("/profile/" + user.tag + "/?locale=" + user.region + "&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
+            ringInfo.IsActive = false;
             txtCareerInfo.Text =
                 "BattleTag: " + jsonresult.battleTag + Environment.NewLine +
                 "Paragon level: " + jsonresult.paragonLevel + Environment.NewLine +
@@ -69,6 +70,7 @@ namespace Lizzard.Diablo_3
             D3Api call = new D3Api();
             var result = await call.get("/profile/" + "RedZerg%231884" + "/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
+            ringCharacters.IsActive = false;
             foreach (Hero h in jsonresult.heroes)
             {
                 if (h.@class == "barbarian")

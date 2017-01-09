@@ -175,6 +175,9 @@
     <Compile Include="World of Warcraft\Mounts.xaml.cs">
       <DependentUpon>Mounts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="World of Warcraft\RealmStatus.xaml.cs">
+      <DependentUpon>RealmStatus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="World of Warcraft\WoWApi.cs" />
     <Compile Include="World of Warcraft\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -190,6 +193,9 @@
     <Content Include="Assets\d3Ench.png" />
     <Content Include="Assets\d3Scoun.png" />
     <Content Include="Assets\d3Temp.png" />
+    <Content Include="Assets\ProtossIcon.png" />
+    <Content Include="Assets\TerranIcon.png" />
+    <Content Include="Assets\ZergIcon.png" />
     <Content Include="Images\d3.png" />
     <Content Include="Images\hots.png" />
     <Content Include="Images\hs.png" />
@@ -303,6 +309,10 @@
     <Page Include="World of Warcraft\Profile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="World of Warcraft\RealmStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup />

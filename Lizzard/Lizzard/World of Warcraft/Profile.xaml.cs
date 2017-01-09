@@ -65,6 +65,8 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
+            ringInfo.IsActive = false;
+
             txtProfile.Text =
                 "Name: " + jsonresult.name + Environment.NewLine +
                 "Level: " + jsonresult.level.ToString() + Environment.NewLine +
@@ -76,6 +78,7 @@ namespace Lizzard.World_of_Warcraft
 
         private async void loadIconProfileData()
         {
+
             WoWApi call = new WoWApi();
             var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
@@ -84,10 +87,10 @@ namespace Lizzard.World_of_Warcraft
 
         private async void loadActivity()
         {
-           
             WoWApi call = new WoWApi();
             var result = await call.get("character/" + realm + "/" + charName + "?fields=feed&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFeed>(result);
+            ringActivity.IsActive = false;
 
             foreach (Feed feed in jsonresult.feed)
             {
@@ -108,6 +111,7 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("character/" + realm + "/" + charName + "?fields=stats&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectStats>(result);
+            ringStats.IsActive = false;
             txtStats.Text =
                 "Health: " + jsonresult.stats.health.ToString() + Environment.NewLine +
                 "Mana: " + jsonresult.stats.power.ToString() + Environment.NewLine +
@@ -124,6 +128,7 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("character/" + realm + "/" + charName + "?fields=items&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectItems>(result);
+            ringItems.IsActive = false;
             txtItems.Text =
                 "Equipped item level: " + jsonresult.items.averageItemLevelEquipped.ToString() + Environment.NewLine +
                 "Item level: " + jsonresult.items.averageItemLevel.ToString() + Environment.NewLine +
@@ -146,6 +151,12 @@ namespace Lizzard.World_of_Warcraft
         {
             try
             {
+                ringItems.IsActive = true;
+                ringStats.IsActive = true;
+                ringActivity.IsActive = true;
+                ringInfo.IsActive = true;
+
+
                 charName = txtCharName.Text;
                 realm = txtRealm.Text;
                 loadProfileData();
