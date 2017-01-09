@@ -70,9 +70,9 @@
         	FontSize="30"
         	Foreground="#FF003265"
         	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20,0,25" />
-        <TextBox x:Name="txtCharName" Grid.Row="3" TextWrapping="Wrap" Text="Name" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184"/>
-        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,0,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1"/>
-        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="Realm" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184"/>
+        <TextBox x:Name="txtCharName" Grid.Row="3" TextWrapping="Wrap" Text="" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184" PlaceholderText="Name" TabIndex="1"/>
+        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,0,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3"/>
+        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184" PlaceholderText="Realm" TabIndex="2"/>
         <TextBlock
         	TextWrapping="Wrap"
         	Text="Character search"
