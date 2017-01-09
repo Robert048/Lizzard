@@ -111,6 +111,9 @@
       <DependentUpon>CreateDeckPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Hearthstone\Data.cs" />
+    <Compile Include="Hearthstone\ManageDeckPage.xaml.cs">
+      <DependentUpon>ManageDeckPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Heroes of the Storm\Api.cs" />
     <Compile Include="Heroes of the Storm\data.cs" />
     <Compile Include="Heroes of the Storm\HeroesPage.xaml.cs">
@@ -122,7 +125,7 @@
     <Compile Include="Heroes of the Storm\StatsPage.xaml.cs">
       <DependentUpon>StatsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ImageConverter.cs" />
+    <Compile Include="Converters.cs" />
     <Compile Include="Overwatch\CompetitivePage.xaml.cs">
       <DependentUpon>CompetitivePage.xaml</DependentUpon>
     </Compile>
@@ -230,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Hearthstone\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hearthstone\ManageDeckPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

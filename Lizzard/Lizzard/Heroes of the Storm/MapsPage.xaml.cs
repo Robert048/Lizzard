@@ -24,7 +24,7 @@ namespace Lizzard.Heroes_of_the_Storm
             var jsonresult = JsonConvert.DeserializeObject<List<Map>>(result);
             foreach (var map in jsonresult)
             {
-                listMaps.Items.Add(map.PrimaryName);
+                listMaps.Items.Add(map);
             }
             progressRing.IsActive = false;
         }
