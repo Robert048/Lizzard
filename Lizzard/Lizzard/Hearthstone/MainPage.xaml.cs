@@ -52,7 +52,6 @@ namespace Lizzard.Hearthstone
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            //check for card file
             Frame.Navigate(typeof(CreateDeckPage));
         }
 
@@ -61,6 +60,11 @@ namespace Lizzard.Hearthstone
             progressRing.IsActive = true;
             btnReload.IsEnabled = false;
             updateCards();
+        }
+
+        private void btnManage_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ManageDeckPage));
         }
     }
 }

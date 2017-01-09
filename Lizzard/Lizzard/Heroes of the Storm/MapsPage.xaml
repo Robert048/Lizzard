@@ -4,6 +4,7 @@
       xmlns:local="using:Lizzard.Heroes_of_the_Storm"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:custom="using:Lizzard"
       mc:Ignorable="d">
 
     <Grid Background="#FF007AF0"
@@ -57,7 +58,34 @@
                   Grid.Column="2"
                   Grid.Row="3"
                   Grid.RowSpan="2"
-                  Grid.ColumnSpan="4" />
+                  Grid.ColumnSpan="4">
+            <ListView.Resources>
+                <DataTemplate x:Key="MapTemplate">
+                    <Grid Height="75"
+                          Width="350">
+                        <Grid.Resources>
+                            <custom:ImageConverterHotsMaps x:Key="converter" />
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImageURL, Converter={StaticResource converter}}"
+                               Stretch="Uniform" />
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="{Binding PrimaryName}"
+                                   d:LayoutOverrides="Width"
+                                   Grid.Column="1"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontSize="20" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <StaticResource ResourceKey="MapTemplate" />
+            </ListView.ItemTemplate>
+        </ListView>
         <ProgressRing x:Name="progressRing"
                       Grid.Column="3"
                       Grid.Row="3"

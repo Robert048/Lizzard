@@ -70,7 +70,8 @@
                 Background="#FF2F67E1"
                 Foreground="#FFFBD163"
                 FontSize="30"
-                Margin="10" />
+                Margin="10"
+                Click="btnManage_Click" />
         <Button x:Name="btnReload"
                 Content="Update cards"
                 Grid.Column="4"
@@ -82,16 +83,6 @@
                 FontSize="30"
                 Margin="10"
                 Click="btnReload_Click" />
-        <Button x:Name="btnStat"
-                Content="4e button"
-                Grid.Column="5"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FF2F67E1"
-                Foreground="#FFFBD163"
-                FontSize="30"
-                Margin="10" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="hearthstone"
