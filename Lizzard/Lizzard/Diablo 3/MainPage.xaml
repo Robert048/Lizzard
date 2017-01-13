@@ -23,7 +23,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
@@ -39,19 +40,9 @@
                 FontSize="30"
                 Foreground="Black"
                 Margin="-10,0,0,0"
-                Click="btnBack_Click" FontWeight="Bold" />
+                Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}" />
         <Button x:Name="btnProfile"
                 Content="Profile"
-                Grid.Column="3"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
-                Background="#FF4C0505"
-                Foreground="Black"
-                FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnProfile_Click" />
-        <Button x:Name="btnFollowers"
-                Content="Followers"
                 Grid.Column="4"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -59,7 +50,17 @@
                 Background="#FF4C0505"
                 Foreground="Black"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" />
+                Margin="10" FontWeight="Bold" Click="btnProfile_Click" Style="{StaticResource DiabloButton}" />
+        <Button x:Name="btnFollowers"
+                Content="Followers"
+                Grid.Column="5"
+                Grid.Row="3"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Background="#FF4C0505"
+                Foreground="Black"
+                FontSize="30"
+                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" Style="{StaticResource DiabloButton}" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"
@@ -67,7 +68,7 @@
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Grid.ColumnSpan="4" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="3"
+        <Rectangle Grid.ColumnSpan="4"
                    Fill="#FF4C0505"
                    Grid.Row="1"
                    Stroke="Black"

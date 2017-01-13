@@ -1,33 +1,21 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Lizzard.Diablo_3
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class DiabloFollower : Page
+    public sealed partial class Follower : Page
     {
         string followerName = "";
 
-        public DiabloFollower()
+        public Follower()
         {
             this.InitializeComponent();
         }
@@ -60,7 +48,7 @@ namespace Lizzard.Diablo_3
 
         public async void loadFollowerData()
         {
-            D3Api call = new D3Api();
+            Api call = new Api();
             var result = await call.get("/data/follower/" + followerName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
 
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFollower>(result);
@@ -76,7 +64,7 @@ namespace Lizzard.Diablo_3
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Diablo_3.DiabloFollowers));
+            Frame.Navigate(typeof(Diablo_3.Followers));
         }
     }
 }
