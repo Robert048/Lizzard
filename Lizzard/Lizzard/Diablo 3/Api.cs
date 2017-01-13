@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Lizzard.Diablo_3
 {
-    class D3Api
+    class Api
     {
         public async Task<string> get(string apiLink)
         {

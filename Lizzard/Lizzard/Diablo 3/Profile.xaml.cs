@@ -1,33 +1,21 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Lizzard.Diablo_3
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Diablo 3 profile page
     /// </summary>
-    public sealed partial class DiabloProfile : Page
+    public sealed partial class Profile : Page
     {
 
         private User user;
         Windows.Storage.ApplicationDataContainer localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
 
-        public DiabloProfile()
+        public Profile()
         {
             this.InitializeComponent();
         }
@@ -40,7 +28,7 @@ namespace Lizzard.Diablo_3
 
         private async void loadCareerInformation()
         {
-            D3Api call = new D3Api();
+            Api call = new Api();
 
             var tag = localSettings.Values["tag"];
             user = new User { tag = (string)localSettings.Values["tag"], region = (string)localSettings.Values["region"]};
@@ -67,7 +55,7 @@ namespace Lizzard.Diablo_3
 
         private async void loadMembers()
         {
-            D3Api call = new D3Api();
+            Api call = new Api();
             var result = await call.get("/profile/" + "RedZerg%231884" + "/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
             ringCharacters.IsActive = false;
