@@ -46,7 +46,7 @@ namespace Lizzard.Heroes_of_the_Storm
             {
                 tag = user.tag.Replace("-", "_");
             }
-            var result = await call.get("Players/" + region + "/" + tag);
+            var result = await call.getApi("Players/" + region + "/" + tag);
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);
             if (jsonresult != null)
             {
