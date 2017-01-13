@@ -133,22 +133,24 @@
             <RowDefinition Height="8*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Lizzard"
                    Foreground="#FF078637"
-                   Grid.ColumnSpan="2"
+                   Grid.ColumnSpan="3"
                    VerticalAlignment="Bottom"
                    FontSize="100" />
         <Button x:Name="btnWOW"
-                Grid.Column="1"
+                Grid.Column="2"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="2"
@@ -157,11 +159,12 @@
                 FontSize="26.667"
                 TabIndex="1"
                 Click="btnWOW_Click"
-                Style="{StaticResource btnMainPage}">
+                Style="{StaticResource btnMainPage}"
+                Grid.ColumnSpan="2">
             <Image Source="Images/World of Warcraft.png" />
         </Button>
         <Button x:Name="btnD3"
-                Grid.Column="2"
+                Grid.Column="4"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="2"
@@ -173,7 +176,7 @@
             <Image Source="Images/Diablo 3.png" />
         </Button>
         <Button x:Name="btnSC2"
-                Grid.Column="3"
+                Grid.Column="5"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="2"
@@ -185,7 +188,7 @@
             <Image Source="Images/StarCraft 2.png" />
         </Button>
         <Button x:Name="btnOW"
-                Grid.Column="1"
+                Grid.Column="2"
                 Margin="10"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
@@ -193,11 +196,12 @@
                 FontSize="26.667"
                 Click="btnOW_Click"
                 Background="#FF078637"
-                Style="{StaticResource btnMainPage}">
+                Style="{StaticResource btnMainPage}"
+                Grid.ColumnSpan="2">
             <Image Source="Images/Overwatch.png" />
         </Button>
         <Button x:Name="btnHS"
-                Grid.Column="2"
+                Grid.Column="4"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="3"
@@ -209,7 +213,7 @@
             <Image Source="Images/Hearthstone.png" />
         </Button>
         <Button x:Name="btnHotS"
-                Grid.Column="3"
+                Grid.Column="5"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="3"
@@ -221,7 +225,7 @@
             <Image Source="Images/Heroes of the Storm.png" />
         </Button>
         <Button x:Name="btnLogout"
-                Grid.Column="5"
+                Grid.Column="7"
                 Margin="10"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right"
@@ -237,7 +241,7 @@
                    Grid.Row="1"
                    Stroke="Black"
                    StrokeThickness="0"
-                   Grid.ColumnSpan="2"
+                   Grid.ColumnSpan="3"
                    Margin="-10,0,0,0" />
     </Grid>
 </Page>
