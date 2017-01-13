@@ -5,6 +5,122 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="btnMainPage"
+               TargetType="Button">
+            <Setter Property="Background"
+                    Value="{ThemeResource ButtonBackground}" />
+            <Setter Property="Foreground"
+                    Value="{ThemeResource ButtonForeground}" />
+            <Setter Property="BorderBrush"
+                    Value="{ThemeResource ButtonBorderBrush}" />
+            <Setter Property="BorderThickness"
+                    Value="{ThemeResource ButtonBorderThemeThickness}" />
+            <Setter Property="Padding"
+                    Value="8,4,8,4" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Left" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+            <Setter Property="FontFamily"
+                    Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontWeight"
+                    Value="Normal" />
+            <Setter Property="FontSize"
+                    Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="UseSystemFocusVisuals"
+                    Value="True" />
+            <Setter Property="FocusVisualMargin"
+                    Value="-3" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid"
+                              Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                                           Storyboard.TargetName="RootGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="#FF223243" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
+                                                                           Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="#FF078637" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{x:Null}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                                           Storyboard.TargetName="RootGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="#FF223243" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
+                                                                           Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="#FF078637" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{x:Null}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background"
+                                                                           Storyboard.TargetName="RootGrid">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource ButtonBackgroundDisabled}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
+                                                                           Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource ButtonBorderBrushDisabled}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
+                                                                           Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                        Value="{ThemeResource ButtonForegroundDisabled}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter"
+                                              AutomationProperties.AccessibilityView="Raw"
+                                              BorderBrush="{TemplateBinding BorderBrush}"
+                                              BorderThickness="{TemplateBinding BorderThickness}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              ContentTransitions="{TemplateBinding ContentTransitions}"
+                                              Content="{TemplateBinding Content}"
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Padding="{TemplateBinding Padding}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid Background="#FF223243"
           BorderThickness="10"
@@ -32,132 +148,19 @@
                    VerticalAlignment="Bottom"
                    FontSize="100" />
         <Button x:Name="btnWOW"
-                Content="World of Warcraft"
                 Grid.Column="1"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="2"
                 VerticalAlignment="Stretch"
-                Background="Black"
+                Background="#FF078637"
                 FontSize="26.667"
                 TabIndex="1"
-                Click="btnWOW_Click">
-            <Button.Resources>
-                <Style x:Key="wowIcon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="images/wow.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="wowIcon" />
-            </Button.Style>
+                Click="btnWOW_Click"
+                Style="{StaticResource btnMainPage}">
+            <Image Source="Images/World of Warcraft.png" />
         </Button>
         <Button x:Name="btnD3"
-                Content="Diablo III"
                 Grid.Column="2"
                 HorizontalAlignment="Stretch"
                 Margin="10"
@@ -165,123 +168,11 @@
                 VerticalAlignment="Stretch"
                 FontSize="26.667"
                 Click="btnD3_Click"
-                Background="Black">
-            <Button.Resources>
-                <Style x:Key="d3Icon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="Images/d3.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="d3Icon" />
-            </Button.Style>
+                Background="#FF078637"
+                Style="{StaticResource btnMainPage}">
+            <Image Source="Images/Diablo 3.png" />
         </Button>
         <Button x:Name="btnSC2"
-                Content="StarCraft II"
                 Grid.Column="3"
                 HorizontalAlignment="Stretch"
                 Margin="10"
@@ -289,246 +180,11 @@
                 VerticalAlignment="Stretch"
                 FontSize="26.667"
                 Click="btnSC2_Click"
-                Background="Black">
-            <Button.Resources>
-                <Style x:Key="sc2Icon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="Images/sc2.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="sc2Icon" />
-            </Button.Style>
-        </Button>
-        <Button x:Name="btnSettings"
-                Content="Settings"
-                Grid.Column="4"
-                Margin="10"
-                Grid.Row="2"
-                VerticalAlignment="Stretch"
-                FontSize="26.667"
-                HorizontalAlignment="Stretch"
-                Background="Black">
-            <Button.Resources>
-                <Style x:Key="settingsIcon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="Images/settings.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="settingsIcon" />
-            </Button.Style>
+                Background="#FF078637"
+                Style="{StaticResource btnMainPage}">
+            <Image Source="Images/StarCraft 2.png" />
         </Button>
         <Button x:Name="btnOW"
-                Content="Overwatch"
                 Grid.Column="1"
                 Margin="10"
                 Grid.Row="3"
@@ -536,123 +192,11 @@
                 HorizontalAlignment="Stretch"
                 FontSize="26.667"
                 Click="btnOW_Click"
-                Background="Black">
-            <Button.Resources>
-                <Style x:Key="owIcon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="Images/ow.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="owIcon" />
-            </Button.Style>
+                Background="#FF078637"
+                Style="{StaticResource btnMainPage}">
+            <Image Source="Images/Overwatch.png" />
         </Button>
         <Button x:Name="btnHS"
-                Content="Hearthstone"
                 Grid.Column="2"
                 HorizontalAlignment="Stretch"
                 Margin="10"
@@ -660,476 +204,34 @@
                 VerticalAlignment="Stretch"
                 FontSize="26.667"
                 Click="btnHS_Click"
-                Background="Black">
-            <Button.Resources>
-                <Style x:Key="hsIcon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="images/hs.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="hsIcon" />
-            </Button.Style>
+                Background="#FF078637"
+                Style="{StaticResource btnMainPage}">
+            <Image Source="Images/Hearthstone.png" />
         </Button>
         <Button x:Name="btnHotS"
-                Content="Heroes of the Storm"
                 Grid.Column="3"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="3"
                 VerticalAlignment="Stretch"
                 FontSize="26.667"
-                Background="Black"
-                Click="btnHotS_Click">
-            <Button.Resources>
-                <Style x:Key="hsIcon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="images/hs.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-                <Style x:Key="hotsIcon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="images/hots.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="hotsIcon" />
-            </Button.Style>
+                Background="#FF078637"
+                Click="btnHotS_Click"
+                Style="{StaticResource btnMainPage}">
+            <Image Source="Images/Heroes of the Storm.png" />
         </Button>
         <Button x:Name="btnLogout"
-                Content="Logout"
-                Grid.Column="4"
+                Grid.Column="5"
                 Margin="10"
-                Grid.Row="3"
-                VerticalAlignment="Stretch"
-                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
                 FontSize="26.667"
-                Background="Black"
+                Background="#FF223243"
                 Click="btnLogout_Click">
-            <Button.Resources>
-                <Style x:Key="logoutIcon"
-                       TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource ButtonBackground}" />
-                    <Setter Property="Foreground"
-                            Value="{ThemeResource ButtonForeground}" />
-                    <Setter Property="BorderBrush"
-                            Value="{ThemeResource ButtonBorderBrush}" />
-                    <Setter Property="BorderThickness"
-                            Value="{ThemeResource ButtonBorderThemeThickness}" />
-                    <Setter Property="Padding"
-                            Value="8,4,8,4" />
-                    <Setter Property="HorizontalAlignment"
-                            Value="Left" />
-                    <Setter Property="VerticalAlignment"
-                            Value="Center" />
-                    <Setter Property="FontFamily"
-                            Value="{ThemeResource ContentControlThemeFontFamily}" />
-                    <Setter Property="FontWeight"
-                            Value="Normal" />
-                    <Setter Property="FontSize"
-                            Value="{ThemeResource ControlContentThemeFontSize}" />
-                    <Setter Property="UseSystemFocusVisuals"
-                            Value="True" />
-                    <Setter Property="FocusVisualMargin"
-                            Value="-3" />
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Grid x:Name="RootGrid"
-                                      Background="#FF078637">
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <Storyboard>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="PointerOver">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPointerOver}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundPressed}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                                </Storyboard>
-                                            </VisualState>
-                                            <VisualState x:Name="Disabled">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonBorderBrushDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground"
-                                                                                   Storyboard.TargetName="ContentPresenter">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="{ThemeResource ButtonForegroundDisabled}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                    <Image x:Name="image"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           Margin="30,20,30,40"
-                                           Stretch="Fill"
-                                           Source="Images/logout.png" />
-                                    <ContentPresenter x:Name="ContentPresenter"
-                                                      AutomationProperties.AccessibilityView="Raw"
-                                                      BorderBrush="{TemplateBinding BorderBrush}"
-                                                      BorderThickness="{TemplateBinding BorderThickness}"
-                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                      ContentTransitions="{TemplateBinding ContentTransitions}"
-                                                      Content="{TemplateBinding Content}"
-                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      Padding="{TemplateBinding Padding}"
-                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                      VerticalAlignment="Bottom"
-                                                      HorizontalAlignment="Left"
-                                                      Foreground="#FF223243" />
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="logoutIcon" />
-            </Button.Style>
+            <Image x:Name="image"
+                   Height="100"
+                   Width="100"
+                   Source="Images/logout2.png" />
         </Button>
         <Rectangle Fill="#FF078637"
                    Grid.Row="1"
