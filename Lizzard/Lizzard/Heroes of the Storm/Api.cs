@@ -6,12 +6,24 @@ namespace Lizzard.Heroes_of_the_Storm
 {
     class Api
     {
-        public async Task<string> get(string apiLink)
+        public async Task<string> getApi(string apiLink)
         {
             var result = "";
             using (var client = new HttpClient())
             {
                 var uri = new Uri("https://api.hotslogs.com/Public/" + apiLink);
+                var response = await client.GetAsync(uri);
+                result = await response.Content.ReadAsStringAsync();
+            }
+            return result;
+        }
+
+        public async Task<string> getData(string apiLink)
+        {
+            var result = "";
+            using (var client = new HttpClient())
+            {
+                var uri = new Uri("https://www.hotslogs.com/API/" + apiLink);
                 var response = await client.GetAsync(uri);
                 result = await response.Content.ReadAsStringAsync();
             }

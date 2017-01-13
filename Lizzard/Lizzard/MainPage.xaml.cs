@@ -57,5 +57,10 @@ namespace Lizzard
             localSettings.Values["platform"] = "";
             Frame.Navigate(typeof(LogInpage));
         }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
