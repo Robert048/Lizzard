@@ -20,7 +20,7 @@ namespace Lizzard.Heroes_of_the_Storm
         private async void getMaps()
         {
             Api call = new Api();
-            var result = await call.get("Data/Maps");
+            var result = await call.getData("Data/Maps");
             var jsonresult = JsonConvert.DeserializeObject<List<Map>>(result);
             foreach (var map in jsonresult)
             {
