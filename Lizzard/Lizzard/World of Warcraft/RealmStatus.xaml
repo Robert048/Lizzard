@@ -12,13 +12,13 @@
           BorderBrush="#FFFF9C00"
           BorderThickness="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition />
-            <RowDefinition Height="11*" />
             <RowDefinition Height="3*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="14*" />
+            <RowDefinition Height="4*" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -51,7 +51,7 @@
         	Background="#FFFF9C00"
         	FontSize="30"
         	Foreground="#FF003265"
-        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,20,0,25" />
+        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
         <TextBlock
         	TextWrapping="Wrap"
         	Text="Realm status"
