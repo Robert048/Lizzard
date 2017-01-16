@@ -157,6 +157,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Starcraft 2\Data.cs" />
+    <Compile Include="Starcraft 2\InputInfo.xaml.cs">
+      <DependentUpon>InputInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Starcraft 2\SC2Api.cs" />
     <Compile Include="Starcraft 2\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -286,6 +289,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Overwatch\QuickPlayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Starcraft 2\InputInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

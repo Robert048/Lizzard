@@ -10,10 +10,10 @@ namespace Lizzard.Starcraft_2
     /// <summary>
     /// StarCraft II mainpage
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class InputPage : Page
     {
 
-        public MainPage()
+        public InputPage()
         {
             this.InitializeComponent();
         }

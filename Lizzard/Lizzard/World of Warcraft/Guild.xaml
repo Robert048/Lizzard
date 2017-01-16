@@ -45,7 +45,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="5*" />
             <ColumnDefinition Width="4*" />
@@ -59,7 +59,7 @@
                    Foreground="#FFFF9C00"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="4" FontWeight="Bold" />
+                   Grid.ColumnSpan="5" FontWeight="Bold" />
         <Rectangle Grid.ColumnSpan="3"
                    Fill="#FFFF9C00"
                    Grid.Row="1"
@@ -87,7 +87,7 @@
         	Foreground="#FF003265"
         	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
         <TextBox x:Name="txtGuildName" Grid.Row="3" TextWrapping="Wrap" Text="" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184" PlaceholderText="Name" TabIndex="1"/>
-        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,0,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3"/>
+        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,250,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184" PlaceholderText="Realm" TabIndex="2"/>
         <TextBlock
         	TextWrapping="Wrap"
