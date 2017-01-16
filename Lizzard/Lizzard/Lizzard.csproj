@@ -164,6 +164,7 @@
     <Compile Include="Starcraft 2\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Starcraft 2\StarcraftUser.cs" />
     <Compile Include="User.cs" />
     <Compile Include="World of Warcraft\Data.cs" />
     <Compile Include="World of Warcraft\MainPage.xaml.cs">
