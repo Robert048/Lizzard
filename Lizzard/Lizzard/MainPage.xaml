@@ -235,7 +235,7 @@
             <Image x:Name="image"
                    Height="100"
                    Width="100"
-                   Source="Images/logout2.png" />
+                   Source="Images/logout.png" />
         </Button>
         <Rectangle Fill="#FF078637"
                    Grid.Row="1"
