@@ -26,7 +26,7 @@ namespace Lizzard
 
         private void btnSC2_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Starcraft_2.MainPage));
+            Frame.Navigate(typeof(Starcraft_2.InputInfo));
         }
 
         private void btnOW_Click(object sender, RoutedEventArgs e)
@@ -58,9 +58,20 @@ namespace Lizzard
             Frame.Navigate(typeof(LogInpage));
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-
+            Grid grid = (Grid)sender;
+            if (grid != null)
+            {
+                if (grid.ActualHeight > grid.ActualWidth)
+                {
+                    VisualStateManager.GoToState(this, "Phone", false);
+                }
+                else
+                {
+                    VisualStateManager.GoToState(this, "Standard", false);
+                }
+            }
         }
     }
 }

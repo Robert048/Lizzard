@@ -124,33 +124,121 @@
 
     <Grid Background="#FF223243"
           BorderThickness="10"
-          BorderBrush="#FF078637">
+          BorderBrush="#FF078637"
+          SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="btnWOW.(Grid.Row)"
+                                Value="3" />
+                        <Setter Target="btnWOW.(Grid.RowSpan)"
+                                Value="1" />
+                        <Setter Target="btnWOW.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="btnWOW.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="btnD3.(Grid.Column)"
+                                Value="6" />
+                        <Setter Target="btnD3.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="btnD3.(Grid.RowSpan)"
+                                Value="1" />
+                        <Setter Target="btnD3.(Grid.Row)"
+                                Value="3" />
+                        <Setter Target="btnSC2.(Grid.Row)"
+                                Value="6" />
+                        <Setter Target="btnSC2.(Grid.RowSpan)"
+                                Value="1" />
+                        <Setter Target="btnSC2.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="btnSC2.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="btnOW.(Grid.Row)"
+                                Value="6" />
+                        <Setter Target="btnOW.(Grid.RowSpan)"
+                                Value="1" />
+                        <Setter Target="btnOW.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="btnOW.(Grid.Column)"
+                                Value="6" />
+                        <Setter Target="btnHS.(Grid.RowSpan)"
+                                Value="2" />
+                        <Setter Target="btnHS.(Grid.Row)"
+                                Value="8" />
+                        <Setter Target="btnHS.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="btnHS.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="btnHotS.(Grid.Row)"
+                                Value="8" />
+                        <Setter Target="btnHotS.(Grid.RowSpan)"
+                                Value="2" />
+                        <Setter Target="btnHotS.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="btnLogout.(FrameworkElement.HorizontalAlignment)"
+                                Value="Right" />
+                        <Setter Target="btnLogout.(FrameworkElement.VerticalAlignment)"
+                                Value="Top" />
+                        <Setter Target="image.(FrameworkElement.Width)"
+                                Value="NaN" />
+                        <Setter Target="image.(FrameworkElement.Height)"
+                                Value="NaN" />
+                        <Setter Target="btnLogout.(Grid.Column)"
+                                Value="8" />
+                        <Setter Target="btnLogout.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="8" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Standard" />
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="8*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock"
+                   Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Lizzard"
                    Foreground="#FF078637"
-                   Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="4"
                    VerticalAlignment="Bottom"
                    FontSize="100" />
         <Button x:Name="btnWOW"
-                Grid.Column="2"
+                Grid.Column="3"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="2"
@@ -160,11 +248,12 @@
                 TabIndex="1"
                 Click="btnWOW_Click"
                 Style="{StaticResource btnMainPage}"
-                Grid.ColumnSpan="2">
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="3">
             <Image Source="Images/World of Warcraft.png" />
         </Button>
         <Button x:Name="btnD3"
-                Grid.Column="4"
+                Grid.Column="5"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="2"
@@ -172,11 +261,12 @@
                 FontSize="26.667"
                 Click="btnD3_Click"
                 Background="#FF078637"
-                Style="{StaticResource btnMainPage}">
+                Style="{StaticResource btnMainPage}"
+                Grid.RowSpan="3">
             <Image Source="Images/Diablo 3.png" />
         </Button>
         <Button x:Name="btnSC2"
-                Grid.Column="5"
+                Grid.Column="6"
                 HorizontalAlignment="Stretch"
                 Margin="10"
                 Grid.Row="2"
@@ -184,49 +274,52 @@
                 FontSize="26.667"
                 Click="btnSC2_Click"
                 Background="#FF078637"
-                Style="{StaticResource btnMainPage}">
+                Style="{StaticResource btnMainPage}"
+                Grid.RowSpan="3">
             <Image Source="Images/StarCraft 2.png" />
         </Button>
         <Button x:Name="btnOW"
-                Grid.Column="2"
+                Grid.Column="3"
                 Margin="10"
-                Grid.Row="3"
+                Grid.Row="5"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 FontSize="26.667"
                 Click="btnOW_Click"
                 Background="#FF078637"
                 Style="{StaticResource btnMainPage}"
-                Grid.ColumnSpan="2">
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="4">
             <Image Source="Images/Overwatch.png" />
         </Button>
         <Button x:Name="btnHS"
-                Grid.Column="4"
+                Grid.Column="5"
                 HorizontalAlignment="Stretch"
                 Margin="10"
-                Grid.Row="3"
+                Grid.Row="5"
                 VerticalAlignment="Stretch"
                 FontSize="26.667"
                 Click="btnHS_Click"
                 Background="#FF078637"
-                Style="{StaticResource btnMainPage}">
+                Style="{StaticResource btnMainPage}"
+                Grid.RowSpan="4">
             <Image Source="Images/Hearthstone.png" />
         </Button>
         <Button x:Name="btnHotS"
-                Grid.Column="5"
+                Grid.Column="6"
                 HorizontalAlignment="Stretch"
                 Margin="10"
-                Grid.Row="3"
+                Grid.Row="5"
                 VerticalAlignment="Stretch"
                 FontSize="26.667"
                 Background="#FF078637"
                 Click="btnHotS_Click"
-                Style="{StaticResource btnMainPage}">
+                Style="{StaticResource btnMainPage}"
+                Grid.RowSpan="4">
             <Image Source="Images/Heroes of the Storm.png" />
         </Button>
         <Button x:Name="btnLogout"
-                Grid.Column="7"
-                Margin="10"
+                Grid.Column="9"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right"
                 FontSize="26.667"
@@ -237,11 +330,12 @@
                    Width="100"
                    Source="Images/logout.png" />
         </Button>
-        <Rectangle Fill="#FF078637"
+        <Rectangle x:Name="rectangle"
+                   Fill="#FF078637"
                    Grid.Row="1"
                    Stroke="Black"
                    StrokeThickness="0"
-                   Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="4"
                    Margin="-10,0,0,0" />
     </Grid>
 </Page>

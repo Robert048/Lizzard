@@ -15,7 +15,6 @@ namespace Lizzard.World_of_Warcraft
     public sealed partial class Profile : Page
     {
         private string charName;
-        private string region;
         private string realm;
 
         public Profile()
@@ -147,7 +146,7 @@ namespace Lizzard.World_of_Warcraft
 
 
 
-        private void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             try
             {
@@ -173,8 +172,9 @@ namespace Lizzard.World_of_Warcraft
             }
             catch
             {
-                //showError();
-
+                var dialog = new MessageDialog("No character found.");
+                await dialog.ShowAsync();
+                Frame.Navigate(typeof(Profile));
             }
         }
     }
