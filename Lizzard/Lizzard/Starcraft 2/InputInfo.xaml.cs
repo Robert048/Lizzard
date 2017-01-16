@@ -26,5 +26,10 @@ namespace Lizzard.Starcraft_2
         {
             this.InitializeComponent();
         }
+
+        private void btnEnterInfo(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }
