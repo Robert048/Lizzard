@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Lizzard.Starcraft_2.InputPage"
+    x:Class="Lizzard.Starcraft_2.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Lizzard.Starcraft_2"
