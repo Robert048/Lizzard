@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
@@ -55,14 +55,14 @@
                Margin="10,0,36,0"
                Width="100"
                Source="Images/testWowIcon.png"
-               Stretch="Fill" RenderTransformOrigin="-15.792,5.118" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" />
-        <TextBlock x:Name="txtProfile" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Collapsed"/>
-        <TextBlock x:Name="textBlock" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="Character Information" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock1" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock2" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="Character Stats" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
-        <TextBlock x:Name="txtStats" Grid.Column="3" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock3" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="Equipped items" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Visible"/>
-        <TextBlock x:Name="txtItems" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
+               Stretch="Fill" RenderTransformOrigin="-15.792,5.118" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" />
+        <TextBlock x:Name="txtProfile" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
+        <TextBlock x:Name="textBlock" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="Character Information" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
+        <TextBlock x:Name="textBlock1" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
+        <TextBlock x:Name="textBlock2" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="Character Stats" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
+        <TextBlock x:Name="txtStats" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
+        <TextBlock x:Name="textBlock3" Grid.Column="5" Grid.Row="4" TextWrapping="Wrap" Text="Equipped items" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Visible"/>
+        <TextBlock x:Name="txtItems" Grid.Column="5" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
         <Button x:Name="btnBack"
         	Content="&lt;"
         	Grid.Row="6"
@@ -70,20 +70,20 @@
         	FontSize="30"
         	Foreground="#FF003265"
         	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
-        <TextBox x:Name="txtCharName" Grid.Row="3" TextWrapping="Wrap" Text="" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184" PlaceholderText="Name" TabIndex="1"/>
-        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,0,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3"/>
-        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184" PlaceholderText="Realm" TabIndex="2"/>
+        <TextBox x:Name="txtCharName" Grid.Row="3" TextWrapping="Wrap" Text="" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184" PlaceholderText="Name" TabIndex="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,250,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184" PlaceholderText="Realm" TabIndex="2" Grid.ColumnSpan="2"/>
         <TextBlock
         	TextWrapping="Wrap"
         	Text="Character search"
         	Foreground="#FFFF9C00"
         	FontSize="48"
         	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <GridView x:Name="gridViewFeed" Grid.Column="2" Grid.Row="5" ItemTemplate="{StaticResource FeedTemplate}" Margin="0,0,15,0"/>
-        <ProgressRing x:Name="ringInfo" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
-        <ProgressRing x:Name="ringActivity" Grid.Column="2" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
-        <ProgressRing x:Name="ringStats" Grid.Column="3" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
-        <ProgressRing x:Name="ringItems" Grid.Column="4" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
+        <GridView x:Name="gridViewFeed" Grid.Column="3" Grid.Row="5" ItemTemplate="{StaticResource FeedTemplate}" Margin="0,0,15,0"/>
+        <ProgressRing x:Name="ringInfo" Grid.Column="2" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
+        <ProgressRing x:Name="ringActivity" Grid.Column="3" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
+        <ProgressRing x:Name="ringStats" Grid.Column="4" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
+        <ProgressRing x:Name="ringItems" Grid.Column="5" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
 
     </Grid>
 </Page>
