@@ -116,6 +116,13 @@
                         </Setter>
                         <Setter Target="button.(Control.FontSize)"
                                 Value="20" />
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="3" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
