@@ -58,9 +58,20 @@ namespace Lizzard
             Frame.Navigate(typeof(LogInpage));
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-
+            Grid grid = (Grid)sender;
+            if (grid != null)
+            {
+                if (grid.ActualHeight > grid.ActualWidth)
+                {
+                    VisualStateManager.GoToState(this, "Phone", false);
+                }
+                else
+                {
+                    VisualStateManager.GoToState(this, "Standard", false);
+                }
+            }
         }
     }
 }

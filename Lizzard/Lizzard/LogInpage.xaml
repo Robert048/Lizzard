@@ -35,16 +35,14 @@
                    Margin="-10,0,0,0"
                    Grid.ColumnSpan="2" />
 
-        <TextBlock Margin="30,0,307,14.008"
-                   TextWrapping="Wrap"
+        <TextBlock TextWrapping="Wrap"
                    Text="Lizzard"
                    Foreground="#FF078637"
-                   Grid.ColumnSpan="3"
-                   VerticalAlignment="Bottom"
+                   Grid.ColumnSpan="2"
                    FontSize="100"
-                   Grid.RowSpan="2" />
-        <Button x:Name="button"
-                Content="Login"
+                   VerticalAlignment="Bottom"
+                   Margin="20,0,0,0" />
+        <Button Content="Login"
                 Grid.Column="3"
                 Grid.Row="5"
                 Background="#FF078637"
