@@ -122,7 +122,8 @@
         </Style>
     </Page.Resources>
 
-    <Grid Background="#FF223243"
+    <Grid x:Name="grid"
+          Background="#FF223243"
           BorderThickness="10"
           BorderBrush="#FF078637"
           SizeChanged="Grid_SizeChanged">
@@ -202,6 +203,69 @@
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Standard" />
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="btnWOW.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnD3.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnSC2.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnHS.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnHotS.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.VerticalAlignment)"
+                                Value="Bottom" />
+                        <Setter Target="textBlock.(FrameworkElement.HorizontalAlignment)"
+                                Value="Stretch" />
+                        <Setter Target="btnOW.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="image.(FrameworkElement.Width)"
+                                Value="NaN" />
+                        <Setter Target="image.(FrameworkElement.Height)"
+                                Value="NaN" />
+                    </VisualState.Setters>
+                </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>

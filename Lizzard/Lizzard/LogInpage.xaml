@@ -6,17 +6,128 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
 
-    <Grid Background="#FF223243"
+    <Grid x:Name="grid"
+          Background="#FF223243"
           BorderThickness="10"
-          BorderBrush="#FF078637">
+          BorderBrush="#FF078637"
+          SizeChanged="grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard" />
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtUsername.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="txtUsername.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="boxRegion.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="boxRegion.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="boxRegion.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,1</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtUsername.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,1</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="button.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>1,10</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="button.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="button.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="button.(Grid.Row)"
+                                Value="6" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="txtUsername.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtUsername.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="txtUsername.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="txtUsername.(FrameworkElement.VerticalAlignment)"
+                                Value="Center" />
+                        <Setter Target="txtUsername.(Control.FontSize)"
+                                Value="13.333" />
+                        <Setter Target="boxRegion.(Control.FontSize)"
+                                Value="13.333" />
+                        <Setter Target="boxRegion.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="boxRegion.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="boxRegion.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="button.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="button.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="button.(Grid.Row)"
+                                Value="6" />
+                        <Setter Target="button.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="button.(Control.FontSize)"
+                                Value="20" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="2*" />
             <RowDefinition Height="8*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="6*" />
             <RowDefinition Height="8*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -28,22 +139,25 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="#FF078637"
+        <Rectangle x:Name="rectangle"
+                   Fill="#FF078637"
                    Grid.Row="1"
                    Stroke="Black"
                    StrokeThickness="0"
                    Margin="-10,0,0,0"
                    Grid.ColumnSpan="2" />
 
-        <TextBlock TextWrapping="Wrap"
+        <TextBlock x:Name="textBlock"
+                   TextWrapping="Wrap"
                    Text="Lizzard"
                    Foreground="#FF078637"
                    Grid.ColumnSpan="2"
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Margin="20,0,0,0" />
-        <Button Content="Login"
-                Grid.Column="3"
+        <Button x:Name="button"
+                Content="Login"
+                Grid.Column="2"
                 Grid.Row="5"
                 Background="#FF078637"
                 FontSize="30"
@@ -51,24 +165,28 @@
                 VerticalAlignment="Stretch"
                 TabIndex="3"
                 Foreground="#FF223243"
-                Click="button_Click" />
+                Click="button_Click"
+                Margin="5"
+                Grid.ColumnSpan="3" />
         <TextBox x:Name="txtUsername"
-                 Grid.Column="3"
+                 Grid.Column="2"
                  Margin="0,5"
                  Grid.Row="3"
                  TextWrapping="Wrap"
                  Text=""
                  PlaceholderText="Battletag"
                  FontSize="20"
-                 TabIndex="1" />
+                 TabIndex="1"
+                 Grid.ColumnSpan="3" />
         <ComboBox x:Name="boxRegion"
-                  Grid.Column="3"
+                  Grid.Column="2"
                   Grid.Row="4"
                   HorizontalAlignment="Stretch"
                   VerticalAlignment="Stretch"
                   PlaceholderText="Region/platform"
                   Margin="0,5"
-                  FontSize="20" />
+                  FontSize="20"
+                  Grid.ColumnSpan="3" />
 
     </Grid>
 </Page>

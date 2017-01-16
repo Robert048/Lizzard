@@ -67,6 +67,10 @@ namespace Lizzard
                 {
                     VisualStateManager.GoToState(this, "Phone", false);
                 }
+                else if (grid.ActualWidth < 1024)
+                {
+                    VisualStateManager.GoToState(this, "Tablet", false);
+                }
                 else
                 {
                     VisualStateManager.GoToState(this, "Standard", false);
