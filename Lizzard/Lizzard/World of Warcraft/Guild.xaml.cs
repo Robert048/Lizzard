@@ -16,7 +16,6 @@ namespace Lizzard.World_of_Warcraft
     public sealed partial class Guild : Page
     {
         private string guildName;
-        private string region;
         private string realm;
         public Guild()
         {
