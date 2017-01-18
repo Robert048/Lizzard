@@ -9,7 +9,8 @@
     <Grid x:Name="grid"
           Background="#FF43484C"
           BorderBrush="#FFF99E1A"
-          BorderThickness="10">
+          BorderThickness="10"
+          SizeChanged="grid_SizeChanged">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="Standard" />
