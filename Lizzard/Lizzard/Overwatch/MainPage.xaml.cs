@@ -37,11 +37,15 @@ namespace Lizzard.Overwatch
             var result = await call.get(user.platform + "/" + user.region + "/" + user.tag + "/profile");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectProfile>(result);
             data = jsonresult.data;
-            if (data.avatar != null && data.username != null)
+            if (data != null)
             {
-                image.Source = new BitmapImage(new Uri(data.avatar, UriKind.Absolute));
-                txtData.Text = data.username + System.Environment.NewLine + "Level: " + data.level;
-                progressRing.IsActive = false;
+
+                if (data.avatar != null && data.username != null)
+                {
+                    image.Source = new BitmapImage(new Uri(data.avatar, UriKind.Absolute));
+                    txtData.Text = data.username + System.Environment.NewLine + "Level: " + data.level;
+                    progressRing.IsActive = false;
+                }
             }
         }
 

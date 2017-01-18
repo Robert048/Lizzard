@@ -6,9 +6,95 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
 
-    <Grid Background="#FF43484C"
+    <Grid x:Name="grid"
+          Background="#FF43484C"
           BorderBrush="#FFF99E1A"
           BorderThickness="10">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard" />
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="image.(Grid.Column)"
+                                Value="10" />
+                        <Setter Target="image.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(Grid.Column)"
+                                Value="8" />
+                        <Setter Target="txtData.(Grid.ColumnSpan)"
+                                Value="2" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="9" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="image.(Grid.Column)"
+                                Value="10" />
+                        <Setter Target="image.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(Grid.Column)"
+                                Value="8" />
+                        <Setter Target="txtData.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="txtData.(TextBlock.FontSize)"
+                                Value="13.333" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
@@ -20,13 +106,18 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="12*" />
-            <ColumnDefinition Width="12*" />
-            <ColumnDefinition Width="24*" />
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
@@ -39,21 +130,23 @@
                 Foreground="#FF43484C"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" />
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock"
+                   Margin="20,0,0,0"
                    TextWrapping="Wrap"
-                   Text="competitive"
+                   Text="Competitive"
                    Foreground="#FFF99E1A"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="3" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="6" />
+        <Rectangle x:Name="rectangle"
+                   Grid.ColumnSpan="4"
                    Fill="#FFF99E1A"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
         <Image x:Name="image"
-               Grid.Column="7"
+               Grid.Column="11"
                Height="100"
                Margin="0,20,20,0"
                Width="100"
@@ -61,7 +154,7 @@
                Source="Images/ow.png"
                Stretch="Fill" />
         <TextBlock x:Name="txtData"
-                   Grid.Column="5"
+                   Grid.Column="10"
                    Margin="0,20,20,0"
                    TextWrapping="Wrap"
                    Text=""
@@ -84,7 +177,7 @@
                   Grid.Row="3"
                   Grid.RowSpan="2"
                   Grid.Column="1"
-                  Grid.ColumnSpan="5"
+                  Grid.ColumnSpan="10"
                   ItemTemplate="{StaticResource DataTemplate}">
         </GridView>
     </Grid>
