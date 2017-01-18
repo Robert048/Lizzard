@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
@@ -85,8 +86,8 @@ namespace Lizzard.World_of_Warcraft
                 realm = txtRealm.Text;
                 loadGuildActivity();
                 loadMembers();
-                textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                //textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                //textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
 
             }
             catch
@@ -103,6 +104,26 @@ namespace Lizzard.World_of_Warcraft
             parameters.realm = ((TextBlock)sender).Tag.ToString();
 
             Frame.Navigate(typeof(Profile), parameters);
+        }
+
+        private void Grid_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+        {
+            Grid grid = (Grid)sender;
+            if (grid != null)
+            {
+                if (grid.ActualHeight > grid.ActualWidth)
+                {
+                    VisualStateManager.GoToState(this, "Phone", false);
+                }
+                else if (grid.ActualWidth < 1024)
+                {
+                    VisualStateManager.GoToState(this, "Tablet", false);
+                }
+                else
+                {
+                    VisualStateManager.GoToState(this, "Standard", false);
+                }
+            }
         }
     }
 }
