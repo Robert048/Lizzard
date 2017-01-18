@@ -13,11 +13,18 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="6*" />
+
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -25,42 +32,45 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="11"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FF4C0505"
                 FontSize="30"
                 Foreground="Black"
                 Margin="-10,0,0,0"
-                Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}" />
+                Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}" Grid.RowSpan="2" />
         <Button x:Name="btnProfile"
                 Content="Profile"
                 Grid.Column="4"
-                Grid.Row="3"
+                Grid.Row="4"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF4C0505"
                 Foreground="Black"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnProfile_Click" Style="{StaticResource DiabloButton}" />
+                Margin="10" FontWeight="Bold" Click="btnProfile_Click" Style="{StaticResource DiabloButton}" Grid.ColumnSpan="2" Grid.RowSpan="3" />
         <Button x:Name="btnFollowers"
                 Content="Followers"
-                Grid.Column="5"
-                Grid.Row="3"
+                Grid.Column="6"
+                Grid.Row="4"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF4C0505"
                 Foreground="Black"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" Style="{StaticResource DiabloButton}" />
+                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" Style="{StaticResource DiabloButton}" Grid.RowSpan="3" Grid.ColumnSpan="2" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"
