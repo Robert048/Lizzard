@@ -6,67 +6,161 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FF003265"
+    <Grid x:Name="grid" Background="#FF003265"
           BorderBrush="#FFFF9C00"
-          BorderThickness="10">
+          BorderThickness="10" SizeChanged="grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)" Value="10"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)" Value="8"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="60"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="btnProfile.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="btnProfile.(Grid.Row)" Value="3"/>
+                        <Setter Target="btnProfile.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="btnProfile.(Grid.Column)" Value="1"/>
+                        <Setter Target="btnSearch.(Grid.Row)" Value="6"/>
+                        <Setter Target="btnSearch.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="btnSearch.(Grid.Column)" Value="1"/>
+                        <Setter Target="btnSearch.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="btnMounts.(Grid.Row)" Value="3"/>
+                        <Setter Target="btnMounts.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="btnMounts.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="btnRealmStatus.(Grid.Column)" Value="6"/>
+                        <Setter Target="btnRealmStatus.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="btnRealmStatus.(Grid.Row)" Value="6"/>
+                        <Setter Target="btnRealmStatus.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="btnProfile.(Control.FontSize)" Value="20"/>
+                        <Setter Target="btnSearch.(Control.FontSize)" Value="20"/>
+                        <Setter Target="btnMounts.(Control.FontSize)" Value="20"/>
+                        <Setter Target="btnRealmStatus.(Control.FontSize)" Value="20"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnProfile.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnSearch.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnMounts.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnRealmStatus.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
+
             <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="3*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="11"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FFFF9C00"
                 FontSize="30"
                 Foreground="#FF003265"
                 Margin="0"
-                Click="btnBack_Click" FontWeight="Bold" />
+                Click="btnBack_Click" FontWeight="Bold" Grid.RowSpan="2" />
         <Button x:Name="btnProfile"
                 Content="Search character"
                 Grid.Column="2"
-                Grid.Row="3"
+                Grid.Row="4"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FFFF9C00"
                 Foreground="#FF003265"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnProfile_Click" />
+                Margin="10" FontWeight="Bold" Click="btnProfile_Click" Grid.RowSpan="3" Grid.ColumnSpan="2" />
         <Button x:Name="btnSearch"
                 Content="Search guild"
-                Grid.Column="3"
-                Grid.Row="3"
+                Grid.Column="4"
+                Grid.Row="4"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FFFF9C00"
                 Foreground="#FF003265"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnSearch_Click" />
-        <TextBlock Margin="20,0,0,0"
+                Margin="10" FontWeight="Bold" Click="btnSearch_Click" Grid.RowSpan="3" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="textBlock" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="World of  Warcraft"
                    Foreground="#FFFF9C00"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="4" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="6" FontWeight="Bold" />
+        <Rectangle x:Name="rectangle" Grid.ColumnSpan="4"
                    Fill="#FFFF9C00"
                    Grid.Row="1"
                    Stroke="Black"
@@ -78,24 +172,24 @@
                Stretch="Fill" Margin="10,10,11,77" />
         <Button x:Name="btnMounts"
         	Content="Mounts"
-        	Grid.Column="4"
-        	Grid.Row="3"
+        	Grid.Column="6"
+        	Grid.Row="4"
         	VerticalAlignment="Stretch"
         	HorizontalAlignment="Stretch"
         	Background="#FFFF9C00"
         	Foreground="#FF003265"
         	FontSize="30"
-        	Margin="10" FontWeight="Bold" Click="btnAllMounts" />
+        	Margin="10" FontWeight="Bold" Click="btnAllMounts" Grid.RowSpan="3" Grid.ColumnSpan="2" />
         <Button x:Name="btnRealmStatus"
         	Content="Realm status"
-        	Grid.Column="5"
-        	Grid.Row="3"
+        	Grid.Column="8"
+        	Grid.Row="4"
         	VerticalAlignment="Stretch"
         	HorizontalAlignment="Stretch"
         	Background="#FFFF9C00"
         	Foreground="#FF003265"
         	FontSize="30"
-        	Margin="10,10,9,10" FontWeight="Bold" Click="btnRealmPage" />
+        	Margin="10" FontWeight="Bold" Click="btnRealmPage" Grid.RowSpan="3" Grid.ColumnSpan="2" />
 
     </Grid>
 </Page>

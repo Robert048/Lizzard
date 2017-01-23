@@ -50,5 +50,25 @@ namespace Lizzard.World_of_Warcraft
         {
             Frame.Navigate(typeof(MainPage));
         }
+
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Grid grid = (Grid)sender;
+            if (grid != null)
+            {
+                if (grid.ActualHeight > grid.ActualWidth)
+                {
+                    VisualStateManager.GoToState(this, "Phone", false);
+                }
+                else if (grid.ActualWidth < 1024)
+                {
+                    VisualStateManager.GoToState(this, "Tablet", false);
+                }
+                else
+                {
+                    VisualStateManager.GoToState(this, "Standard", false);
+                }
+            }
+        }
     }
 }

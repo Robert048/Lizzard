@@ -23,56 +23,83 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="28"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FF4C0505"
                 FontSize="30"
                 Foreground="Black"
                 Margin="-10,0,0,0"
-                Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}" />
+                Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}" Grid.RowSpan="2" />
         <TextBlock Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"
                    Foreground="#FF4C0505"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="4" FontWeight="Bold" />
+                   Grid.ColumnSpan="10" FontWeight="Bold" />
         <Rectangle Grid.ColumnSpan="3"
                    Fill="#FF4C0505"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <GridView x:Name="gridView" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="2" ItemTemplate="{StaticResource D3Hero}"/>
+        <GridView x:Name="gridView" Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="7" Grid.RowSpan="18" ItemTemplate="{StaticResource D3Hero}"/>
         <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="53,80,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="tBlock1" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Characters" FontSize="32" Foreground="#FF4C0505" FontWeight="Bold" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,15"/>
-        <TextBlock x:Name="tBlock1_Copy" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" FontSize="24" Foreground="#FF4C0505" FontWeight="Bold" Visibility="Visible" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,15">
-        	<Run FontSize="32" Text="Career "/>
-        	<Run FontSize="29.333" Text="Information"/>
+        <TextBlock x:Name="tBlock1" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="Characters" FontSize="32" Foreground="#FF4C0505" FontWeight="Bold" Visibility="Visible" Margin="0" Grid.RowSpan="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="tBlock1_Copy" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" FontSize="32" Foreground="#FF4C0505" FontWeight="Bold" Visibility="Visible" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Margin="0" Grid.RowSpan="4">
+        	<Run Text="Career "/>
+        	<Run Text="Information"/>
         </TextBlock>
-        <TextBlock x:Name="txtCareerInfo" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="#FF891212" FontSize="24" Text="" Visibility="Visible"/>
-        <ProgressRing x:Name="ringInfo" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="223" Width="223" Foreground="#FF4C0505" IsActive="True" Grid.ColumnSpan="2" Grid.RowSpan="2" Background="Transparent"/>
-        <ProgressRing x:Name="ringCharacters" Grid.Column="4" HorizontalAlignment="Center" Margin="0" Grid.Row="3" VerticalAlignment="Center" Height="223" Width="223" Foreground="#FF4C0505" IsActive="True" Background="Transparent" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBlock x:Name="txtCareerInfo" Grid.Column="1" Grid.Row="9" TextWrapping="Wrap" Foreground="#FF891212" FontSize="32" Text="" Visibility="Visible" Margin="0" Grid.ColumnSpan="3" Grid.RowSpan="18"/>
+        <ProgressRing x:Name="ringInfo" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" Grid.Row="13" VerticalAlignment="Stretch" Foreground="#FF4C0505" IsActive="True" Grid.ColumnSpan="2" Grid.RowSpan="11" Background="Transparent"/>
+        <ProgressRing x:Name="ringCharacters" Grid.Column="4" HorizontalAlignment="Stretch" Margin="0" Grid.Row="13" VerticalAlignment="Stretch" Foreground="#FF4C0505" IsActive="True" Background="Transparent" Grid.ColumnSpan="2" Grid.RowSpan="11"/>
 
 
     </Grid>

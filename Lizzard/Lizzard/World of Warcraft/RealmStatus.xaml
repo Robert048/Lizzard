@@ -14,22 +14,49 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="3*" />
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="14*" />
-            <RowDefinition Height="4*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <TextBlock Margin="20,0,0,0"
@@ -38,7 +65,7 @@
                    Foreground="#FFFF9C00"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="4" FontWeight="Bold" />
+                   Grid.ColumnSpan="10" FontWeight="Bold" />
         <Rectangle Grid.ColumnSpan="3"
                    Fill="#FFFF9C00"
                    Grid.Row="1"
@@ -47,18 +74,18 @@
                    StrokeThickness="0" />
         <Button x:Name="btnBack"
         	Content="&lt;"
-        	Grid.Row="6"
+        	Grid.Row="28"
         	Background="#FFFF9C00"
         	FontSize="30"
         	Foreground="#FF003265"
-        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
+        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Grid.RowSpan="2" />
         <TextBlock
         	TextWrapping="Wrap"
         	Text="Realm status"
         	Foreground="#FFFF9C00"
         	FontSize="48"
-        	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <GridView x:Name="gridView" Grid.Column="1" Grid.Row="3" Grid.RowSpan="3" Grid.ColumnSpan="6" Margin="0,10,0,0">
+        	Grid.ColumnSpan="5" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="3" />
+        <GridView x:Name="gridView" Grid.Column="1" Grid.Row="6" Grid.RowSpan="21" Grid.ColumnSpan="10" Margin="0,10,0,0">
             <GridView.Resources>
                 <DataTemplate x:Key="MountTemplate">
                     <Border BorderBrush="#FFFF9C00" BorderThickness="2">
