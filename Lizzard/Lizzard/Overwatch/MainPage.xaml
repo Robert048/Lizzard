@@ -6,34 +6,195 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
 
-    <Grid Background="#FF43484C"
+    <Grid x:Name="grid"
+          Background="#FF43484C"
           BorderBrush="#FFF99E1A"
-          BorderThickness="10">
+          BorderThickness="10"
+          SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.Text)"
+                                Value="Overwatch" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="5" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="8" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="btnLifetime.(Grid.Row)"
+                                Value="3" />
+                        <Setter Target="btnLifetime.(Grid.RowSpan)"
+                                Value="2" />
+                        <Setter Target="btnLifetime.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="btnLifetime.(Grid.Column)"
+                                Value="4" />
+                        <Setter Target="btnHeroesQuick.(Grid.Row)"
+                                Value="7" />
+                        <Setter Target="btnHeroesQuick.(Grid.Column)"
+                                Value="4" />
+                        <Setter Target="btnHeroesQuick.(Grid.RowSpan)"
+                                Value="2" />
+                        <Setter Target="btnHeroesComp.(Grid.Column)"
+                                Value="4" />
+                        <Setter Target="btnHeroesComp.(Grid.Row)"
+                                Value="10" />
+                        <Setter Target="btnHeroesComp.(Grid.RowSpan)"
+                                Value="3" />
+                        <Setter Target="btnHeroesQuick.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="btnHeroesComp.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="textBlock.(TextBlock.Text)"
+                                Value="Overwatch" />
+                        <Setter Target="txtData.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="txtData.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,20,20,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(FrameworkElement.HorizontalAlignment)"
+                                Value="Center" />
+                        <Setter Target="progressRing.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="progressRing.(FrameworkElement.VerticalAlignment)"
+                                Value="Stretch" />
+                        <Setter Target="progressRing.(FrameworkElement.HorizontalAlignment)"
+                                Value="Stretch" />
+                        <Setter Target="progressRing.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="progressRing.(Grid.Column)"
+                                Value="9" />
+                        <Setter Target="image.(Grid.Column)"
+                                Value="9" />
+                        <Setter Target="image.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="image.(FrameworkElement.VerticalAlignment)"
+                                Value="Bottom" />
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnLifetime.(Control.FontSize)"
+                                Value="20" />
+                        <Setter Target="btnHeroesQuick.(Control.FontSize)"
+                                Value="20" />
+                        <Setter Target="btnHeroesComp.(Control.FontSize)"
+                                Value="20" />
+                        <Setter Target="txtData.(TextBlock.FontSize)"
+                                Value="13.333" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnLifetime.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnHeroesQuick.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnHeroesComp.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnBack.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(TextBlock.Text)"
+                                Value="Overwatch" />
+                        <Setter Target="txtData.(TextBlock.FontSize)"
+                                Value="13.333" />
+                        <Setter Target="btnLifetime.(Control.FontSize)"
+                                Value="20" />
+                        <Setter Target="btnHeroesQuick.(Control.FontSize)"
+                                Value="20" />
+                        <Setter Target="btnHeroesComp.(Control.FontSize)"
+                                Value="20" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="6*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="12"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FFF99E1A"
@@ -41,11 +202,12 @@
                 FontWeight="Bold"
                 Foreground="#FF43484C"
                 Margin="-10,0,0,0"
-                Click="btnBack_Click" />
+                Click="btnBack_Click"
+                Grid.RowSpan="2" />
         <Button x:Name="btnLifetime"
                 Content="Lifetime stats"
                 Grid.Column="3"
-                Grid.Row="3"
+                Grid.Row="4"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FFF99E1A"
@@ -53,44 +215,50 @@
                 FontSize="30"
                 Margin="10"
                 Click="btnLifetime_Click"
-                Grid.ColumnSpan="2" />
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="4" />
         <Button x:Name="btnHeroesQuick"
                 Content="Hero stats &#10;Quick play"
                 Grid.Column="5"
-                Grid.Row="3"
+                Grid.Row="4"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FFF99E1A"
                 Foreground="#FF43484C"
                 FontSize="30"
                 Margin="10"
-                Click="btnHeroesQuick_Click" />
+                Click="btnHeroesQuick_Click"
+                Grid.RowSpan="4" />
         <Button x:Name="btnHeroesComp"
                 Content="Hero stats &#10;Competitive"
                 Grid.Column="6"
-                Grid.Row="3"
+                Grid.Row="4"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FFF99E1A"
                 Foreground="#FF43484C"
                 FontSize="30"
                 Margin="10"
-                Click="btnHeroesComp_Click" />
-        <TextBlock Margin="20,0,0,0"
+                Click="btnHeroesComp_Click"
+                Grid.RowSpan="4"
+                Grid.ColumnSpan="2" />
+        <TextBlock x:Name="textBlock"
+                   Margin="20,0,0,0"
                    TextWrapping="Wrap"
-                   Text="overwatch"
+                   Text="Overwatch"
                    Foreground="#FFF99E1A"
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Grid.ColumnSpan="4" />
-        <Rectangle Grid.ColumnSpan="4"
+        <Rectangle x:Name="rectangle"
+                   Grid.ColumnSpan="4"
                    Fill="#FFF99E1A"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
         <Image x:Name="image"
-               Grid.Column="9"
+               Grid.Column="10"
                Height="100"
                Margin="0,20,20,0"
                Width="100"
@@ -98,7 +266,7 @@
                Source="Images/ow.png"
                Stretch="Fill" />
         <TextBlock x:Name="txtData"
-                   Grid.Column="8"
+                   Grid.Column="9"
                    Margin="0,20,20,0"
                    TextWrapping="Wrap"
                    Text="Waiting for response"
@@ -108,7 +276,7 @@
                    Foreground="#FFF99E1A"
                    FontWeight="Bold" />
         <ProgressRing x:Name="progressRing"
-                      Grid.Column="9"
+                      Grid.Column="10"
                       HorizontalAlignment="Left"
                       Margin="0,30,0,0"
                       VerticalAlignment="Top"

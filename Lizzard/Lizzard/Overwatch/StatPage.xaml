@@ -6,32 +6,200 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
 
-    <Grid Background="#FF43484C"
+    <Grid x:Name="grid"
+          Background="#FF43484C"
           BorderBrush="#FFF99E1A"
-          BorderThickness="10">
+          BorderThickness="10"
+          SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard" />
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="8" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="textBlock1.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="txtQuickPlay.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="txtQuickPlay.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="textBlock2.(Grid.Column)"
+                                Value="6" />
+                        <Setter Target="textBlock2.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="txtCompetitive.(Grid.Column)"
+                                Value="6" />
+                        <Setter Target="txtCompetitive.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="textBlock3.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="txtAchievements.(Grid.ColumnSpan)"
+                                Value="10" />
+                        <Setter Target="progressRing.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(TextBlock.FontSize)"
+                                Value="13.333" />
+                        <Setter Target="txtCompetitive.(Grid.RowSpan)"
+                                Value="10" />
+                        <Setter Target="txtQuickPlay.(Grid.RowSpan)"
+                                Value="10" />
+                        <Setter Target="textBlock3.(Grid.Row)"
+                                Value="17" />
+                        <Setter Target="textBlock3.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="txtAchievements.(Grid.Row)"
+                                Value="20" />
+                        <Setter Target="txtAchievements.(Grid.RowSpan)"
+                                Value="6" />
+                        <Setter Target="txtAchievements.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="textBlock1.(TextBlock.FontSize)"
+                                Value="26.667" />
+                        <Setter Target="textBlock2.(TextBlock.FontSize)"
+                                Value="26.667" />
+                        <Setter Target="textBlock3.(TextBlock.FontSize)"
+                                Value="26.667" />
+                        <Setter Target="textBlock1.(FrameworkElement.HorizontalAlignment)"
+                                Value="Left" />
+                        <Setter Target="textBlock1.(FrameworkElement.VerticalAlignment)"
+                                Value="Center" />
+                        <Setter Target="textBlock2.(FrameworkElement.VerticalAlignment)"
+                                Value="Center" />
+                        <Setter Target="textBlock3.(FrameworkElement.VerticalAlignment)"
+                                Value="Center" />
+                        <Setter Target="progressRing.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="progressRing.(Grid.Row)"
+                                Value="20" />
+                        <Setter Target="progressRing.(Grid.RowSpan)"
+                                Value="4" />
+                        <Setter Target="image.(Grid.Column)"
+                                Value="10" />
+                        <Setter Target="image.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(Grid.Column)"
+                                Value="8" />
+                        <Setter Target="txtData.(Grid.ColumnSpan)"
+                                Value="2" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="8" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="image.(Grid.Column)"
+                                Value="10" />
+                        <Setter Target="image.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtData.(Grid.Column)"
+                                Value="8" />
+                        <Setter Target="txtData.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,10,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="6*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
             <RowDefinition Height="4*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="12*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="16*" />
-            <ColumnDefinition Width="16*" />
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="27"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FFF99E1A"
@@ -40,21 +208,23 @@
                 Foreground="#FF43484C"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" />
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock"
+                   Margin="20,0,0,0"
                    TextWrapping="Wrap"
-                   Text="lifetime stats"
+                   Text="Lifetime stats"
                    Foreground="#FFF99E1A"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="3" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="6" />
+        <Rectangle x:Name="rectangle"
+                   Grid.ColumnSpan="4"
                    Fill="#FFF99E1A"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
         <Image x:Name="image"
-               Grid.Column="7"
+               Grid.Column="11"
                Height="100"
                Margin="0,20,20,0"
                Width="100"
@@ -62,7 +232,7 @@
                Source="Images/ow.png"
                Stretch="Fill" />
         <TextBlock x:Name="txtData"
-                   Grid.Column="6"
+                   Grid.Column="10"
                    Margin="0,20,20,0"
                    TextWrapping="Wrap"
                    Text=""
@@ -72,69 +242,81 @@
                    Foreground="#FFF99E1A"
                    FontWeight="Bold" />
         <ProgressRing x:Name="progressRing"
-                      Grid.Column="5"
-                      HorizontalAlignment="Left"
-                      Margin="0,30,0,0"
-                      VerticalAlignment="Top"
+                      Grid.Column="8"
+                      HorizontalAlignment="Center"
+                      Margin="0"
+                      VerticalAlignment="Center"
                       IsActive="True"
                       Foreground="#FFF99E1A"
                       Width="40"
                       Height="40"
-                      Grid.Row="3" />
-        <TextBlock Grid.Column="2"
-                   Grid.Row="2"
+                      Grid.Row="8"
+                      Grid.ColumnSpan="2" />
+        <TextBlock x:Name="textBlock1"
+                   Grid.Column="2"
+                   Grid.Row="4"
                    TextWrapping="Wrap"
                    Text="Quick play"
                    Foreground="#FFF99E1A"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
                    FontSize="40"
-                   Grid.ColumnSpan="2" />
+                   Grid.ColumnSpan="2"
+                   Grid.RowSpan="3"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom" />
         <TextBlock x:Name="txtQuickPlay"
                    Grid.Column="2"
-                   Grid.Row="3"
+                   Grid.Row="8"
                    TextWrapping="Wrap"
                    Text=""
-                   Margin="0,10,0,0"
+                   Margin="0"
                    FontSize="20"
                    Foreground="#FFF99E1A"
-                   Grid.ColumnSpan="2" />
-        <TextBlock Grid.Column="4"
-                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Grid.RowSpan="17" />
+        <TextBlock x:Name="textBlock2"
+                   Grid.Column="5"
+                   Grid.Row="4"
                    TextWrapping="Wrap"
                    Text="Competitive"
                    Foreground="#FFF99E1A"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
                    FontSize="40"
-                   Margin="10,0,0,0"
-                   Grid.RowSpan="2" />
+                   Margin="0"
+                   Grid.RowSpan="3"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   Grid.ColumnSpan="2" />
         <TextBlock x:Name="txtCompetitive"
-                   Grid.Column="4"
-                   Grid.Row="3"
+                   Grid.Column="5"
+                   Grid.Row="8"
                    TextWrapping="Wrap"
                    Text=""
-                   Margin="0,10,0,0"
+                   Margin="0"
                    FontSize="20"
-                   Foreground="#FFF99E1A" />
-        <TextBlock Grid.Column="5"
-                   Grid.Row="1"
+                   Foreground="#FFF99E1A"
+                   Grid.RowSpan="17"
+                   Grid.ColumnSpan="2" />
+        <TextBlock x:Name="textBlock3"
+                   Grid.Column="8"
+                   Grid.Row="4"
                    TextWrapping="Wrap"
                    Text="Achievements"
                    Foreground="#FFF99E1A"
-                   VerticalAlignment="Bottom"
-                   HorizontalAlignment="Left"
                    FontSize="40"
                    Margin="0"
-                   Grid.RowSpan="2" />
+                   Grid.RowSpan="3"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Bottom"
+                   Grid.ColumnSpan="2" />
         <TextBlock x:Name="txtAchievements"
-                   Grid.Column="5"
-                   Grid.Row="3"
+                   Grid.Column="8"
                    TextWrapping="Wrap"
                    Text=""
-                   Margin="0,10,0,0"
+                   Margin="0"
                    FontSize="20"
-                   Foreground="#FFF99E1A" />
+                   Foreground="#FFF99E1A"
+                   Grid.RowSpan="17"
+                   Grid.Row="8"
+                   Grid.ColumnSpan="2" />
 
     </Grid>
 </Page>
