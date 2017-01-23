@@ -29,74 +29,143 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Grid Background="#FF003265"
+    <Grid x:Name="grid" Background="#FF003265"
           BorderBrush="#FFFF9C00"
-          BorderThickness="10">
+          BorderThickness="10" SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard"/>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="60"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="progressGuildMembers.(Grid.Row)" Value="7"/>
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="txtGuildName.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="txtRealm.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="btnSearch.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="textBlock2.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="gridView.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="textBlock3.(Grid.Column)" Value="6"/>
+                        <Setter Target="textBlock3.(Grid.ColumnSpan)" Value="5"/>
+                        <Setter Target="gridViewNews.(Grid.Column)" Value="6"/>
+                        <Setter Target="gridViewNews.(Grid.ColumnSpan)" Value="5"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="5"/>
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="3*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="15*" />
-            <RowDefinition Height="4*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="5*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="World of  Warcraft"
                    Foreground="#FFFF9C00"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="5" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="10" FontWeight="Bold" />
+        <Rectangle x:Name="rectangle" Grid.ColumnSpan="4"
                    Fill="#FFFF9C00"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <Image x:Name="image"
-               Height="100"
-               Margin="10,0,36,0"
-               Width="100"
-               Source="Images/testWowIcon.png"
-               Stretch="Fill" RenderTransformOrigin="-15.792,5.118" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" />
-        <Image x:Name="imgChar" Grid.Column="1" Grid.Row="3"/>
-        <TextBlock x:Name="textBlock1" Grid.Column="5" Grid.Row="4" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock3" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Visible">
+        <TextBlock x:Name="textBlock3" Grid.Column="9" Grid.Row="3" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock2" Grid.Column="1" Grid.Row="12" TextWrapping="Wrap" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Visible" Grid.RowSpan="2">
         	<Run Text="Guild Members"/>
         	<LineBreak/>
         	<Run/>
         </TextBlock>
         <Button x:Name="btnBack"
         	Content="&lt;"
-        	Grid.Row="6"
+        	Grid.Row="28"
         	Background="#FFFF9C00"
         	FontSize="30"
         	Foreground="#FF003265"
-        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
-        <TextBox x:Name="txtGuildName" Grid.Row="3" TextWrapping="Wrap" Text="" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184" PlaceholderText="Name" TabIndex="1"/>
-        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,250,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184" PlaceholderText="Realm" TabIndex="2"/>
-        <TextBlock
+        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Grid.RowSpan="2" />
+        <TextBox x:Name="txtGuildName" Grid.Row="5" TextWrapping="Wrap" Text="" Grid.Column="1" Margin="0" PlaceholderText="Name" TabIndex="1" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
+        <Button x:Name="btnSearch" Content="Search" Grid.Row="9" VerticalAlignment="Bottom" Margin="0" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="" Margin="0" PlaceholderText="Realm" TabIndex="2" Grid.ColumnSpan="2" VerticalAlignment="Center" Grid.RowSpan="2"/>
+        <TextBlock x:Name="textBlock1"
         	TextWrapping="Wrap"
         	Text="Guild search"
         	Foreground="#FFFF9C00"
         	FontSize="48"
-        	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <GridView x:Name="gridView" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" ItemTemplate="{StaticResource DataTemplate1}"/>
-        <GridView x:Name="gridViewNews" Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="3" ItemTemplate="{StaticResource GuildNewsTemplate}"/>
+        	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="2" />
+        <GridView x:Name="gridView" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="7" ItemTemplate="{StaticResource DataTemplate1}" Grid.RowSpan="13"/>
+        <GridView x:Name="gridViewNews" Grid.Column="9" Grid.Row="5" Grid.ColumnSpan="3" ItemTemplate="{StaticResource GuildNewsTemplate}" Grid.RowSpan="22"/>
         <ProgressRing x:Name="progressGuildMembers" Grid.Column="2" HorizontalAlignment="Center" Margin="1,0,0,0" Grid.Row="5" VerticalAlignment="Stretch" Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"/>
         <ProgressRing x:Name="progressGuildActivity" Grid.Column="5" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"/>
 

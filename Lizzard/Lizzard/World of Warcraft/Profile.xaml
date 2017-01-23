@@ -15,36 +15,102 @@
 
     <Grid Background="#FF003265"
           BorderBrush="#FFFF9C00"
-          BorderThickness="10">
+          BorderThickness="10" SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="60"/>
+                        <Setter Target="textBlock4.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="btnSearch.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="image.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="image.(Grid.RowSpan)" Value="5"/>
+                        <Setter Target="image.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="image.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="image.(Grid.Row)" Value="11"/>
+                        <Setter Target="textBlock5.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Standard"/>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock4.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock4.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="5"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="3*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="15*" />
-            <RowDefinition Height="4*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock4" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="World of  Warcraft"
                    Foreground="#FFFF9C00"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="4" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="10" FontWeight="Bold" />
+        <Rectangle x:Name="rectangle" Grid.ColumnSpan="3"
                    Fill="#FFFF9C00"
                    Grid.Row="1"
                    Stroke="Black"
@@ -55,31 +121,31 @@
                Margin="10,0,36,0"
                Width="100"
                Source="Images/testWowIcon.png"
-               Stretch="Fill" RenderTransformOrigin="-15.792,5.118" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" />
-        <TextBlock x:Name="txtProfile" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Text="Character Information" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock1" Grid.Column="3" Grid.Row="4" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock2" Grid.Column="4" Grid.Row="4" TextWrapping="Wrap" Text="Character Stats" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible"/>
-        <TextBlock x:Name="txtStats" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
-        <TextBlock x:Name="textBlock3" Grid.Column="5" Grid.Row="4" TextWrapping="Wrap" Text="Equipped items" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Grid.ColumnSpan="2" Visibility="Visible"/>
-        <TextBlock x:Name="txtItems" Grid.Column="5" Grid.Row="5" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible"/>
+               Stretch="Fill" RenderTransformOrigin="-15.792,5.118" Grid.Row="12" HorizontalAlignment="Center" VerticalAlignment="Top" d:LayoutOverrides="HorizontalAlignment, LeftPosition, RightPosition" />
+        <TextBlock x:Name="txtProfile" Grid.Column="1" Grid.Row="12" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible" Grid.RowSpan="14" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock" Grid.Column="1" Grid.Row="9" TextWrapping="Wrap" Text="Character Information" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock1" Grid.Column="3" Grid.Row="9" TextWrapping="Wrap" Text="Recent activity" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock2" Grid.Column="5" Grid.Row="9" TextWrapping="Wrap" Text="Character Stats" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="txtStats" Grid.Column="5" Grid.Row="12" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible" Grid.ColumnSpan="2" Grid.RowSpan="14"/>
+        <TextBlock x:Name="textBlock3" Grid.Column="7" Grid.Row="9" TextWrapping="Wrap" Text="Equipped items" FontSize="24" Foreground="#FFFF9C00" FontWeight="Bold" Visibility="Visible" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="txtItems" Grid.Column="7" Grid.Row="12" TextWrapping="Wrap" Text="" Foreground="#FFFF9C00" FontSize="24" Visibility="Visible" Grid.RowSpan="14" Grid.ColumnSpan="2"/>
         <Button x:Name="btnBack"
         	Content="&lt;"
-        	Grid.Row="6"
+        	Grid.Row="28"
         	Background="#FFFF9C00"
         	FontSize="30"
         	Foreground="#FF003265"
-        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
-        <TextBox x:Name="txtCharName" Grid.Row="3" TextWrapping="Wrap" Text="" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,115" HorizontalAlignment="Left" Width="184" PlaceholderText="Name" TabIndex="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnSearch" Content="Search" Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,250,15" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="1" TabIndex="3" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="0,35,0,80" HorizontalAlignment="Left" Width="184" PlaceholderText="Realm" TabIndex="2" Grid.ColumnSpan="2"/>
-        <TextBlock
+        	Click="btnBack_Click" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Grid.RowSpan="2" />
+        <TextBox x:Name="txtCharName" Grid.Row="5" TextWrapping="Wrap" Text="" Grid.Column="1" Margin="0" PlaceholderText="Name" TabIndex="1" Grid.ColumnSpan="3" VerticalAlignment="Center"/>
+        <Button x:Name="btnSearch" Content="Search" Grid.Row="5" VerticalAlignment="Stretch" Margin="10,0,0,0" Background="#FFFF9C00" RenderTransformOrigin="0.646,-0.109" HorizontalAlignment="Stretch" Click="btnSearch_Click" Grid.Column="4" TabIndex="3" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtRealm" Grid.Column="1" Grid.Row="7" TextWrapping="Wrap" Text="" Margin="0" PlaceholderText="Realm" TabIndex="2" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="textBlock5"
         	TextWrapping="Wrap"
         	Text="Character search"
         	Foreground="#FFFF9C00"
         	FontSize="48"
-        	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
-        <GridView x:Name="gridViewFeed" Grid.Column="3" Grid.Row="5" ItemTemplate="{StaticResource FeedTemplate}" Margin="0,0,15,0"/>
+        	Grid.ColumnSpan="4" FontWeight="Bold" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="2" />
+        <GridView x:Name="gridViewFeed" Grid.Column="3" Grid.Row="12" ItemTemplate="{StaticResource FeedTemplate}" Margin="0,0,15,0" Grid.RowSpan="14" Grid.ColumnSpan="2"/>
         <ProgressRing x:Name="ringInfo" Grid.Column="2" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
         <ProgressRing x:Name="ringActivity" Grid.Column="3" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
         <ProgressRing x:Name="ringStats" Grid.Column="4" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Foreground="#FFFF9C00" Height="136" Width="136"/>
