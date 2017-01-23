@@ -167,9 +167,8 @@
         <GridView x:Name="gridView"
                   Grid.Row="3"
                   Grid.RowSpan="2"
-                  Grid.Column="1"
                   Grid.ColumnSpan="10"
-                  ItemTemplate="{StaticResource DataTemplate}">
-        </GridView>
+                  ItemTemplate="{StaticResource DataTemplate}"
+                  Grid.Column="1" />
     </Grid>
 </Page>
