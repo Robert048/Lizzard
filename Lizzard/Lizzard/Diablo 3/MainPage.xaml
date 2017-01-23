@@ -7,43 +7,85 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Black"
+    <Grid x:Name="grid" Background="Black"
           BorderBrush="#FF4C0505"
-          BorderThickness="10">
+          BorderThickness="10" SizeChanged="grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)" Value="10"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)" Value="10"/>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="5"/>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)" Value="10"/>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-
-            <RowDefinition Height="5*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="5*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="11"
+                Grid.Row="28"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FF4C0505"
@@ -54,31 +96,31 @@
         <Button x:Name="btnProfile"
                 Content="Profile"
                 Grid.Column="4"
-                Grid.Row="4"
+                Grid.Row="10"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF4C0505"
                 Foreground="Black"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnProfile_Click" Style="{StaticResource DiabloButton}" Grid.ColumnSpan="2" Grid.RowSpan="3" />
+                Margin="10" FontWeight="Bold" Click="btnProfile_Click" Style="{StaticResource DiabloButton}" Grid.ColumnSpan="2" Grid.RowSpan="12" />
         <Button x:Name="btnFollowers"
                 Content="Followers"
                 Grid.Column="6"
-                Grid.Row="4"
+                Grid.Row="10"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF4C0505"
                 Foreground="Black"
                 FontSize="30"
-                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" Style="{StaticResource DiabloButton}" Grid.RowSpan="3" Grid.ColumnSpan="2" />
-        <TextBlock Margin="20,0,0,0"
+                Margin="10" FontWeight="Bold" Click="btnFollowers_Click" Style="{StaticResource DiabloButton}" Grid.RowSpan="12" Grid.ColumnSpan="2" />
+        <TextBlock x:Name="textBlock" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"
                    Foreground="#FF4C0505"
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Grid.ColumnSpan="4" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="4"
+        <Rectangle x:Name="rectangle" Grid.ColumnSpan="4"
                    Fill="#FF4C0505"
                    Grid.Row="1"
                    Stroke="Black"
