@@ -23,28 +23,53 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="29"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FF4C0505"
@@ -66,7 +91,7 @@
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
         <TextBlock Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Choose a follower" Grid.ColumnSpan="4" Foreground="#FF4C0505" FontSize="85.333" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom"/>
-        <Image x:Name="imgTemplar" Grid.Column="3" Grid.Row="3" Source="ms-appx:///Assets/d3Temp.png" Tapped="imgTemplar_Tapped" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgTemplar" Grid.Column="3" Grid.Row="10" Source="ms-appx:///Assets/d3Temp.png" Tapped="imgTemplar_Tapped" Grid.ColumnSpan="2" Grid.RowSpan="12"/>
         <Image x:Name="imgScoundrel" Grid.Column="5" Grid.Row="3" Source="ms-appx:///Assets/d3Scoun.png" Tapped="imgScoundrel_Tapped"/>
         <Image x:Name="imgEnchantress" Grid.Column="6" Grid.Row="3" Source="ms-appx:///Assets/d3Ench.png" Tapped="imgEnchantress_Tapped"/>
 
