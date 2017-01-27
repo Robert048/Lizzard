@@ -26,10 +26,10 @@ namespace Lizzard.World_of_Warcraft
             WoWApi call = new WoWApi();
             var result = await call.get("guild/" + realm + "/" + guildName + "?fields=news%2Cchallenge&");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectGuildNews>(result);
-            progressGuildActivity.IsActive = false;
-            progressGuildMembers.IsActive = false;
             if (jsonresult.name != null)
             {
+                loadMembers();
+                progressGuildMembers.IsActive = false;
                 foreach (News news in jsonresult.news)
                 {
                     if (news.type == "itemLoot")
@@ -42,7 +42,7 @@ namespace Lizzard.World_of_Warcraft
                         gridViewNews.Items.Add(news);
                     }
                 }
-                loadMembers();
+                progressGuildActivity.IsActive = false;
             }
         }
 
