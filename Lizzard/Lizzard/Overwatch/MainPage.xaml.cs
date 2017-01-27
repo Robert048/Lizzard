@@ -52,6 +52,11 @@ namespace Lizzard.Overwatch
                     progressRing.IsActive = false;
                 }
             }
+            else
+            {
+                txtData.Text = "BattleTag and region combination does not exist";
+                progressRing.IsActive = false;
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
