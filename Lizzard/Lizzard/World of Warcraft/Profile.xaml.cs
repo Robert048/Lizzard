@@ -23,7 +23,6 @@ namespace Lizzard.World_of_Warcraft
             this.InitializeComponent();
         }
 
-
         /// <summary>
         /// When navigated from the guild search page already insert and load the specific character to search for
         /// </summary>
@@ -59,7 +58,7 @@ namespace Lizzard.World_of_Warcraft
             var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             ringInfo.IsActive = false;
-            if (jsonresult != null)
+            if (jsonresult.name != null)
             {
                 txtProfile.Text =
                     "Name: " + jsonresult.name + Environment.NewLine +
@@ -178,9 +177,6 @@ namespace Lizzard.World_of_Warcraft
                 charName = txtCharName.Text;
                 realm = txtRealm.Text;
                 loadProfileData();
-                loadIconProfileData();
-                loadActivity();
-                loadStats();
                 loadItems(); txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
