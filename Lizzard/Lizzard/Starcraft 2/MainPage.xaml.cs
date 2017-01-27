@@ -27,6 +27,9 @@ namespace Lizzard.Starcraft_2
             loadProfileInformation();
         }
 
+        /// <summary>
+        /// Load all profile information with the use of an API Call. Insert all profile information on the page.
+        /// </summary>
         private async void loadProfileInformation()
         {
             try {
