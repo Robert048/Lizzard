@@ -27,17 +27,22 @@ namespace Lizzard.World_of_Warcraft
             var result = await call.get("guild/" + realm + "/" + guildName + "?fields=news%2Cchallenge&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectGuildNews>(result);
             progressGuildActivity.IsActive = false;
-            foreach (News news in jsonresult.news)
+            if (jsonresult.name != null)
             {
-                if (news.type == "itemLoot")
-                {
-                    call = new WoWApi();
-                    var itemResult = await call.get("item/" + news.itemId.ToString() + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
-                    var jsonresults = JsonConvert.DeserializeObject<RootObjectItem>(itemResult);
 
-                    news.type = news.character + " has recieved " + jsonresults.name;  
-                    gridViewNews.Items.Add(news);
+                foreach (News news in jsonresult.news)
+                {
+                    if (news.type == "itemLoot")
+                    {
+                        call = new WoWApi();
+                        var itemResult = await call.get("item/" + news.itemId.ToString() + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+                        var jsonresults = JsonConvert.DeserializeObject<RootObjectItem>(itemResult);
+
+                        news.type = news.character + " has recieved " + jsonresults.name;
+                        gridViewNews.Items.Add(news);
+                    }
                 }
+                loadMembers();
             }
         }
 
@@ -68,6 +73,7 @@ namespace Lizzard.World_of_Warcraft
                 m.character.thumbnail = "http://render-api-eu.worldofwarcraft.com/static-render/eu/" + m.character.thumbnail;
                 gridView.Items.Add(m.character);
             }
+
         }
 
         private void btnBack_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -85,8 +91,6 @@ namespace Lizzard.World_of_Warcraft
                 guildName = txtGuildName.Text;
                 realm = txtRealm.Text;
                 loadGuildActivity();
-                loadMembers();
-
             }
             catch
             {
