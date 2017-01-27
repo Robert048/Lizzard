@@ -19,7 +19,26 @@
 
     <Grid Background="Black"
           BorderBrush="#FF4C0505"
-          BorderThickness="10">
+          BorderThickness="10" SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard"/>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)" Value="10"/>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)" Value="11"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
@@ -77,23 +96,23 @@
                 Foreground="Black"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}" />
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"
                    Foreground="#FF4C0505"
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Grid.ColumnSpan="4" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="4"
+        <Rectangle x:Name="rectangle" Grid.ColumnSpan="4"
                    Fill="#FF4C0505"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <TextBlock Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Choose a follower" Grid.ColumnSpan="4" Foreground="#FF4C0505" FontSize="85.333" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="textBlock1" Grid.Row="2" TextWrapping="Wrap" Text="Choose a follower" Grid.ColumnSpan="12" Foreground="#FF4C0505" FontSize="60" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Bottom" Grid.RowSpan="6"/>
         <Image x:Name="imgTemplar" Grid.Column="3" Grid.Row="10" Source="ms-appx:///Assets/d3Temp.png" Tapped="imgTemplar_Tapped" Grid.ColumnSpan="2" Grid.RowSpan="12"/>
-        <Image x:Name="imgScoundrel" Grid.Column="5" Grid.Row="3" Source="ms-appx:///Assets/d3Scoun.png" Tapped="imgScoundrel_Tapped"/>
-        <Image x:Name="imgEnchantress" Grid.Column="6" Grid.Row="3" Source="ms-appx:///Assets/d3Ench.png" Tapped="imgEnchantress_Tapped"/>
+        <Image x:Name="imgScoundrel" Grid.Column="5" Grid.Row="10" Source="ms-appx:///Assets/d3Scoun.png" Tapped="imgScoundrel_Tapped" Grid.RowSpan="12" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgEnchantress" Grid.Column="7" Grid.Row="10" Source="ms-appx:///Assets/d3Ench.png" Tapped="imgEnchantress_Tapped" Grid.RowSpan="12" Grid.ColumnSpan="2"/>
 
 
     </Grid>

@@ -21,6 +21,21 @@
                     <VisualState.Setters>
                         <Setter Target="textBlock.(Grid.ColumnSpan)" Value="10"/>
                         <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="btnProfile.(Grid.Column)" Value="4"/>
+                        <Setter Target="btnFollowers.(Grid.Column)" Value="4"/>
+                        <Setter Target="btnProfile.(Grid.Row)" Value="6"/>
+                        <Setter Target="btnProfile.(Grid.RowSpan)" Value="7"/>
+                        <Setter Target="btnProfile.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="btnFollowers.(Grid.Row)" Value="15"/>
+                        <Setter Target="btnFollowers.(Grid.RowSpan)" Value="7"/>
+                        <Setter Target="btnFollowers.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="btnBack.(Grid.Row)" Value="29"/>
+                        <Setter Target="btnBack.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Tablet">
@@ -30,6 +45,11 @@
                         <Setter Target="grid.(Grid.BorderThickness)">
                             <Setter.Value>
                                 <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,0,0,0</Thickness>
                             </Setter.Value>
                         </Setter>
                     </VisualState.Setters>

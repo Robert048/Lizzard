@@ -9,30 +9,90 @@
 
     <Grid Background="#FF223D99"
           BorderBrush="#FFD6C005"
-          BorderThickness="10">
+          BorderThickness="10" SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard">
+                    <VisualState.Setters>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="4"/>
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)" Value="10"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)" Value="10"/>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="5"/>
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)" Value="10"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="29"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FFD6C005"
@@ -41,42 +101,42 @@
                 Foreground="#FF223D99"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" />
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock1" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Starcraft II"
                    Foreground="#FFD6C005"
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Grid.ColumnSpan="4" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="3"
+        <Rectangle x:Name="rectangle" Grid.ColumnSpan="3"
                    Fill="#FFD6C005"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <TextBlock x:Name="textBlock" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="Profile information" Grid.ColumnSpan="2" Foreground="#FFD6C005" VerticalAlignment="Bottom" FontSize="32" FontWeight="Bold" Margin="0,0,0,15"/>
-        <TextBlock x:Name="txtProfile" Grid.Row="3" TextWrapping="Wrap" Text="" RenderTransformOrigin="-0.016,-0.825" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="#FFD6C005" FontSize="18.667" Grid.Column="1"/>
-        <TextBlock x:Name="textBlock_Copy" Grid.Column="3" Grid.Row="2" TextWrapping="Wrap" Text="Swarm levels" Grid.ColumnSpan="2" Foreground="#FFD6C005" FontSize="32" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,15"/>
-        <TextBlock x:Name="txtTerran" Grid.Column="3" Grid.Row="3" TextWrapping="Wrap" Text="Terran level: " Foreground="#FFD6C005" FontSize="26.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="142,0,0,260"/>
-        <ProgressBar x:Name="prgTerran" Grid.Column="3" Height="34" Margin="0,0,39,81" Grid.Row="3" VerticalAlignment="Bottom" Foreground="#FFD6C005" Width="278" HorizontalAlignment="Center" LargeChange="1"/>
+        <TextBlock x:Name="textBlock" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" Text="Profile information" Grid.ColumnSpan="3" Foreground="#FFD6C005" VerticalAlignment="Bottom" FontSize="32" FontWeight="Bold" Margin="0,0,0,15" Grid.RowSpan="2"/>
+        <TextBlock x:Name="txtProfile" Grid.Row="8" TextWrapping="Wrap" Text="" RenderTransformOrigin="-0.016,-0.825" Grid.ColumnSpan="3" Grid.RowSpan="19" Foreground="#FFD6C005" FontSize="18.667" Grid.Column="1"/>
+        <TextBlock x:Name="textBlock_Copy" Grid.Column="4" Grid.Row="5" TextWrapping="Wrap" Text="Swarm levels" Grid.ColumnSpan="3" Foreground="#FFD6C005" FontSize="32" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,15" Grid.RowSpan="2"/>
+        <TextBlock x:Name="txtTerran" Grid.Column="5" Grid.Row="7" TextWrapping="Wrap" Text="Terran level: " Foreground="#FFD6C005" FontSize="26.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <ProgressBar x:Name="prgTerran" Grid.Column="4" Margin="10,0,25,0" Grid.Row="16" VerticalAlignment="Stretch" Foreground="#FFD6C005" LargeChange="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="image1" Grid.Column="3" HorizontalAlignment="Left" Height="112" Margin="15,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="112" Source="ms-appx:///Assets/TerranIcon.png"/>
-        <TextBlock x:Name="txtTerranLvl" Grid.Column="3" Grid.Row="3" TextWrapping="Wrap" Text="" Foreground="#FFD6C005" FontSize="46.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="142,0,0,204" Height="59" Width="109"/>
-        <TextBlock x:Name="txtTerran_Copy2" Grid.Column="3" Grid.Row="3" TextWrapping="Wrap" Text="Progress to next level:" Foreground="#FFD6C005" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,130"/>
-        <TextBlock x:Name="txtTerran_Copy3" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="Zerg level: " Foreground="#FFD6C005" FontSize="26.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="142,0,0,260"/>
-        <ProgressBar x:Name="prgZerg" Grid.Column="4" Height="34" Margin="0,0,39,81" Grid.Row="3" VerticalAlignment="Bottom" Foreground="#FFD6C005" Width="278" HorizontalAlignment="Center"/>
-        <Image x:Name="image1_Copy" Grid.Column="4" HorizontalAlignment="Left" Height="112" Margin="15,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="112" Source="ms-appx:///Assets/ZergIcon.png"/>
-        <TextBlock x:Name="txtZergLvl" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="" Foreground="#FFD6C005" FontSize="46.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="142,0,0,201" Height="59" Width="109"/>
-        <TextBlock x:Name="txtTerran_Copy5" Grid.Column="4" Grid.Row="3" TextWrapping="Wrap" Text="Progress to next level:" Foreground="#FFD6C005" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,130"/>
-        <TextBlock x:Name="txtTerran_Copy" Grid.Column="5" Grid.Row="3" TextWrapping="Wrap" Text="Protoss level: " Foreground="#FFD6C005" FontSize="26.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="142,0,0,260"/>
-        <ProgressBar x:Name="prgProtoss" Grid.Column="5" Height="34" Margin="0,0,38,81" Grid.Row="3" VerticalAlignment="Bottom" Foreground="#FFD6C005" Width="278" HorizontalAlignment="Center"/>
-        <Image x:Name="image1_Copy1" Grid.Column="5" HorizontalAlignment="Left" Height="112" Margin="15,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="112" Source="ms-appx:///Assets/ProtossIcon.png"/>
-        <TextBlock x:Name="txtProtossLvl" Grid.Column="5" Grid.Row="3" TextWrapping="Wrap" Text="" Foreground="#FFD6C005" FontSize="46.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="142,0,0,201" Height="59" Width="109"/>
-        <TextBlock x:Name="txtTerran_Copy7" Grid.Column="5" Grid.Row="3" TextWrapping="Wrap" Text="Progress to next level:" Foreground="#FFD6C005" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,130"/>
-        <ProgressRing x:Name="prgrsZrg" Grid.Column="4" HorizontalAlignment="Left" Margin="142,61,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="-1.4,-1.15" Height="59" Width="59" Foreground="#FFD6C005" IsActive="True"/>
-        <ProgressRing x:Name="prgrTerran" Grid.Column="3" HorizontalAlignment="Left" Margin="142,61,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="-1.4,-1.15" Height="59" Width="59" Foreground="#FFD6C005" IsActive="True"/>
-        <ProgressRing x:Name="prgrsProt" Grid.Column="5" HorizontalAlignment="Left" Margin="142,61,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="-1.4,-1.15" Height="59" Width="59" Foreground="#FFD6C005" IsActive="True"/>
-        <ProgressRing x:Name="prgrProf" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="-1.4,-1.15" Height="128" Width="128" Foreground="#FFD6C005" IsActive="True"/>
+        <Image x:Name="image1" Grid.Column="4" HorizontalAlignment="Left" Height="112" Margin="15,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="112" Source="ms-appx:///Assets/TerranIcon.png" Grid.RowSpan="6"/>
+        <TextBlock x:Name="txtTerranLvl" Grid.Column="5" Grid.Row="8" TextWrapping="Wrap" Text="" Foreground="#FFD6C005" FontSize="46.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Height="59" Width="109" Grid.RowSpan="5"/>
+        <TextBlock x:Name="txtTerran_Copy2" Grid.Column="4" Grid.Row="12" TextWrapping="Wrap" Text="Progress to next level:" Foreground="#FFD6C005" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="txtTerran_Copy3" Grid.Column="7" Grid.Row="7" TextWrapping="Wrap" Text="Zerg level: " Foreground="#FFD6C005" FontSize="26.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <ProgressBar x:Name="prgZerg" Grid.Column="6" Margin="10,0,25,0" Grid.Row="16" VerticalAlignment="Stretch" Foreground="#FFD6C005" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Image x:Name="image1_Copy" Grid.Column="6" HorizontalAlignment="Left" Height="112" Margin="15,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="112" Source="ms-appx:///Assets/ZergIcon.png" Grid.RowSpan="6"/>
+        <TextBlock x:Name="txtZergLvl" Grid.Column="7" Grid.Row="8" TextWrapping="Wrap" Text="" Foreground="#FFD6C005" FontSize="46.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Height="59" Width="109" Grid.RowSpan="5"/>
+        <TextBlock x:Name="txtTerran_Copy5" Grid.Column="6" Grid.Row="12" TextWrapping="Wrap" Text="Progress to next level:" Foreground="#FFD6C005" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+        <TextBlock x:Name="txtTerran_Copy" Grid.Column="9" Grid.Row="7" TextWrapping="Wrap" Text="Protoss level: " Foreground="#FFD6C005" FontSize="26.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <ProgressBar x:Name="prgProtoss" Grid.Column="8" Margin="10,0,20,0" Grid.Row="16" VerticalAlignment="Stretch" Foreground="#FFD6C005" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Image x:Name="image1_Copy1" Grid.Column="8" HorizontalAlignment="Left" Height="112" Margin="15,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="112" Source="ms-appx:///Assets/ProtossIcon.png" Grid.RowSpan="6"/>
+        <TextBlock x:Name="txtProtossLvl" Grid.Column="9" Grid.Row="8" TextWrapping="Wrap" Text="" Foreground="#FFD6C005" FontSize="46.667" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Height="59" Width="109" Grid.RowSpan="5"/>
+        <TextBlock x:Name="txtTerran_Copy7" Grid.Column="8" Grid.Row="12" TextWrapping="Wrap" Text="Progress to next level:" Foreground="#FFD6C005" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+        <ProgressRing x:Name="prgrsZrg" Grid.Column="7" HorizontalAlignment="Stretch" Margin="0" Grid.Row="10" VerticalAlignment="Stretch" RenderTransformOrigin="-1.4,-1.15" Foreground="#FFD6C005" IsActive="True" Grid.RowSpan="3"/>
+        <ProgressRing x:Name="prgrTerran" Grid.Column="5" HorizontalAlignment="Stretch" Margin="0" Grid.Row="10" VerticalAlignment="Stretch" RenderTransformOrigin="-1.4,-1.15" Foreground="#FFD6C005" IsActive="True" Grid.RowSpan="3"/>
+        <ProgressRing x:Name="prgrsProt" Grid.Column="9" HorizontalAlignment="Stretch" Margin="0" Grid.Row="10" VerticalAlignment="Stretch" RenderTransformOrigin="-1.4,-1.15" Foreground="#FFD6C005" IsActive="True" Grid.RowSpan="3"/>
+        <ProgressRing x:Name="prgrProf" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" Grid.Row="13" VerticalAlignment="Stretch" RenderTransformOrigin="-1.4,-1.15" Foreground="#FFD6C005" IsActive="True" Grid.RowSpan="10" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>
