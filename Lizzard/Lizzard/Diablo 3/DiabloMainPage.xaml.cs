@@ -5,18 +5,13 @@ using Windows.UI.Xaml.Controls;
 namespace Lizzard.Diablo_3
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Diablo 3 main page
     /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        private void textBlock_SelectionChanged(System.Object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

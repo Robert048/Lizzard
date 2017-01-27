@@ -19,7 +19,7 @@ using Windows.UI.Xaml.Navigation;
 namespace Lizzard.World_of_Warcraft
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// World of Warcraft page with a list of all available mounts
     /// </summary>
     public sealed partial class Mounts : Page
     {
@@ -33,6 +33,9 @@ namespace Lizzard.World_of_Warcraft
             loadMounts();
         }
 
+        /// <summary>
+        /// Load all mounts using an API call and inserting it with name and icon into the grid
+        /// </summary>
         private async void loadMounts()
         {
             WoWApi call = new WoWApi();

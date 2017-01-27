@@ -23,10 +23,13 @@ namespace Lizzard.Diablo_3
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            loadMembers();
             loadCareerInformation();
+            loadCharacters();
         }
 
+        /// <summary>
+        /// Load all career information with the use of an API call
+        /// </summary>
         private async void loadCareerInformation()
         {
             Api call = new Api();
@@ -60,9 +63,12 @@ namespace Lizzard.Diablo_3
                 Frame.Navigate(typeof(MainPage));
             }
         }
-            
 
-        private async void loadMembers()
+
+        /// <summary>
+        /// Load all character information bound on the battlenet account with the use of an API call
+        /// </summary>
+        private async void loadCharacters()
         {
             Api call = new Api();
             var tag = localSettings.Values["tag"];

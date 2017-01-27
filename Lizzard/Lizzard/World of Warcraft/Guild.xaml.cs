@@ -1,19 +1,14 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Threading.Tasks;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+
+// World of warcraft guild search page
 
 namespace Lizzard.World_of_Warcraft
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+
     public sealed partial class Guild : Page
     {
         private string guildName;
@@ -23,11 +18,9 @@ namespace Lizzard.World_of_Warcraft
             this.InitializeComponent();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-        }
-
-
+        /// <summary>
+        /// Load all recent guild activity using an API call and insert this information in a grid
+        /// </summary>
         private async void loadGuildActivity()
         {
             WoWApi call = new WoWApi();
@@ -48,6 +41,11 @@ namespace Lizzard.World_of_Warcraft
             }
         }
 
+        /// <summary>
+        /// Load item information with use of item ID and an API call
+        /// </summary>
+        /// <param name="itemId">ID of the item</param>
+        /// <returns>Item object</returns>
         private async Task<RootObjectItem> getItem(int itemId)
         {
             WoWApi call = new WoWApi();
@@ -56,6 +54,9 @@ namespace Lizzard.World_of_Warcraft
             return jsonresult;
         }
 
+        /// <summary>
+        /// Load all guild members using an API call and insert all this information in a grid. The names are clickable and navigate to the character search page.
+        /// </summary>
         private async void loadMembers()
         {
             WoWApi call = new WoWApi();
@@ -75,7 +76,6 @@ namespace Lizzard.World_of_Warcraft
         }
 
 
-
         private void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             try
@@ -86,17 +86,19 @@ namespace Lizzard.World_of_Warcraft
                 realm = txtRealm.Text;
                 loadGuildActivity();
                 loadMembers();
-                //textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                //textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
 
             }
             catch
             {
-                //showError();
-
+                
             }
         }
 
+        /// <summary>
+        /// Navigate to character search page when clicked on a specific name of a guild member in the grid. After loading guild members
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SendGuildMember(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             var parameters = new Character();

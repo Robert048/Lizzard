@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Input;
 namespace Lizzard.Diablo_3
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Diablo 3 choose follower page
     /// </summary>
     public sealed partial class Followers : Page
     {
@@ -18,6 +18,7 @@ namespace Lizzard.Diablo_3
         {
             Frame.Navigate(typeof(MainPage));
         }
+
 
         private void imgTemplar_Tapped(object sender, TappedRoutedEventArgs e)
         {
