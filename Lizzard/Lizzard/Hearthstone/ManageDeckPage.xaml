@@ -6,9 +6,74 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
 
-    <Grid Background="#FFFBD163"
+    <Grid x:Name="grid"
+          Background="#FFFBD163"
           BorderBrush="#FF2F67E1"
-          BorderThickness="10">
+          BorderThickness="10"
+          SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard" />
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="gridView.(Grid.Row)"
+                                Value="2" />
+                        <Setter Target="gridView.(Grid.Column)"
+                                Value="0" />
+                        <Setter Target="gridView.(Grid.RowSpan)"
+                                Value="4" />
+                        <Setter Target="gridView.(Grid.ColumnSpan)"
+                                Value="10" />
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="10" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="8" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="gridView.(Grid.Row)"
+                                Value="2" />
+                        <Setter Target="gridView.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="gridView.(Grid.ColumnSpan)"
+                                Value="8" />
+                        <Setter Target="gridView.(Grid.RowSpan)"
+                                Value="3" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
@@ -24,7 +89,8 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="2*" />
@@ -41,14 +107,16 @@
                 Foreground="#FFFBD163"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" />
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock"
+                   Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Hearthstone"
                    Foreground="#FF2F67E1"
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Grid.ColumnSpan="4" />
-        <Rectangle Grid.ColumnSpan="4"
+        <Rectangle x:Name="rectangle"
+                   Grid.ColumnSpan="4"
                    Fill="#FF2F67E1"
                    Grid.Row="1"
                    Stroke="Black"
