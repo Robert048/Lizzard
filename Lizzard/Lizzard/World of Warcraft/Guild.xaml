@@ -166,8 +166,15 @@
         	Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="2" />
         <GridView x:Name="gridView" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="7" ItemTemplate="{StaticResource DataTemplate1}" Grid.RowSpan="13"/>
         <GridView x:Name="gridViewNews" Grid.Column="9" Grid.Row="5" Grid.ColumnSpan="3" ItemTemplate="{StaticResource GuildNewsTemplate}" Grid.RowSpan="22"/>
-        <ProgressRing x:Name="progressGuildMembers" Grid.Column="2" HorizontalAlignment="Center" Margin="1,0,0,0" Grid.Row="5" VerticalAlignment="Stretch" Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"/>
-        <ProgressRing x:Name="progressGuildActivity" Grid.Column="5" HorizontalAlignment="Center" Margin="0" Grid.Row="5" VerticalAlignment="Center" Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"/>
+        <ProgressRing x:Name="progressGuildMembers" Grid.Column="1" HorizontalAlignment="Center" Margin="0" Grid.Row="15"
+                      VerticalAlignment="Stretch"
+                      Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"
+                      Grid.RowSpan="10" />
+        <ProgressRing x:Name="progressGuildActivity" Grid.Column="9" HorizontalAlignment="Center" Margin="0"
+                      Grid.Row="10"
+                      VerticalAlignment="Stretch"
+                      Height="275" Width="275" Foreground="#FFFF9C00" Grid.ColumnSpan="2"
+                      Grid.RowSpan="10" />
 
     </Grid>
 </Page>

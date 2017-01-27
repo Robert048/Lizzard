@@ -38,7 +38,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadMounts()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("mount/?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("mount/?");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectMount>(result);
             progressMounts.IsActive = false;
             foreach (Mount m in jsonresult.mounts)
