@@ -11,7 +11,7 @@ using Windows.UI.Xaml.Navigation;
 namespace Lizzard.World_of_Warcraft
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// World of Warcraft character search page
     /// </summary>
     public sealed partial class Profile : Page
     {
@@ -23,6 +23,11 @@ namespace Lizzard.World_of_Warcraft
             this.InitializeComponent();
         }
 
+
+        /// <summary>
+        /// When navigated from the guild search page already insert and load the specific character to search for
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -32,25 +37,22 @@ namespace Lizzard.World_of_Warcraft
                 var parameters = (Character)e.Parameter;
                 txtCharName.Text = parameters.name;
                 txtRealm.Text = parameters.realm;
-
                 try
                 {
                     charName = txtCharName.Text;
                     realm = txtRealm.Text;
                     loadProfileData();
-
                 }
                 catch
                 {
-                    //showError();
 
                 }
             }
-
         }
-
-
-
+        
+        /// <summary>
+        /// Load all profile data of the inserted character name
+        /// </summary>
         private async void loadProfileData()
         {
             WoWApi call = new WoWApi();
@@ -83,6 +85,9 @@ namespace Lizzard.World_of_Warcraft
             }
         }
 
+        /// <summary>
+        /// Load character icon of the isnerted character name using an API call
+        /// </summary>
         private async void loadIconProfileData()
         {
 
@@ -92,6 +97,9 @@ namespace Lizzard.World_of_Warcraft
             image.Source = new BitmapImage(new Uri("http://render-api-eu.worldofwarcraft.com/static-render/eu/" + jsonresult.thumbnail));
         }
 
+        /// <summary>
+        /// Load recent activity of the inserted character name using an API call
+        /// </summary>
         private async void loadActivity()
         {
             WoWApi call = new WoWApi();
@@ -113,6 +121,9 @@ namespace Lizzard.World_of_Warcraft
             }
         }
 
+        /// <summary>
+        /// Load all character stats of the inserted character name using an API call
+        /// </summary>
         private async void loadStats()
         {
             WoWApi call = new WoWApi();
@@ -130,6 +141,10 @@ namespace Lizzard.World_of_Warcraft
                 "Haste rating: " + jsonresult.stats.haste.ToString() + Environment.NewLine;
         }
 
+
+        /// <summary>
+        /// Load all items equipped by the inserted character using an API call
+        /// </summary>
         private async void loadItems()
         {
             WoWApi call = new WoWApi();
@@ -151,9 +166,7 @@ namespace Lizzard.World_of_Warcraft
         {
             Frame.Navigate(typeof(MainPage));
         }
-
-
-
+        
         private async void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             try
@@ -162,8 +175,6 @@ namespace Lizzard.World_of_Warcraft
                 ringStats.IsActive = true;
                 ringActivity.IsActive = true;
                 ringInfo.IsActive = true;
-
-
                 charName = txtCharName.Text;
                 realm = txtRealm.Text;
                 loadProfileData();

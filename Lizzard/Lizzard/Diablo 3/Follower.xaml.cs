@@ -9,20 +9,21 @@ using Windows.UI.Xaml.Navigation;
 namespace Lizzard.Diablo_3
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Diablo 3 specific follower page
     /// </summary>
     public sealed partial class Follower : Page
     {
-        string followerName = "";
+        //Name of clicked follower
+        private string followerName = "";
 
         public Follower()
         {
             this.InitializeComponent();
         }
 
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            
             if(e.Parameter.ToString() == "templar")
             {
                 followerName = e.Parameter.ToString();
@@ -49,26 +50,28 @@ namespace Lizzard.Diablo_3
             loadFollowerData();
         }
 
+        /// <summary>
+        /// API call to load all follower data
+        /// </summary>
         public async void loadFollowerData()
         {
             Api call = new Api();
             var result = await call.get("/data/follower/" + followerName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
-
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFollower>(result);
             ringSkills.IsActive = false;
-
             foreach (Active skill in jsonresult.skills.active)
             {
                 skill.icon = "http://media.blizzard.com/d3/icons/skills/64/" + skill.icon +".png";
                 gridView.Items.Add(skill);
             }
-
         }
+
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Diablo_3.Followers));
         }
+
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {

@@ -33,6 +33,9 @@ namespace Lizzard.World_of_Warcraft
             loadRealms();
         }
 
+        /// <summary>
+        /// Load all available game realms using an API call. Shows if the server is online or offline.
+        /// </summary>
         private async void loadRealms()
         {
             WoWApi call = new WoWApi();
