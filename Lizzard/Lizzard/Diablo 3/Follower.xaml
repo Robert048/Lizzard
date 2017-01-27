@@ -97,14 +97,15 @@
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="29"
+                Grid.Row="28"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FF4C0505"
                 FontSize="30"
                 Foreground="Black"
                 Margin="-10,0,0,0"
-                Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}" />
+                Click="btnBack_Click" FontWeight="Bold" Style="{StaticResource DiabloButton}"
+                Grid.RowSpan="2" />
         <TextBlock x:Name="textBlock1" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Diablo III"
