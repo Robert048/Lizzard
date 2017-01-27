@@ -6,7 +6,6 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Lizzard.World_of_Warcraft
 {
@@ -70,13 +69,14 @@ namespace Lizzard.World_of_Warcraft
                 loadIconProfileData();
                 loadActivity();
                 loadStats();
-                loadItems(); txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock2.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                loadItems();
+                txtItems.Visibility = Visibility.Visible;
+                txtProfile.Visibility = Visibility.Visible;
+                txtStats.Visibility = Visibility.Visible;
+                textBlock.Visibility = Visibility.Visible;
+                textBlock1.Visibility = Visibility.Visible;
+                textBlock2.Visibility = Visibility.Visible;
+                textBlock3.Visibility = Visibility.Visible;
             }
             else
             {
@@ -177,13 +177,7 @@ namespace Lizzard.World_of_Warcraft
                 charName = txtCharName.Text;
                 realm = txtRealm.Text;
                 loadProfileData();
-                loadItems(); txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock2.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
             }
             catch
             {
