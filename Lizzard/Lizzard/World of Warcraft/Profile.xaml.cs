@@ -38,16 +38,7 @@ namespace Lizzard.World_of_Warcraft
                     charName = txtCharName.Text;
                     realm = txtRealm.Text;
                     loadProfileData();
-                    loadIconProfileData();
-                    loadActivity();
-                    loadStats();
-                    loadItems(); txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    textBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    textBlock2.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
                 }
                 catch
                 {
@@ -66,14 +57,30 @@ namespace Lizzard.World_of_Warcraft
             var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             ringInfo.IsActive = false;
+            if (jsonresult != null)
+            {
+                txtProfile.Text =
+                    "Name: " + jsonresult.name + Environment.NewLine +
+                    "Level: " + jsonresult.level.ToString() + Environment.NewLine +
+                    "Achievement points: " + jsonresult.achievementPoints.ToString() + Environment.NewLine +
+                    "Total Honorable Kills: " + jsonresult.totalHonorableKills.ToString() + Environment.NewLine +
+                    "Realm: " + jsonresult.realm.ToString();
 
-            txtProfile.Text =
-                "Name: " + jsonresult.name + Environment.NewLine +
-                "Level: " + jsonresult.level.ToString() + Environment.NewLine +
-                "Achievement points: " + jsonresult.achievementPoints.ToString() + Environment.NewLine +
-                "Total Honorable Kills: " + jsonresult.totalHonorableKills.ToString() + Environment.NewLine +
-                "Realm: " + jsonresult.realm.ToString();
-                
+                loadIconProfileData();
+                loadActivity();
+                loadStats();
+                loadItems(); txtItems.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                txtProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                txtStats.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock1.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock2.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                textBlock3.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+            else
+            {
+                txtProfile.Text = "No character found";
+            }
         }
 
         private async void loadIconProfileData()
