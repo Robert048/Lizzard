@@ -80,6 +80,9 @@ namespace Lizzard.World_of_Warcraft
             }
             else
             {
+                ringActivity.IsActive = false;
+                ringStats.IsActive = false;
+                ringItems.IsActive = false;
                 txtProfile.Text = "No character found";
             }
         }
