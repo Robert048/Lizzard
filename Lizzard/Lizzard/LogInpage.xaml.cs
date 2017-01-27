@@ -13,12 +13,14 @@ namespace Lizzard
         public LogInpage()
         {
             this.InitializeComponent();
+            //add Regions the the box
             boxRegion.Items.Add("eu");
             boxRegion.Items.Add("us");
             boxRegion.Items.Add("kr");
             boxRegion.Items.Add("cn");
             boxRegion.Items.Add("xbl");
             boxRegion.Items.Add("psn");
+            //check if usertag already exists and ifso add existing user to fields
             var tag = localSettings.Values["tag"];
             if (tag != null)
             {
@@ -30,6 +32,7 @@ namespace Lizzard
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            //check if fields are not empty
             if (txtUsername.Text != "" && boxRegion.SelectedIndex != -1)
             {
                 string username = txtUsername.Text;
@@ -46,14 +49,11 @@ namespace Lizzard
                 {
                     user = new User { tag = username, region = boxRegion.SelectedValue.ToString(), platform = "pc" };
                 }
+                //store user in localsettings
                 localSettings.Values["tag"] = user.tag;
                 localSettings.Values["region"] = user.region;
                 localSettings.Values["platform"] = user.platform;
                 Frame.Navigate(typeof(MainPage));
-            }
-            else
-            {
-                //implement error message
             }
         }
 

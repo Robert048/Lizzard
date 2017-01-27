@@ -17,6 +17,9 @@ namespace Lizzard.Heroes_of_the_Storm
             getHeroes();
         }
 
+        /// <summary>
+        /// get the hero data and add to the list
+        /// </summary>
         private async void getHeroes()
         {
             Api call = new Api();
