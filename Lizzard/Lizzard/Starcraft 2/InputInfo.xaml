@@ -9,30 +9,94 @@
 
     <Grid Background="#FF223D99"
           BorderBrush="#FFD6C005"
-          BorderThickness="10">
+          BorderThickness="10" SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard">
+                    <VisualState.Setters>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="4"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)" Value="10"/>
+                        <Setter Target="textBlock1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="6"/>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)" Value="2"/>
+                        <Setter Target="btnEnter.(Grid.Row)" Value="16"/>
+                        <Setter Target="txtScId.(Grid.Column)" Value="4"/>
+                        <Setter Target="txtScName.(Grid.Row)" Value="10"/>
+                        <Setter Target="txtScName.(Grid.Column)" Value="4"/>
+                        <Setter Target="txtScName.(Grid.ColumnSpan)" Value="4"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>10,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="textBlock1.(Grid.ColumnSpan)" Value="10"/>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)" Value="5"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="9*" />
-            <RowDefinition Height="9*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="29"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FFD6C005"
@@ -41,34 +105,32 @@
                 Foreground="#FF223D99"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" />
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock1" Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="Starcraft II"
                    Foreground="#FFD6C005"
                    FontSize="100"
                    VerticalAlignment="Bottom"
                    Grid.ColumnSpan="4" FontWeight="Bold" />
-        <Rectangle Grid.ColumnSpan="3"
+        <Rectangle x:Name="rectangle" Grid.ColumnSpan="4"
                    Fill="#FFD6C005"
                    Grid.Row="1"
                    Stroke="Black"
                    Margin="-10,0,0,0"
                    StrokeThickness="0" />
-        <Image x:Name="image" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
-        <TextBlock x:Name="textBlock" Grid.Column="2" Grid.Row="2" TextWrapping="Wrap" Text="Please enter you Starcraft 2 ID and name." Grid.ColumnSpan="4" Foreground="#FFD6C005" FontSize="48" FontWeight="Bold" Margin="0" TextAlignment="Center" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="txtScId" Grid.Column="3" HorizontalAlignment="Center" Height="33" Margin="0,25,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" PlaceholderText="ID"/>
-        <TextBox x:Name="txtScName" Grid.Column="4" HorizontalAlignment="Center" Height="33" Margin="0,25,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" Width="250" VerticalAlignment="Top" PlaceholderText="Name"/>
+        <TextBlock x:Name="textBlock" Grid.Row="3" TextWrapping="Wrap" Text="Please enter you Starcraft 2 ID and name." Grid.ColumnSpan="10" Foreground="#FFD6C005" FontSize="48" FontWeight="Bold" Margin="0" TextAlignment="Center" VerticalAlignment="Bottom" Grid.RowSpan="3" Grid.Column="1"/>
+        <TextBox x:Name="txtScId" Grid.Column="3" HorizontalAlignment="Center" Height="33" Margin="0,25,0,0" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" PlaceholderText="ID" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="txtScName" Grid.Column="6" HorizontalAlignment="Center" Height="33" Margin="0,25,0,0" Grid.Row="7" TextWrapping="Wrap" Text="" Width="250" VerticalAlignment="Top" PlaceholderText="Name" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
         <Button x:Name="btnEnter"
         	Content="Enter"
-        	Grid.Row="3"
         	HorizontalAlignment="Stretch"
         	VerticalAlignment="Stretch"
         	Background="#FFD6C005"
         	FontSize="30"
         	FontWeight="Bold"
         	Foreground="#FF223D99"
-        	Margin="196,107,208,36"
-        	Click="btnEnterInfo" Grid.Column="3" Grid.ColumnSpan="2" />
+        	Margin="0"
+        	Click="btnEnterInfo" Grid.Column="3" Grid.ColumnSpan="6" Grid.RowSpan="3" Grid.Row="12" />
 
     </Grid>
 </Page>

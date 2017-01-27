@@ -37,7 +37,7 @@ namespace Lizzard.Diablo_3
 
         private void grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-                        Grid grid = (Grid)sender;
+            Grid grid = (Grid)sender;
             if (grid != null)
             {
                 if (grid.ActualHeight > grid.ActualWidth)

@@ -20,7 +20,6 @@ namespace Lizzard.World_of_Warcraft
         public MainPage()
         {
             this.InitializeComponent();
-            user = new User { tag = "RedZerg-1884", region = "eu", platform = "pc" };
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

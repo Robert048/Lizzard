@@ -26,12 +26,14 @@ namespace Lizzard.Diablo_3
             if(e.Parameter.ToString() == "templar")
             {
                 followerName = e.Parameter.ToString();
+                txtFollower.Text = followerName;
                 imgFollowerSet.Source = new BitmapImage(new Uri("http://www.diablowiki.net/images/9/90/Templarportrait.jpg", UriKind.Absolute));
                 ringIcon.IsActive = false;
             }
             if (e.Parameter.ToString() == "scoundrel")
             {
                 followerName = e.Parameter.ToString();
+                txtFollower.Text = followerName;
                 imgFollowerSet.Source = new BitmapImage(new Uri("http://www.diablowiki.net/images/4/49/Scoundrel-portrait.png", UriKind.Absolute));
                 ringIcon.IsActive = false;
 
@@ -39,6 +41,7 @@ namespace Lizzard.Diablo_3
             if (e.Parameter.ToString() == "enchantress")
             {
                 followerName = e.Parameter.ToString();
+                txtFollower.Text = followerName;
                 imgFollowerSet.Source = new BitmapImage(new Uri("http://www.diablowiki.net/images/6/61/Enchantress-portrait.png", UriKind.Absolute));
                 ringIcon.IsActive = false;
 
@@ -65,6 +68,26 @@ namespace Lizzard.Diablo_3
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Diablo_3.Followers));
+        }
+
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Grid grid = (Grid)sender;
+            if (grid != null)
+            {
+                if (grid.ActualHeight > grid.ActualWidth)
+                {
+                    VisualStateManager.GoToState(this, "Phone", false);
+                }
+                else if (grid.ActualWidth < 1024)
+                {
+                    VisualStateManager.GoToState(this, "Tablet", false);
+                }
+                else
+                {
+                    VisualStateManager.GoToState(this, "Standard", false);
+                }
+            }
         }
     }
 }
