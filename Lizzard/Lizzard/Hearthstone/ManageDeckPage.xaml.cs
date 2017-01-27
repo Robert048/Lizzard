@@ -24,8 +24,12 @@ namespace Lizzard.Hearthstone
             Frame.Navigate(typeof(MainPage));
         }
 
+        /// <summary>
+        /// load saved cardDecks from localstorage
+        /// </summary>
         private async void loadDecks()
         {
+            //get file and make cardlist from file
             var folder = ApplicationData.Current.LocalFolder;
             var files = await folder.GetFilesAsync();
             var deckFile = files.FirstOrDefault(x => x.Name == "cardDecks.txt");
@@ -33,7 +37,7 @@ namespace Lizzard.Hearthstone
             result = result.TrimEnd(result[result.Length -1]);
             List<string> cards = result.Split(',').ToList();
 
-            
+            //get cards and add to grid items
             var cardFile = files.FirstOrDefault(x => x.Name == "cards.txt");
             var result2 = await FileIO.ReadTextAsync(cardFile);
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result2);

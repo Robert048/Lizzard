@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Navigation;
 namespace Lizzard.Overwatch
 {
     /// <summary>
-    /// Het overwatch mainscherm
+    /// The overwatch main page
     /// </summary>
     public sealed partial class MainPage : Page
     {
@@ -19,18 +19,23 @@ namespace Lizzard.Overwatch
         public MainPage()
         {
             this.InitializeComponent();
+            //check if usertag already exists
             var tag = localSettings.Values["tag"];
             if (tag != null)
             {
                 this.user = new User { tag = (string)localSettings.Values["tag"], region = (string)localSettings.Values["region"], platform = (string)localSettings.Values["platform"] };
                 getProfile();
             }
+            //if no user exists then send to login page
             else
             {
                 Frame.Navigate(typeof(LogInpage));
             }
         }
 
+        /// <summary>
+        /// Gets Overwatch profile based on user from API
+        /// </summary>
         private async void getProfile()
         {
             Api call = new Api();
@@ -39,7 +44,7 @@ namespace Lizzard.Overwatch
             data = jsonresult.data;
             if (data != null)
             {
-
+                //if data exists add image source and player name
                 if (data.avatar != null && data.username != null)
                 {
                     image.Source = new BitmapImage(new Uri(data.avatar, UriKind.Absolute));

@@ -18,6 +18,9 @@ namespace Lizzard.Hearthstone
             loadCards();
         }
 
+        /// <summary>
+        /// Load cards from localstorage file and only show cards that are collectible and usable
+        /// </summary>
         private async void loadCards()
         {
             var folder = ApplicationData.Current.LocalFolder;
@@ -98,11 +101,17 @@ namespace Lizzard.Hearthstone
             Frame.Navigate(typeof(MainPage));
         }
 
+        /// <summary>
+        /// add a card to the carddeck
+        /// </summary>
+        /// <param name="sender">grid</param>
+        /// <param name="e">clicked item</param>
         private void gridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var card = e.ClickedItem;
             int count = listCards.Items.Count;
             int doubles = 0;
+            //check if cards exists twice
             foreach (var card2 in listCards.Items)
             {
                 var type = card2.GetType();
@@ -203,8 +212,11 @@ namespace Lizzard.Hearthstone
                         break;
                 }
             }
+
+            //checks total cards incl. doubles
             if ((count + doubles) < 30)
             {
+                //if card exists but not twice add another
                 if (listCards.Items.Contains(card))
                 {
                     var type = card.GetType();
@@ -331,6 +343,7 @@ namespace Lizzard.Hearthstone
                             break;
                     }
                 }
+                //if card doesnt exist add
                 else
                 {
                     listCards.Items.Add(card);
@@ -338,11 +351,19 @@ namespace Lizzard.Hearthstone
             }
         }
 
+        /// <summary>
+        /// remove a card from carddeck
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listCards_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //get selected card and remove it
             listCards.Items.Remove(e.ClickedItem);
             var card = e.ClickedItem;
             
+            //check if card existed twice
+            //add 1 of the card
             var type = card.GetType();
             switch (type.Name)
             {
@@ -455,12 +476,17 @@ namespace Lizzard.Hearthstone
             }
         }
 
+        /// <summary>
+        /// save the carddeck
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnSave_Click(object sender, RoutedEventArgs e)
         {
             string deck = "";
             foreach (var card in listCards.Items)
             {
-                
+                //make a list with cardID's
                 var type = card.GetType();
                 switch (type.Name)
                 {
@@ -611,6 +637,7 @@ namespace Lizzard.Hearthstone
                         break;
                 }
             }
+            //open localstorage and add file with the card ID list
             var folder = ApplicationData.Current.LocalFolder;
             var textFile = await folder.CreateFileAsync("cardDecks.txt", CreationCollisionOption.ReplaceExisting);
             await FileIO.WriteTextAsync(textFile, deck);

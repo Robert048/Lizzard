@@ -18,6 +18,9 @@ namespace Lizzard.Hearthstone
             updateCards();
         }
 
+        /// <summary>
+        /// update the card file in localstorage
+        /// </summary>
         private async void updateCards()
         {
             var result = await get();
@@ -36,6 +39,10 @@ namespace Lizzard.Hearthstone
             Frame.Navigate(typeof(Lizzard.MainPage));
         }
 
+        /// <summary>
+        /// gets cards from API
+        /// </summary>
+        /// <returns>result string</returns>
         public async Task<string> get()
         {
             RootObject data = new RootObject(); ;

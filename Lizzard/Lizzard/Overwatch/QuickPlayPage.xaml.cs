@@ -29,11 +29,13 @@ namespace Lizzard.Overwatch
         {
             base.OnNavigatedTo(e);
             DataProfile data = (DataProfile)e.Parameter;
+            //check if usertag already exists
             var tag = localSettings.Values["tag"];
             if (tag != null)
             {
                 this.user = new User { tag = (string)localSettings.Values["tag"], region = (string)localSettings.Values["region"], platform = (string)localSettings.Values["platform"] };
             }
+            //if no user exists then send to login page
             else
             {
                 Frame.Navigate(typeof(LogInpage));
@@ -43,8 +45,12 @@ namespace Lizzard.Overwatch
             getheroes();
         }
 
+        /// <summary>
+        /// Gets Hero stats from API
+        /// </summary>
         private async void getheroes()
         {
+            //first call to get all the heroes and basic stats
             Api call = new Api();
             var result = await call.get(user.platform + "/" + user.region + "/" + user.tag + "/quickplay/heroes");
             var jsonresult = JsonConvert.DeserializeObject<List<Hero>>(result);
@@ -79,6 +85,8 @@ namespace Lizzard.Overwatch
                 }
             }
             names = names.Remove(names.Length - 1);
+
+            //second call to get more information per hero
             Api call2 = new Api();
             var result2 = await call2.get(user.platform + "/" + user.region + "/" + user.tag + "/quickplay/hero/" + names + "/");
             var jsonresult2 = JsonConvert.DeserializeObject<dynamic>(result2);
