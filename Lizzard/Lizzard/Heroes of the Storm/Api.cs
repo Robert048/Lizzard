@@ -6,6 +6,7 @@ namespace Lizzard.Heroes_of_the_Storm
 {
     class Api
     {
+        //API call for the HotsLog API
         public async Task<string> getApi(string apiLink)
         {
             var result = "";
@@ -18,6 +19,7 @@ namespace Lizzard.Heroes_of_the_Storm
             return result;
         }
 
+        //New URL for a part of the HotSLog API
         public async Task<string> getData(string apiLink)
         {
             var result = "";

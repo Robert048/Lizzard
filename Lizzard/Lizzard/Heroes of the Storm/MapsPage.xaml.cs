@@ -17,6 +17,9 @@ namespace Lizzard.Heroes_of_the_Storm
             getMaps();
         }
 
+        /// <summary>
+        /// get the map data from API and add to list
+        /// </summary>
         private async void getMaps()
         {
             Api call = new Api();

@@ -22,6 +22,7 @@ namespace Lizzard.Heroes_of_the_Storm
         private async void getStats()
         {
             Api call = new Api();
+            //get region and tag from localstorage and set it in correct format for this API
             string region = "";
             string tag = "";
             switch (user.region)
@@ -46,6 +47,7 @@ namespace Lizzard.Heroes_of_the_Storm
             {
                 tag = user.tag.Replace("-", "_");
             }
+            //get player stats
             var result = await call.getApi("Players/" + region + "/" + tag);
             var jsonresult = JsonConvert.DeserializeObject<RootObject>(result);
             if (jsonresult != null)
@@ -89,6 +91,7 @@ namespace Lizzard.Heroes_of_the_Storm
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            //get user info if logged in
             var tag = localSettings.Values["tag"];
             if (tag != null)
             {

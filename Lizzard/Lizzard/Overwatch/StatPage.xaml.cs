@@ -19,15 +19,20 @@ namespace Lizzard.Overwatch
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Gets achievements of the user
+        /// </summary>
         private async void getAchievements()
         {
             Api call = new Api();
             User user = new User();
+            //check if usertag already exists
             var tag = localSettings.Values["tag"];
             if (tag != null)
             {
                 user = new User { tag = (string)localSettings.Values["tag"], region = (string)localSettings.Values["region"], platform = (string)localSettings.Values["platform"] };
             }
+            //if no user exists then send to login page
             else
             {
                 Frame.Navigate(typeof(LogInpage));
@@ -46,6 +51,7 @@ namespace Lizzard.Overwatch
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            //add existing data to fields
             DataProfile data = (DataProfile)e.Parameter;
             txtQuickPlay.Text = data.games.quick.wins + " Wins" + Environment.NewLine + data.playtime.quick + " playtime";
             if (data.competitive.rank != null)

@@ -3,6 +3,9 @@ using Windows.UI.Xaml.Data;
 
 namespace Lizzard
 {
+    /// <summary>
+    /// Converter for Hearthstone image source
+    /// </summary>
     public class ImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -24,6 +27,9 @@ namespace Lizzard
         }
     }
 
+    /// <summary>
+    /// Converter for Heroes of the Storm image source of the Heroes
+    /// </summary>
     public class ImageConverterHots : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -37,6 +43,9 @@ namespace Lizzard
         }
     }
 
+    /// <summary>
+    /// Converter for Heroes of the Storm image source of the Maps
+    /// </summary>
     public class ImageConverterHotsMaps : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
