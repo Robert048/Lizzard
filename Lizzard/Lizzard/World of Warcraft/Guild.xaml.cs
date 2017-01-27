@@ -24,18 +24,18 @@ namespace Lizzard.World_of_Warcraft
         private async void loadGuildActivity()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("guild/" + realm + "/" + guildName + "?fields=news%2Cchallenge&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("guild/" + realm + "/" + guildName + "?fields=news%2Cchallenge&");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectGuildNews>(result);
             progressGuildActivity.IsActive = false;
+            progressGuildMembers.IsActive = false;
             if (jsonresult.name != null)
             {
-
                 foreach (News news in jsonresult.news)
                 {
                     if (news.type == "itemLoot")
                     {
                         call = new WoWApi();
-                        var itemResult = await call.get("item/" + news.itemId.ToString() + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+                        var itemResult = await call.get("item/" + news.itemId.ToString() + "?");
                         var jsonresults = JsonConvert.DeserializeObject<RootObjectItem>(itemResult);
 
                         news.type = news.character + " has recieved " + jsonresults.name;
@@ -54,7 +54,7 @@ namespace Lizzard.World_of_Warcraft
         private async Task<RootObjectItem> getItem(int itemId)
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("item/" + itemId.ToString() + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("item/" + itemId.ToString() + "?");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectItem>(result);
             return jsonresult;
         }
@@ -65,7 +65,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadMembers()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("guild/" + realm + "/" + guildName + "?fields=members&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("guild/" + realm + "/" + guildName + "?fields=members&");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectGuildMembers>(result);
             progressGuildMembers.IsActive = false;
             foreach (Member m in jsonresult.members)
@@ -76,13 +76,13 @@ namespace Lizzard.World_of_Warcraft
 
         }
 
-        private void btnBack_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
         }
 
 
-        private void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace Lizzard.World_of_Warcraft
             Frame.Navigate(typeof(Profile), parameters);
         }
 
-        private void Grid_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Grid grid = (Grid)sender;
             if (grid != null)
