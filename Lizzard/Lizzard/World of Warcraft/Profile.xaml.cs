@@ -54,7 +54,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadProfileData()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             ringInfo.IsActive = false;
             if (jsonresult.name != null)
@@ -94,7 +94,7 @@ namespace Lizzard.World_of_Warcraft
         {
 
             WoWApi call = new WoWApi();
-            var result = await call.get("character/" + realm + "/" + charName + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?");
             var jsonresult = JsonConvert.DeserializeObject<CharacterInformation>(result);
             image.Source = new BitmapImage(new Uri("http://render-api-eu.worldofwarcraft.com/static-render/eu/" + jsonresult.thumbnail));
         }
@@ -105,7 +105,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadActivity()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/" + realm + "/" + charName + "?fields=feed&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?fields=feed&");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectFeed>(result);
             ringActivity.IsActive = false;
 
@@ -114,7 +114,7 @@ namespace Lizzard.World_of_Warcraft
                 if (feed.type == "LOOT")
                 {
                     call = new WoWApi();
-                    var itemResult = await call.get("item/" + feed.itemId.ToString() + "?locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+                    var itemResult = await call.get("item/" + feed.itemId.ToString() + "?");
                     var jsonresults = JsonConvert.DeserializeObject<RootObjectItem>(itemResult);
 
                     feed.type = jsonresult.name + " has recieved " + jsonresults.name;
@@ -129,7 +129,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadStats()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/" + realm + "/" + charName + "?fields=stats&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?fields=stats&");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectStats>(result);
             ringStats.IsActive = false;
             txtStats.Text =
@@ -150,7 +150,7 @@ namespace Lizzard.World_of_Warcraft
         private async void loadItems()
         {
             WoWApi call = new WoWApi();
-            var result = await call.get("character/" + realm + "/" + charName + "?fields=items&locale=en_GB&apikey=4v8q8ry9kymcbmfgjx7h7a5ufhqn3259");
+            var result = await call.get("character/" + realm + "/" + charName + "?fields=items&");
             var jsonresult = JsonConvert.DeserializeObject<RootObjectItems>(result);
             ringItems.IsActive = false;
             txtItems.Text =
@@ -164,12 +164,12 @@ namespace Lizzard.World_of_Warcraft
 
         }
 
-        private void btnBack_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
         }
         
-        private async void btnSearch_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -190,7 +190,7 @@ namespace Lizzard.World_of_Warcraft
             }
         }
 
-        private void Grid_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Grid grid = (Grid)sender;
             if (grid != null)
