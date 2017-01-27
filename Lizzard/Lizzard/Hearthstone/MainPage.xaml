@@ -6,42 +6,177 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
 
-    <Grid Background="#FFFBD163"
+    <Grid x:Name="grid"
+          Background="#FFFBD163"
           BorderBrush="#FF2F67E1"
-          BorderThickness="10">
+          BorderThickness="10"
+          SizeChanged="Grid_SizeChanged">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard" />
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="btnCreate.(Grid.RowSpan)"
+                                Value="4" />
+                        <Setter Target="btnCreate.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="btnCreate.(Grid.Column)"
+                                Value="4" />
+                        <Setter Target="btnManage.(Grid.RowSpan)"
+                                Value="4" />
+                        <Setter Target="btnManage.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="btnManage.(Grid.Row)"
+                                Value="11" />
+                        <Setter Target="btnManage.(Grid.Column)"
+                                Value="4" />
+                        <Setter Target="btnReload.(Grid.RowSpan)"
+                                Value="4" />
+                        <Setter Target="btnReload.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="btnReload.(Grid.Row)"
+                                Value="16" />
+                        <Setter Target="btnReload.(Grid.Column)"
+                                Value="4" />
+                        <Setter Target="btnCreate.(Grid.Row)"
+                                Value="6" />
+                        <Setter Target="progressRing.(Grid.Row)"
+                                Value="16" />
+                        <Setter Target="progressRing.(Grid.Column)"
+                                Value="4" />
+                        <Setter Target="progressRing.(Grid.RowSpan)"
+                                Value="4" />
+                        <Setter Target="progressRing.(Grid.ColumnSpan)"
+                                Value="4" />
+                        <Setter Target="progressRing.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,30,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="progressRing.(FrameworkElement.HorizontalAlignment)"
+                                Value="Right" />
+                        <Setter Target="progressRing.(FrameworkElement.VerticalAlignment)"
+                                Value="Stretch" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="rectangle.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnBack.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>-5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnCreate.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnManage.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnReload.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <ProgressRing x:Name="progressRing"
-                      Grid.Column="4"
+                      Grid.Column="7"
                       HorizontalAlignment="Stretch"
                       Margin="0,0,0,50"
-                      Grid.Row="3"
+                      Grid.Row="8"
                       VerticalAlignment="Bottom"
                       Width="40"
                       Height="40"
-                      Foreground="#FF2F67E1" />
+                      Foreground="#FF2F67E1"
+                      Grid.ColumnSpan="2"
+                      Grid.RowSpan="12" />
 
         <Button x:Name="btnBack"
                 Content="&lt;"
-                Grid.Row="6"
+                Grid.Row="28"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Background="#FF2F67E1"
@@ -49,48 +184,57 @@
                 FontWeight="Bold"
                 Foreground="#FFFBD163"
                 Margin="-10,0,0,0"
-                Click="btnBack_Click" />
+                Click="btnBack_Click"
+                Grid.RowSpan="2" />
         <Button x:Name="btnCreate"
                 Content="Create Deck"
-                Grid.Column="2"
-                Grid.Row="3"
+                Grid.Column="3"
+                Grid.Row="8"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF2F67E1"
                 Foreground="#FFFBD163"
                 FontSize="30"
                 Margin="10"
-                Click="btnCreate_Click" />
+                Click="btnCreate_Click"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="12" />
         <Button x:Name="btnManage"
                 Content="Manage Decks"
-                Grid.Column="3"
-                Grid.Row="3"
+                Grid.Column="5"
+                Grid.Row="8"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF2F67E1"
                 Foreground="#FFFBD163"
                 FontSize="30"
                 Margin="10"
-                Click="btnManage_Click" />
+                Click="btnManage_Click"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="12" />
         <Button x:Name="btnReload"
                 Content="Update cards"
-                Grid.Column="4"
-                Grid.Row="3"
+                Grid.Column="7"
+                Grid.Row="8"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 Background="#FF2F67E1"
                 Foreground="#FFFBD163"
                 FontSize="30"
                 Margin="10"
-                Click="btnReload_Click" />
-        <TextBlock Margin="20,0,0,0"
+                Click="btnReload_Click"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="12" />
+        <TextBlock x:Name="textBlock"
+                   Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="hearthstone"
                    Foreground="#FF2F67E1"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="3" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="8" />
+        <Rectangle x:Name="rectangle"
+                   Grid.ColumnSpan="4"
                    Fill="#FF2F67E1"
                    Grid.Row="1"
                    Stroke="Black"

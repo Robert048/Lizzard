@@ -7,9 +7,64 @@
       xmlns:custom="using:Lizzard"
       mc:Ignorable="d">
 
-    <Grid Background="#FF007AF0"
+    <Grid x:Name="grid"
+          Background="#FF007AF0"
           BorderBrush="#FF533B5B"
           BorderThickness="10">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Standard" />
+                <VisualState x:Name="Phone">
+                    <VisualState.Setters>
+                        <Setter Target="btnBack.(Grid.ColumnSpan)"
+                                Value="2" />
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="11" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="60" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="6" />
+                        <Setter Target="listMaps.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="listMaps.(Grid.ColumnSpan)"
+                                Value="10" />
+                        <Setter Target="listMaps.(Grid.Row)"
+                                Value="2" />
+                        <Setter Target="listMaps.(Grid.RowSpan)"
+                                Value="3" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(Grid.ColumnSpan)"
+                                Value="10" />
+                        <Setter Target="rectangle.(Grid.ColumnSpan)"
+                                Value="5" />
+                        <Setter Target="listMaps.(Grid.Column)"
+                                Value="1" />
+                        <Setter Target="listMaps.(Grid.ColumnSpan)"
+                                Value="10" />
+                        <Setter Target="textBlock.(TextBlock.FontSize)"
+                                Value="53.333" />
+                        <Setter Target="textBlock.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>5,0,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="grid.(Grid.BorderThickness)">
+                            <Setter.Value>
+                                <Thickness>5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
@@ -21,14 +76,18 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Button x:Name="btnBack"
                 Content="&lt;"
@@ -41,14 +100,16 @@
                 Foreground="#FF007AF0"
                 Margin="-10,0,0,0"
                 Click="btnBack_Click" />
-        <TextBlock Margin="20,0,0,0"
+        <TextBlock x:Name="textBlock"
+                   Margin="20,0,0,0"
                    TextWrapping="Wrap"
                    Text="The Maps"
                    Foreground="#FF533B5B"
                    FontSize="100"
                    VerticalAlignment="Bottom"
-                   Grid.ColumnSpan="4" />
-        <Rectangle Grid.ColumnSpan="3"
+                   Grid.ColumnSpan="8" />
+        <Rectangle x:Name="rectangle"
+                   Grid.ColumnSpan="4"
                    Fill="#FF533B5B"
                    Grid.Row="1"
                    Stroke="Black"
@@ -58,7 +119,7 @@
                   Grid.Column="2"
                   Grid.Row="3"
                   Grid.RowSpan="2"
-                  Grid.ColumnSpan="4">
+                  Grid.ColumnSpan="8">
             <ListView.Resources>
                 <DataTemplate x:Key="MapTemplate">
                     <Grid Height="75"
@@ -87,7 +148,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <ProgressRing x:Name="progressRing"
-                      Grid.Column="3"
+                      Grid.Column="1"
                       Grid.Row="3"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center"
